@@ -1,0 +1,11 @@
+{
+  "name": "project-witcher",
+  "version": "1.0.0",
+  "description": "Witcher project with Bestiary, Interactive map and Quizzes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

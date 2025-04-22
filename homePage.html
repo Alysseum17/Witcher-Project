@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/homePageStyle.css" />
+    <script defer src="script/script.js"></script>
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule=""
+    src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+  ></script>
+    <title>Witcher|Explore Witcher`s world</title>
+  </head>
+  <body>
+    <header class="main--header">
+      <div class="flex--container flex--header">
+        <a href="#">
+          <img src="images/logo.png" alt="Witcher logo" class="logo--image" />
+        </a>
+        <nav class="main--nav">
+          <ul class="main--nav-list">
+            <li><a href ="#" class="main--nav-link">Home</a></li>
+            <li><a href "#" class="main--nav-link">Bestiary</a></li>
+            <li><a href "#" class="main--nav-link">Map</a></li>
+            <li><a href "#" class="main--nav-link">Questions</a></li>
+          </ul>
+        </nav>
+        <form action="#" class="login--form flex--container">
+          <div>
+            <input class="login" type="text" placeholder="Login" required />
+          </div>
+          <div>
+            <input
+              class="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div>
+            <button class="confirm--button"><span class = "arrow">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+    </header>
+    <main>
+      <section class="section--hero">
+        <div class="hero grid grid--center">
+          <div class="hero--text">
+            <h1 class="main--heading">The Witcher's world awaits for you </h1>
+            <p class="hero--description">Embrace the challenge and plunge into a legendary realm of sword and sorcery. Danger and wonder are waiting at every turn.</p>
+            <div class="flex--container container--info">
+              <a href="#" class="button--cta">Try it!</a>
+              <a href="#how" class="button--info">Learn more &darr;</a>
+            </div>
+          </div>
+          <div class="hero--image">
+            <img src="images/hero.png" alt="Some pictures from from Withcer" class="hero--images"/>
+          </div>
+        </div>
+      </section>
+      <section class="how--section" id="how">
+        <div class="title--section container">
+          <span class="subheading">How it works</span>
+          <h1 class="main--heading">Guide to the Witcher's Universe</h1>
+        </div>
+        <div class="container grid grid--2-cols">
+          <div class="how--description">
+            <span class="number">1</span>
+            <h2 class="secondary--heading">The Witcher's Bestiary</h2>
+            <p class="description">Dive into a comprehensive compendium of legendary creatures, where each entry reveals the lore, strengths, and weaknesses of the foes lurking in the Witcher's universe.</p>
+          </div>
+          <img src="images/bestiary.jpg" alt="Witcher`s bestiary" class="how--img"/>
+          <img src="images/map.webp" alt="Witcher`s interactive map" class="how--img"/>
+          <div class="how--description">
+            <span class="number">2</span>
+            <h2 class="secondary--heading">The Witcher's Realm Map</h2>
+            <p class="description">Navigate through a dynamic, interactive map that uncovers the hidden locales, ancient landmarks, and battle--scarred territories of the Witcher's world.</p>
+          </div>
+          <div class="how--description">
+            <span class="number">3</span>
+            <h2 class="secondary--heading">Test Your Witcher Knowledge</h2>
+            <p class="description">Challenge yourself with engaging quizzes that explore the rich lore and secrets of the Witcher's universe—perfect for true fans seeking to prove their mastery.</p>
+          </div>
+          <img src="images/quiz.jpg" alt="Witcher`s quiz" class="how--img"/>
+        </div>
+      </section>
+      <section class="section--slider">
+        <div class="title--section container flex--container title--slider">
+          <span class="subheading">Slider quotes</span>
+          <h1 class="main--heading">Tales from the Path</h1>
+        </div>
+        <div class="button-area">
+        <div class="content--slider">
+        <figure class="slide">
+            <div class="slide--header">
+              <img src="images/geralt.webp" alt="Geralt of Rivia" class="slider--icon"/>
+              <span class="slider--name">Geralt of Rivia</span>
+            </div>
+            <blockquote class="slider--text">...if I'm to choose between one evil and another, then I prefer not to choose at all.</blockquote>
+            <p class="slider--page">&mdash;pg. 90, The Last Wish (U.S. edition)</p>
+            <blockquote class="slider--text">There is no destiny, he thought. It does not exist. The only thing that everyone
+              is destined for is death. Death is the other blade of the two--edged sword. I am the
+              first blade. And the second is death, which dogs my footsteps. I cannot, I may not
+              expose you to that, Ciri. </blockquote>
+            <p class="slider--page">&mdash;pg. 192, Sword of Destiny (U.S. edition)</p>
+        </figure>
+        <figure class="slide">
+          <div class="slide--header">
+            <img src="images/yennefer.png" alt="Yennefer of Vengerberg" class="slider--icon"/>
+            <span class="slider--name">Yennefer of Vengerberg</span>
+          </div>
+          <blockquote class="slider--text">...seize life by the scruff of the neck. Believe me, little one, you should only regret inactivity, indecisiveness, hesitation. You
+            shouldn't regret actions or decisions, even if they occasionally end in sadness
+            and regret.</blockquote>
+          <p class="slider--page">&mdash;pg. 80, The Time of Contempt (U.S. edition)</p>
+          <blockquote class="slider--text">A time of change is coming. It
+            would be a shame to grow old with the uncomfortable conviction that one
+            had done nothing to ensure that these changes are for the better. </blockquote>
+          <p class="slider--page">&mdash;pg. 38, Blood of Elves (U.S. edition)</p>
+      </figure>
+      <figure class="slide">
+        <div class="slide--header">
+          <img src="images/ciri.png" alt="Ciri" class="slider--icon"/>
+          <span class="slider--name">Ciri</span>
+        </div>
+        <blockquote class="slider--text">Hatred and vengeance blinded me ... But I shall stand before them in humility. I shall remember the expression in their eyes. I hope the memory of those eyes will stop me making a similar mistake.</blockquote>
+        <p class="slider--page">&mdash;pg. 463, The Lady of the Lake (U.S. edition)</p>
+        <blockquote class="slider--text">She is not a child, the voice repeated. She is the Flame, the White Flame which will set light to the world. She is the Elder Blood, Hen Ichaer. The blood of elves. </blockquote>
+        <p class="slider--page">&mdash;pg. 41, Blood of Elves (UK edition)</p>
+    </figure>
+      <figure class="slide">
+        <div class="slide--header">
+          <img src="images/vilgefortz.webp" alt="Vilgefortz of Roggeveen" class="slider--icon"/>
+          <span class="slider--name">Vilgefortz of Roggeveen</span>
+        </div>
+        <blockquote class="slider--text">The nature does not have the knowledge of the philosophical thought, Geralt of Rivia. Us, mages, can and have to do whatever we can to comprehend its gentle threads... And then it shows us its power...</blockquote>
+        <p class="slider--page">&mdash;pg. 120, The Time of Contempt (U.S. edition)</p>
+        <blockquote class="slider--text">I mistook stars reflected in a pond at night for
+          those in the sky. </blockquote>
+        <p class="slider--page">&mdash;pg. 126, The Time of Contempt (U.S. edition)</p>
+    </figure> 
+    <figure class="slide">
+      <div class="slide--header">
+        <img src="images/triss.png" alt="Triss Merigold" class="slider--icon"/>
+        <span class="slider--name">Triss Merigold</span>
+      </div>
+      <blockquote class="slider--text">Don't worry, I'm not going to cry. I'm not a little girl from a tiny tower in Maribor any more. Damn it, I'm Triss Merigold, the Fourteenth One Killed at Sodden.</blockquote>
+      <p class="slider--page">&mdash;pg. 107, Blood of Elves (U.K. edition)</p>
+      <blockquote class="slider--text">The chestnut--haired Triss Merigold, cheerful, giggling for no reason, looking like
+        a teenager. He had liked her. And she had liked him. </blockquote>
+      <p class="slider--page">&mdash;pg. 219, Sword of Destiny (UK edition)</p>
+  </figure>
+  <figure class="slide">
+    <div class="slide--header">
+      <img src="images/dandelion.png" alt="Dandelion" class="slider--icon"/>
+      <span class="slider--name">Dandelion</span>
+    </div>
+    <blockquote class="slider--text">I consider gazing into the abyss utter foolishness. There are many things in the world much more worth gazing into.
+      </blockquote>
+    <p class="slider--page">&mdash;Dandelion, Half a Century of Poetry (Season of Storms)</p>
+    <blockquote class="slider--text">In my book, friendship is all that matters. Well, friendship and love. And art. Oh, and wine...</blockquote>
+    <p class="slider--page">&mdash;Dandelion to Geralt, Blood and Wine expansion</p>
+</figure>
+<figure class="slide">
+  <div class="slide--header">
+    <img src="images/zoltan.png" alt="Zoltan Chivay" class="slider--icon"/>
+    <span class="slider--name">Zoltan Chivay</span>
+  </div>
+  <blockquote class="slider--text">Unbridled altruism is a huge vice of mine.I simply have
+    to do good. I am a sensible dwarf, however, and know that I'm unable to do
+    everyone good. Were I to attempt to be good to everyone, to the entire world
+    and to all the creatures living in it, it would be a drop of fresh water in the salt
+    sea.Thus, I decided to do specific good. I'm good to myself and my immediate circle.
+    </blockquote>
+  <p class="slider--page">&mdash;pg. 77, Baptism of Fire (U.K. edition)</p>
+  <blockquote class="slider--text">Life without old friends and vodka is worth the same as a woman without an ass</blockquote>
+  <p class="slider--page">&mdash;The Witcher 2: Assassins of Kings </p>
+</figure>
+<figure class="slide">
+  <div class="slide--header">
+    <img src="images/vesemir.png" alt="Vesemir" class="slider--icon vesemir"/>
+    <span class="slider--name">Vesemir</span>
+  </div>
+  <blockquote class="slider--text">When they're about to hang you, ask for a glass of water. You never know what might happen before they bring it.
+    </blockquote>
+  <p class="slider--page">&mdash;pg. 160, The Lady of the Lake (U.K. edition)</p>
+  <blockquote class="slider--text">There are
+    things to be afraid of. Because darkness will always, always exist. And Evil will
+    always rampage in the darkness, there will always be fangs and claws, killing
+    and blood in the darkness. And witchers will always be necessary</blockquote>
+  <p class="slider--page">&mdash;pg. 304, Season of Storms (U.K. edition)</p>
+</figure>
+<figure class="slide">
+  <div class="slide--header">
+    <img src="images/regis2.png" alt="Vesemir" class="slider--icon vesemir"/>
+    <span class="slider--name">Emiel Regis Rohellec Terzieff--Godefroy</span>
+  </div>
+  <blockquote class="slider--text">...it is better to goforward without an aim than loiter without an aim, and with surety muchbetter than to retreat without an aim.
+    </blockquote>
+  <p class="slider--page">&mdash;pg. 103, The Tower of Swallows (U.K. edition)</p>
+  <blockquote class="slider--text">Ignorance is no justification for ill--conceived actions.
+    When one doesn't know or has doubts it's best to seek advice…</blockquote>
+  <p class="slider--page">&mdash;pg. 211, Baptism of Fire (U.K. edition)</p>
+</figure>
+</div>
+        <button  class="slider--button left--button">&lt;</button>
+        <button class="slider--button right--button">&gt;</button>
+    </div>
+    <div class="dots--container"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo--col">
+          <a href="#" class="footer--logo">
+            <img class="footer--logo logo--image" alt="Witcher logo" src="images/logo.png" />
+          </a>
+
+          <ul class="social--links">
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy; 2025 by Witcher, Inc. All rights reserved.
+          </p>
+        </div>
+        <div class="address--col">
+          <p class="footer--heading">Contact us</p>
+          <address class="contacts">
+            <p class="info">You can mail or phone us</p>
+            <p>
+              <a class="footer--link" href="tel:+380682580514">+380682580514</a
+              ><br />
+              <a class="footer--link" href="mailto:witcher@gmail.com"
+                >witcher@gmail.com</a
+              >
+            </p>
+          </address>
+        </div>
+        <nav class="nav--col">
+          <p class="footer--heading">Account</p>
+          <ul class="footer--nav">
+            <li><a class="footer--link" href="#">Create account</a></li>
+            <li><a class="footer--link" href="#">Sign in</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav--col">
+          <p class="footer--heading">Resources</p>
+          <ul class="footer--nav">
+            <li><a class="footer--link" href="https://witcher.fandom.com/wiki/Witcher_Wiki">Witcher Bestiary</a></li>
+            <li><a class="footer--link" href="#">Help center</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
