@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/homePageStyle.css" />
+    <script defer src="script/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Witcher|Explore Witcher`s world</title>
+  </head>
+  <body>
+    <header class="main--header">
+      <div class="flex--container flex--header">
+        <a href="#">
+          <img src="images/logo.png" alt="Witcher logo" class="logo--image" />
+        </a>
+        <nav class="main--nav">
+          <ul class="main--nav-list">
+            <li><a href="homePage.html" class="main--nav-link">Home</a></li>
+            <li><a href="#" class="main--nav-link">Bestiary</a></li>
+            <li><a href="#" class="main--nav-link">Map</a></li>
+            <li><a href="#" class="main--nav-link">Questions</a></li>
+          </ul>
+        </nav>
+        <form action="#" class="login--form flex--container">
+          <div>
+            <input class="login" type="text" placeholder="Login" required />
+          </div>
+          <div>
+            <input
+              class="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div>
+            <button class="confirm--button">
+              <span class="arrow">&rarr;</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </header>
+    <main>
+      <section class="section--hero">
+        <div class="hero grid grid--center">
+          <div class="hero--text">
+            <h1 class="main--heading">
+              The Witcher's Realm Map awaits your exploration
+            </h1>
+            <p class="hero--description">
+              Navigate through the vast lands, uncover hidden locations, and
+              discover the ancient secrets that lie within the Witcher's world.
+              Every corner holds a story of adventure and peril, waiting for you
+              to uncover.
+            </p>
+            <div class="flex--container container--info">
+              <a href="#how" class="button--cta">Select Your Region &darr;</a>
+            </div>
+          </div>
+          <div class="hero--image">
+            <img
+              src="images/heroMap.png"
+              alt="Some pictures from from Withcer"
+              class="hero--images"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="how--section" id="how">
+        <div class="title--section container">
+          <h1 class="main--heading margin--bottom">
+            Discover the Wonders of the Witcher's World
+          </h1>
+        </div>
+        <div class="container grid grid--2-cols">
+          <div class="how--description">
+            <h2 class="secondary--heading">White Orchard</h2>
+            <p class="description">
+              A peaceful land overshadowed by the ongoing war, where lush
+              fields, ancient ruins, and the quiet countryside provide both
+              serenity and hidden dangers. Explore the birthplace of Geralt and
+              uncover its secrets.
+            </p>
+            <a href="#" class="button--cta">Explore White Orchard!</a>
+          </div>
+          <img
+            src="images/white_orchard.webp"
+            alt="White Orchard"
+            class="how--img"
+          />
+          <img
+            src="images/velen_novigrad.png"
+            alt="Velen & Novigrad"
+            class="how--img"
+          />
+          <div class="how--description">
+            <h2 class="secondary--heading">Velen & Novigrad</h2>
+            <p class="description">
+              The war-torn marshes of Velen and the bustling city of Novigrad
+              offer a stark contrast. Uncover the stories of betrayal, power
+              struggles, and ancient creatures that call these lands home.
+            </p>
+            <a href="#" class="button--cta">Uncover Velen & Novigrad!</a>
+          </div>
+          <div class="how--description">
+            <h2 class="secondary--heading">Skellige Isles</h2>
+            <p class="description">
+              The northern, rugged islands of Skellige are home to fierce
+              warriors and untamed wilderness. Sail the icy seas, discover
+              hidden coves, and explore a culture built on strength and
+              tradition.
+            </p>
+            <a href="#" class="button--cta">Venture to Skellige!</a>
+          </div>
+          <img
+            src="images/skellige.avif"
+            alt="Skellige Isles"
+            class="how--img"
+          />
+          <img
+            src="images/kaer-morhen.webp"
+            alt="Kaer Morhen"
+            class="how--img"
+          />
+          <div class="how--description">
+            <h2 class="secondary--heading">Kaer Morhen</h2>
+            <p class="description">
+              Step into the legendary fortress of the Witchers. Explore the
+              ancient halls of Kaer Morhen, the place where Witchers are forged,
+              and witness the remnants of its long and storied history.
+            </p>
+            <a href="#" class="button--cta">Enter Kaer Morhen!</a>
+          </div>
+          <div class="how--description">
+            <h2 class="secondary--heading">Toussaint</h2>
+            <p class="description">
+              A land of rolling vineyards, medieval castles, and noble knights,
+              Toussaint stands as a beacon of beauty and mystery. But beneath
+              its idyllic surface, dark secrets lurk, waiting to be discovered.
+            </p>
+            <a href="#" class="button--cta">Discover Toussaint!</a>
+          </div>
+          <img src="images/toussaint.jpg" alt="Toussaint" class="how--img" />
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo--col">
+          <a href="#" class="footer--logo">
+            <img
+              class="footer--logo logo--image"
+              alt="Witcher logo"
+              src="images/logo.png"
+            />
+          </a>
+
+          <ul class="social--links">
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy; 2025 by Witcher, Inc. All rights reserved.
+          </p>
+        </div>
+        <div class="address--col">
+          <p class="footer--heading">Contact us</p>
+          <address class="contacts">
+            <p class="info">You can mail or phone us</p>
+            <p>
+              <a class="footer--link" href="tel:+380682580514">+380682580514</a
+              ><br />
+              <a class="footer--link" href="mailto:witcher@gmail.com"
+                >witcher@gmail.com</a
+              >
+            </p>
+          </address>
+        </div>
+        <nav class="nav--col">
+          <p class="footer--heading">Account</p>
+          <ul class="footer--nav">
+            <li><a class="footer--link" href="#">Create account</a></li>
+            <li><a class="footer--link" href="#">Sign in</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav--col">
+          <p class="footer--heading">Resources</p>
+          <ul class="footer--nav">
+            <li>
+              <a
+                class="footer--link"
+                href="https://witcher.fandom.com/wiki/Witcher_Wiki"
+                >Witcher Bestiary</a
+              >
+            </li>
+            <li><a class="footer--link" href="#">Help center</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

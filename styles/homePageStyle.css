@@ -135,6 +135,7 @@
 }
 .hero--images {
   width: 100%;
+  height: 66rem;
 }
 /**************************/
 /* HOW SECTION */
@@ -159,6 +160,7 @@
 }
 .how--img {
   width: 100%;
+  height: 35rem;
 }
 /**************************/
 /* SLIDER SECTION */
