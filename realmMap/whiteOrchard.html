@@ -32,35 +32,39 @@
     <script type="module" src="scripts/viewMap.js"></script>
     <script type="module" src="scripts/modal.js"></script>
     <script type="module" src="scripts/helper.js"></script>
-    <title>Witcher|Explore Witcher`s world</title>
+    <title>White Orchard|Realm Map</title>
   </head>
   <body>
     <main>
       <div class="content">
-        <div class="side--bar blur">
+        <div class="side--bar">
           <div class="title">
             <a href="../realmMap.html" class="maps--nav-link arrow">&larr;</a>
             <h1 class="secondary--heading">The Witcher's Atlas</h1>
           </div>
-          <div class="grid grid--2-cols activities"></div>
-          <div class="grid grid--2-cols abilities">
-            <div class="hide flex--container">
-              <p class="name--show">Hide all</p>
-              <img src="images/icons/show.png" class="show" />
+          <div class="grid-space">
+            <div class="grid grid--2-cols activities"></div>
+            <div class="grid grid--2-cols abilities">
+              <div class="hide flex--container">
+                <p class="name--show">Hide all</p>
+                <img src="images/icons/show.png" class="show" />
+              </div>
+              <a href="#" class="del del--markers button--cta"
+                >Delete all markers</a
+              >
+              <a href="#" class="del del--markers--one button--cta"
+                >Delete one marker</a
+              >
             </div>
-            <a href="#" class="del del--markers button--cta"
-              >Delete all markers</a
-            >
-            <a href="#" class="del del--markers--one button--cta"
-              >Delete one marker</a
-            >
+            <nav class="flex--container maps--nav">
+              <a href="hosVelen.html" class="maps--nav-link">
+                Velen & Novigrad
+              </a>
+              <a href="skellige.html" class="maps--nav-link"> Skellige </a>
+              <a href="kaerMorhen.html" class="maps--nav-link"> Kaer Morhen </a>
+              <a href="toussaint.html" class="maps--nav-link"> Toussaint </a>
+            </nav>
           </div>
-          <nav class="flex--container maps--nav">
-            <a href="#" class="maps--nav-link"> Velen & Novigrad </a>
-            <a href="#" class="maps--nav-link"> Skellige </a>
-            <a href="#" class="maps--nav-link"> Kaer Morhen </a>
-            <a href="#" class="maps--nav-link"> Toussaint </a>
-          </nav>
         </div>
         <div class="map" id="map"></div>
       </div>

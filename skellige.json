@@ -1,0 +1,1827 @@
+{
+  "abandoned": [
+    {
+      "descr": "A place abandoned due to monster or bandit attacks. Once the danger is eliminated, it will fill with life once more(lvl 13 Harpies)",
+      "lat": 3202.2460073139227,
+      "lng": 6179.946797222173
+    },
+    {
+      "descr": "A place abandoned due to monster or bandit attacks. Once the danger is eliminated, it will fill with life once more(lvl 15 Wolves)",
+      "lat": 3284.246159668781,
+      "lng": 6021.661793377238
+    },
+    {
+      "descr": "A place abandoned due to monster or bandit attacks. Once the danger is eliminated, it will fill with life once more(lvl 14 Bandits)",
+      "lat": 2915.9959614436425,
+      "lng": 2957.6066159768093
+    },
+    {
+      "descr": "A place abandoned due to monster or bandit attacks. Once the danger is eliminated, it will fill with life once more(lvl 15 Drowners)",
+      "lat": 3525.4964905900865,
+      "lng": 3631.164519533385
+    }
+  ],
+  "alchemy": [
+    {
+      "lat": 3605.2461465629867,
+      "lng": 6188.68861875373
+    },
+    {
+      "title": "Gremist",
+      "descr": "'Practicum in Advanced Alchemy' (lvl 24) Quest",
+      "lat": 3622.7464217846664,
+      "lng": 4474.940145401173
+    },
+    {
+      "lat": 3411.246198986164,
+      "lng": 3491.887148925663
+    }
+  ],
+  "armourer": [
+    {
+      "title": "Amateur Armorer",
+      "lat": 5366.74687065812,
+      "lng": 4971.896308810319
+    },
+    {
+      "title": "Amateur Armorer",
+      "lat": 3387.2460646517725,
+      "lng": 6316.681203609009
+    },
+    {
+      "title": "Journeyman Armorer",
+      "lat": 4144.246724856159,
+      "lng": 3170.146090717827
+    },
+    {
+      "title": "Journeyman Armorer",
+      "lat": 2248.7455371435526,
+      "lng": 3224.900343521417
+    }
+  ],
+  "armourerstable": [
+    {
+      "lat": 4889.996646221393,
+      "lng": 1554.933929765156
+    },
+    {
+      "lat": 5397.495886085326,
+      "lng": 4980.655577741221
+    },
+    {
+      "lat": 3290.746159668781,
+      "lng": 6006.164410487139
+    },
+    {
+      "lat": 3393.746328405882,
+      "lng": 6309.662338608467
+    },
+    {
+      "lat": 3409.996434890461,
+      "lng": 6392.698541962107
+    },
+    {
+      "lat": 2264.7458123652327,
+      "lng": 3237.181639793992
+    },
+    {
+      "lat": 3101.9970246512034,
+      "lng": 2650.634749908253
+    },
+    {
+      "lat": 4142.7464578256,
+      "lng": 3151.9149557183687
+    }
+  ],
+  "banditcamp": [
+    {
+      "descr": "A group of dangerous bandits have made camp here. (lvl 12 Bandits)",
+      "lat": 4586.996367723265,
+      "lng": 1340.3565069305632
+    },
+    {
+      "lat": 4560.74631202364,
+      "lng": 4962.6719346781065
+    },
+    {
+      "descr": "A group of dangerous bandits have made camp here. (lvl 12 Bandits)",
+      "lat": 4205.995874617755,
+      "lng": 4437.426296527943
+    },
+    {
+      "descr": "A group of dangerous bandits have made camp here. (lvl 14 Bandits)",
+      "lat": 3746.9957370069155,
+      "lng": 4714.937637337516
+    },
+    {
+      "descr": "A group of dangerous bandits have made camp here. (lvl 15 Bandits)",
+      "lat": 3383.495556802244,
+      "lng": 3676.9343659501396
+    },
+    {
+      "descr": "A group of dangerous bandits have made camp here. (lvl 14 Bandits)",
+      "lat": 2308.4957763242983,
+      "lng": 2933.156559157434
+    }
+  ],
+  "barber": [
+    {
+      "lat": 4821.996864105224,
+      "lng": 1542.3665391851869
+    },
+    {
+      "lat": 4000.746177689248,
+      "lng": 3302.681748840238
+    }
+  ],
+  "blacksmith": [
+    {
+      "title": "Amateur Blacksmith",
+      "lat": 4874.996328405882,
+      "lng": 1547.8754809773507
+    },
+    {
+      "title": "Amateur Blacksmith",
+      "lat": 5413.996261238686,
+      "lng": 4944.155577741221
+    },
+    {
+      "title": "Amateur Blacksmith",
+      "lat": 3401.246200624388,
+      "lng": 6406.9204080306645
+    },
+    {
+      "title": "Amateur Blacksmith",
+      "lat": 1216.7456682014956,
+      "lng": 5221.656886296172
+    },
+    {
+      "title": "Journeyman Blacksmith",
+      "lat": 2272.246149839435,
+      "lng": 3223.1456545328438
+    },
+    {
+      "title": "Amateur Blacksmith",
+      "lat": 2500.496118713174,
+      "lng": 3731.915500949598
+    },
+    {
+      "title": "Amateur Blacksmith",
+      "lat": 3104.2464836285963,
+      "lng": 2638.6332125750237
+    },
+    {
+      "title": "Amateur Blacksmith",
+      "lat": 3166.996361170368,
+      "lng": 3357.6927625110743
+    },
+    {
+      "title": "Journeyman Blacksmith",
+      "lat": 4149.496597074665,
+      "lng": 3158.9256422504677
+    }
+  ],
+  "entrance": [
+    {
+      "lat": 4476.491824593828,
+      "lng": 1278.7828034585061
+    },
+    {
+      "lat": 3723.245135778603,
+      "lng": 927.6233000524328
+    },
+    {
+      "lat": 3534.496130180744,
+      "lng": 2539.184256903894
+    },
+    {
+      "lat": 2703.7462497711167,
+      "lng": 1028.387912249384
+    },
+    {
+      "lat": 2498.74580745056,
+      "lng": 1261.94341678855
+    },
+    {
+      "lat": 2327.7456337987855,
+      "lng": 1192.6628838396964
+    },
+    {
+      "lat": 2304.7457664949525,
+      "lng": 1309.6829483489432
+    },
+    {
+      "lat": 2411.246121989622,
+      "lng": 1558.6518701688601
+    },
+    {
+      "lat": 5406.496782194009,
+      "lng": 4838.4226980018275
+    },
+    {
+      "lat": 1099.0178255301435,
+      "lng": 5070.12362719117
+    },
+    {
+      "lat": 1228.7687527650887,
+      "lng": 5082.1605938685325
+    },
+    {
+      "title": "Underwater Cave",
+      "descr": "Underwater entrance to cave",
+      "lat": 3642.5382001372736,
+      "lng": 6548.346050281131
+    },
+    {
+      "lat": 3684.5189657342457,
+      "lng": 6152.902851585073
+    },
+    {
+      "lat": 3646.26871508593,
+      "lng": 6080.621337220006
+    },
+    {
+      "lat": 3489.269057474806,
+      "lng": 6186.659285313582
+    },
+    {
+      "lat": 3415.0186675774257,
+      "lng": 6122.391837914237
+    },
+    {
+      "lat": 3361.2683153592047,
+      "lng": 6217.183166441435
+    },
+    {
+      "lat": 2677.2683546765875,
+      "lng": 3118.8433123348086
+    },
+    {
+      "lat": 2910.018970648918,
+      "lng": 3397.1676818745163
+    },
+    {
+      "lat": 1829.7682973387375,
+      "lng": 3539.6698627994347
+    },
+    {
+      "lat": 1841.518969010694,
+      "lng": 3892.9221527705986
+    },
+    {
+      "lat": 1745.7683415707932,
+      "lng": 3888.1700808919263
+    },
+    {
+      "lat": 2509.268936246209,
+      "lng": 4611.726784939798
+    },
+    {
+      "lat": 2595.0187183623784,
+      "lng": 4374.639220804335
+    },
+    {
+      "lat": 2865.018846143873,
+      "lng": 4478.417790920762
+    },
+    {
+      "lat": 2966.2688739936857,
+      "lng": 4222.127443809777
+    },
+    {
+      "lat": 3657.519381843214,
+      "lng": 3201.868829156351
+    },
+    {
+      "lat": 3779.2689247786384,
+      "lng": 3456.6939620197795
+    },
+    {
+      "lat": 3788.01881829406,
+      "lng": 3772.4629360665667
+    },
+    {
+      "lat": 4306.269904436761,
+      "lng": 3577.93861875373
+    },
+    {
+      "lat": 4042.2694031401297,
+      "lng": 4056.5096078598144
+    },
+    {
+      "lat": 3618.0181269634118,
+      "lng": 4480.176841759172
+    }
+  ],
+  "fasttravel": [
+    {
+      "title": "Hov",
+      "descr": "Village known throughout all of Skellige for the infamous arena which once hosted fierce fights between the mightiest warriors in the isles",
+      "lat": 4869.992312784665,
+      "lng": 1823.3377627664424
+    },
+    {
+      "title": "Svorlag",
+      "descr": "The village was founded by the mythical Sove, who killed a terrifying and bloodthirsty chimera on this spot",
+      "lat": 4848.4921718973765,
+      "lng": 1515.703635883979
+    },
+    {
+      "title": "Old Watchtower",
+      "descr": "The ruins of an old watchtower in which, according to legend, a crazed Koviri princess once locked herself up, convinced only a man able to free her from this tower would be fit to be her husband. No one even tried, however, the princess died of old age and the tower fell into disrepair with the passage of time",
+      "lat": 4594.4952570072,
+      "lng": 1325.557654212398
+    },
+    {
+      "title": "Bay Of Winds",
+      "descr": "Three generations ago this bay was a popular meeting spot for the local youth. Then one night a terrible storm broke out and the sea pounded into the beach, swallowing up several merry-makers and dragging them out to a watery grave",
+      "lat": 5332.992388142982,
+      "lng": 4704.8172620722125
+    },
+    {
+      "title": "Yngvar's Fang",
+      "descr": "This mountain peak was named after the mythical bear which, according to legend, was defeated by Tyr, the heroic founder of Clan Tuirsearch",
+      "lat": 5560.246592159992,
+      "lng": 4884.159721498565
+    },
+    {
+      "title": "Urialla Harbor",
+      "descr": "On account of their mastery of their craft and painstaking attention to detail, the shipwrights working in this harbor are considered the best in the isles",
+      "lat": 5391.245709157103,
+      "lng": 4951.17291609432
+    },
+    {
+      "title": "Trail to Yngvar's Fang",
+      "descr": "This is the start of the mountain trail leading to Yngvar's Fang, the pride and glory of An Skellig",
+      "lat": 5494.496251409341,
+      "lng": 5130.427386990402
+    },
+    {
+      "title": "The Pali Gap Coast",
+      "descr": "Elders say an isolated cave on this coast was once used as a retreat by the world's most famous bard (before the rise of Dandelion, that is): the great Xirdneh of Zanguebar, renowned from Nazair to the Dragon Mountains for his ferocious lute-strumming",
+      "lat": 3699.9918442525195,
+      "lng": 914.2045082539462
+    },
+    {
+      "title": "Kaer Almhult",
+      "descr": "Built centuries ago to serve as the home keep for the kings of Skellige. In practice, however, each ruler preferred to keep to his clan's seat, and Kaer Almhult was left unused. Eventually the decision was made to turn it into a prison, and today the fortress is a crumbling ruin",
+      "lat": 3878.9923684842906,
+      "lng": 1927.9186750809042
+    },
+    {
+      "title": "Tor Gvalch'ca",
+      "descr": "An ancient tower which was erected in the days when elves were the unchallenged masters of these lands",
+      "lat": 2986.995561716917,
+      "lng": 923.1432555154335
+    },
+    {
+      "title": "Abandoned Village",
+      "descr": "This village's residents were forced to abandon it in a hurry when the Ice Giant unexpectedly awoke and decided to make known his wrath",
+      "lat": 2581.745871341307,
+      "lng": 1014.9135381171719
+    },
+    {
+      "title": "Urskar",
+      "descr": "The villagers here were famous for their love of pickled herring. They ate it for breakfast, dinner, and supper, and even made jams and compotes out of it",
+      "lat": 2435.4956911366353,
+      "lng": 1188.4360016438284
+    },
+    {
+      "title": "Clan Tordarroch Forge",
+      "descr": "A famous forge where the best tools and weapons in all of Skellige were once made. When the Ice Giant took over the isle, he turned it into his larder",
+      "lat": 2300.4960826722395,
+      "lng": 1323.4086310361063
+    },
+    {
+      "title": "Dorve Ruins",
+      "descr": "Ruins of a village destroyed by the Ice Giant",
+      "lat": 2518.7463054707423,
+      "lng": 1504.9162642733195
+    },
+    {
+      "title": "Marlin Coast",
+      "descr": "Until quite recently this beach was frequented by fishermen come to fish marlins out of the nearby waters",
+      "lat": 2671.7462202830793,
+      "lng": 1577.412229562221
+    },
+    {
+      "title": "Gull Point",
+      "descr": "Sea fowl come from miles around to congregate on this scrap of barren land, mate and lay eggs",
+      "lat": 2411.2453028774803,
+      "lng": 1839.1964700834353
+    },
+    {
+      "title": "Eldberg Lighthouse",
+      "descr": "Lighthouse built on orders of Jarl Skjordal in order to light the sea and route to Arinbjorn",
+      "lat": 3741.496108883828,
+      "lng": 2470.9669707776657
+    },
+    {
+      "title": "Arinbjorn",
+      "descr": "A village whose calm is only occasionally disturbed by someone slapping another senseless or one comrade breaking a bottle of mead over his mate's head",
+      "lat": 2987.245184925332,
+      "lng": 2637.966098407698
+    },
+    {
+      "title": "Wild Shore",
+      "descr": "A wild and untamed™ part of the isle's coastline. A favourite spot for bandits and lovers",
+      "lat": 2606.4919261637338,
+      "lng": 2702.288691955785
+    },
+    {
+      "title": "Holmstein's Port",
+      "descr": "Piers and docks for the village of Holmstein - Clan Drummond's chief port",
+      "lat": 2140.995550249347,
+      "lng": 3006.6672456895326
+    },
+    {
+      "title": "Kaer Muire",
+      "descr": "This fortress has served as Clan Drummond's home base for centuries. the days when it was new and in full repair are a distant memory now",
+      "lat": 2218.745839735674,
+      "lng": 3208.930125525335
+    },
+    {
+      "title": "Fornhala",
+      "descr": "Mysterious abandoned village",
+      "lat": 2726.4962951620255,
+      "lng": 3106.185686883876
+    },
+    {
+      "title": "Sund",
+      "descr": "Small village whose inhabitant are for the most part shepherds",
+      "lat": 3078.496310385415,
+      "lng": 2995.171825631861
+    },
+    {
+      "title": "Elverum Lighthouse",
+      "descr": "The former keeper of this lighthouse was a confirmed eccentric. In addition to caring for the lighthouse, he also wrote poetry and wove carpets, was known to strip naked and run laps around the lighthouse at noon while shouting \"sound mind in a sound body\" and for breakfast would eat nothing but fish tails",
+      "lat": 1773.4950997376686,
+      "lng": 3942.460755141649
+    },
+    {
+      "title": "Fayrlund",
+      "descr": "This small village has gained great renown as home to the best hunters in Skellige",
+      "lat": 3190.996482398965,
+      "lng": 3370.389438896827
+    },
+    {
+      "title": "Fyresdal",
+      "descr": "Those living here are tough on the outside, but soft and tender within",
+      "lat": 2574.4958172799056,
+      "lng": 3739.918881383221
+    },
+    {
+      "title": "Ruined Inn",
+      "descr": "Ruined and burned-down tavern which once treated locals and travelers to the best roast lamb around",
+      "lat": 2411.4959499760726,
+      "lng": 4006.9313126552543
+    },
+    {
+      "title": "Palisade",
+      "descr": "The remnants of the palisade that once marked the border between the territories of Clan Drummond and Clan an Craite",
+      "lat": 2860.246469293171,
+      "lng": 3925.1595034060733
+    },
+    {
+      "title": "Boxholm",
+      "descr": "Boxholm was once a thriving village serving the nearby fortress, Kaer Nyssen. Today nothing remains of this past glory but a pile of stones, some debris, and fading memories",
+      "lat": 3045.246379190835,
+      "lng": 3674.885077046991
+    },
+    {
+      "title": "Rannvaig",
+      "descr": "Fifteen years ago, one of the fishermen of Rannvaig bagged an enormous halibut, and from that moment on all the other villagers have devoted their lives to beating his record",
+      "lat": 3379.496433252237,
+      "lng": 3489.913756209664
+    },
+    {
+      "title": "Distillery",
+      "descr": "A shroud of secrecy envelops this place. All that is known is that it produces the finest hooch in all of skellige",
+      "lat": 2587.245969634764,
+      "lng": 4373.651979215106
+    },
+    {
+      "title": "Grotto",
+      "descr": "An isolated-off locale that can only be reached by boat",
+      "lat": 2503.9957484744855,
+      "lng": 4604.430767424024
+    },
+    {
+      "title": "Blandare",
+      "descr": "Unusually for a Skellige village, Blandare is located inland, far from any shore. Its inhabitants scratch out a living through mining and shepherding",
+      "lat": 3338.746620009805,
+      "lng": 3985.1362765556955
+    },
+    {
+      "title": "Druids' Camp",
+      "descr": "Camp pitched by druids investigating the magic cataclysm which devastated the nearby woods",
+      "lat": 3304.9929222040987,
+      "lng": 4408.808320280048
+    },
+    {
+      "title": "Redgill",
+      "descr": "This village's inhabitants fled in a panic when a mysterious magic cataclysm struck the surrounding area",
+      "lat": 3335.9963529792467,
+      "lng": 4656.173243233057
+    },
+    {
+      "title": "Whale Graveyard",
+      "descr": "The isle's inhabitants come here and gather bones which they use to build their huts",
+      "lat": 3769.9968788492424,
+      "lng": 4633.901215891385
+    },
+    {
+      "title": "Gedyneith",
+      "descr": "An oak which is sacred to all Skelligers, as it is worshiped both by druids and Freya's disciples. The Isle's most important ceremonies are held here, including weddings and royal coronations",
+      "lat": 3550.245768133177,
+      "lng": 4487.883550399548
+    },
+    {
+      "title": "Gedyneith",
+      "descr": "An oak which is sacred to all Skelligers, as it is worshiped both by druids and Freya's disciples. The Isle's most important ceremonies are held here, including weddings and royal coronations",
+      "lat": 3546.49140848486,
+      "lng": 4374.709524381258
+    },
+    {
+      "title": "Abandoned Sawmill",
+      "descr": "Though located depp in the forest, an ideal place for lumber harvesting, the sawmill now lies abandoned and unused",
+      "lat": 3474.245466699909,
+      "lng": 4239.324883519251
+    },
+    {
+      "title": "Kaer Gelen",
+      "descr": "This old fort's ruins attract the sort whom one would not want to run into in a dark alley",
+      "lat": 3788.992053945228,
+      "lng": 4118.144096633715
+    },
+    {
+      "title": "Miners' Camp",
+      "descr": "Small camp which local miners use as a base during their gold prospecting expeditions into the mountains to the north",
+      "lat": 3702.995845129718,
+      "lng": 3865.0396615818236
+    },
+    {
+      "title": "Rogne",
+      "descr": "This mountain settlement is home to tough folk of indomitable spirit",
+      "lat": 3886.995930317381,
+      "lng": 3668.513708575298
+    },
+    {
+      "title": "Crossroads",
+      "descr": "Fork in the road leading to Kaer Trolde",
+      "lat": 3592.496020419717,
+      "lng": 3399.4105938685325
+    },
+    {
+      "title": "Kaer Trolde Harbor",
+      "descr": "One of the busiest ports in Skellige. Goods from every corner of the world are brought here to be sold and traded",
+      "lat": 3913.246333320555,
+      "lng": 3226.6643014408933
+    },
+    {
+      "title": "Bridge to Kaer Trolde",
+      "descr": "This stone bridge was, according to legend, carved single-handedly by Grymmdjarr, the heroic founder of Clan an Craite",
+      "lat": 4136.246642944945,
+      "lng": 3202.658412943614
+    },
+    {
+      "title": "Ancient Crypt",
+      "descr": "Though Skelligers are famed for bravery bordering on madness, there are certain places which even they keep their distance from. This is one of them",
+      "lat": 4303.99674451485,
+      "lng": 3580.228856818469
+    },
+    {
+      "title": "Yustianna's Grotto",
+      "descr": "Yustianna was a pirate born of a Skelliger from Clan an Craite and a captive woman taken during a raid. In her time she was feared on the Continent from Ofir to Zanguebar. Known for her skill as a navigator and unmatched master of various weapons, she quickly became the terror of the Great Sea, and when she returned to Skellige, they say this cave is where she hid her loot",
+      "lat": 4042.996310385415,
+      "lng": 4036.2533922237976
+    },
+    {
+      "title": "Giants' Toes",
+      "descr": "In truth simply a normal rock formation shaped by centuries of wind and water, islanders believe Uroboros punished giants who opposed his will by turning them into these stones",
+      "lat": 4138.496180965696,
+      "lng": 4420.644673116631
+    },
+    {
+      "title": "Harviken",
+      "descr": "Home seat to Clan Dimun, and the location where Holger Blackhand divvies out the loot after every successful raid",
+      "lat": 1232.2457468362613,
+      "lng": 5204.164737625877
+    },
+    {
+      "title": "Trottheim",
+      "descr": "This village was once famed across all of Skellige for the fact that it was inhabited exclusively by women, all their men having died during one raid or another",
+      "lat": 1201.5482597793832,
+      "lng": 5665.03312243844
+    },
+    {
+      "title": "Larvik",
+      "descr": "The largest village on Hindarsfjall and home seat to Donar, head of Clan an Hindar. Its inhabitants are just and god-fearing folk, traditionalists strident in their devotion to Freya",
+      "lat": 3362.4960449930813,
+      "lng": 6331.664192394647
+    },
+    {
+      "title": "Lurthen",
+      "descr": "Lurthen's most famous inhabitant was a certain Peter Pijus, known for the fact that he was able to drink an entire barrel of mead in one go and remain standing",
+      "lat": 3181.7455633551417,
+      "lng": 6157.869592480072
+    },
+    {
+      "title": "Isolated Hut",
+      "descr": "They say this was once home to a herbalist who came to the isles from the continent. Unable to find a place in any of the nearby villages, she settled in this seaside hut, where she recieved the occasional visitor in need of magic creams of bandages",
+      "lat": 3267.995671477944,
+      "lng": 6012.336333375071
+    },
+    {
+      "title": "Lofoten Cemetery",
+      "descr": "The inhabitants of Lofoten often visit this small cemetery to care for the graves of their loved ones and ask Freya for blessings in the afterlife",
+      "lat": 3367.996447996255,
+      "lng": 5947.879079503466
+    },
+    {
+      "title": "Lofoten",
+      "descr": "Once a rich and vibrant village, today Lofoten is a ravaged and crumbling ruin",
+      "lat": 3476.996844446532,
+      "lng": 5931.399907336434
+    },
+    {
+      "title": "Freya's Garden",
+      "descr": "Garden dedicated to the goddess Freya. Once beautiful and filled with thousands of fragrant blooms and herbs, today it lies abandoned and untended",
+      "lat": 3590.746508610554,
+      "lng": 6035.156777249926
+    }
+  ],
+  "grindstone": [
+    {
+      "lat": 4881.246543013263,
+      "lng": 1554.9002344751711
+    },
+    {
+      "lat": 5407.746303832518,
+      "lng": 4985.417681874516
+    },
+    {
+      "lat": 3284.7457943447657,
+      "lng": 6010.891183636761
+    },
+    {
+      "lat": 3393.4962383035468,
+      "lng": 6297.167790920763
+    },
+    {
+      "lat": 3405.2462661533596,
+      "lng": 6396.427386990402
+    },
+    {
+      "lat": 1217.6554788344536,
+      "lng": 5229.350341676407
+    },
+    {
+      "lat": 2254.9959335938297,
+      "lng": 3239.664737625877
+    },
+    {
+      "lat": 3105.246200624388,
+      "lng": 2651.668772336975
+    },
+    {
+      "lat": 3527.9966511360662,
+      "lng": 3614.18916398496
+    },
+    {
+      "lat": 4134.496490590087,
+      "lng": 3151.9001254289255
+    }
+  ],
+  "guarded": [
+    {
+      "descr": "A particularly powerful monster (lvl 18 Drowners) guards a valuable cache here",
+      "lat": 5532.246515163451,
+      "lng": 2623.167790920762
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 18 Drowners) guards a valuable cache here",
+      "lat": 5589.492640429522,
+      "lng": 3160.8643700504435
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 16 Echidna) guards a valuable cache here",
+      "lat": 5611.246280897378,
+      "lng": 3388.6723708630902
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 18 Drowners) guards a valuable cache here",
+      "lat": 5772.996862466999,
+      "lng": 3489.194616297255
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 16 Echidna) guards a valuable cache here",
+      "lat": 5840.496949292886,
+      "lng": 3678.731801067109
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 32 Basilisk) guards a valuable cache here",
+      "lat": 5695.246033525511,
+      "lng": 4047.4358925975826
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 16 Bear) guards a valuable cache here",
+      "lat": 4740.492443842608,
+      "lng": 6154.350630223459
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 16 Wraith) guards a valuable cache here",
+      "lat": 3555.9953405566384,
+      "lng": 6020.410484822287
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 21 Cyclops) guards a valuable cache here",
+      "lat": 1830.7455944814028,
+      "lng": 448.40263349258134
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 13 Sirens) guards a valuable cache here",
+      "lat": 2896.996228474201,
+      "lng": 1347.9217165856148
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 21 Cyclops) guards a valuable cache here",
+      "lat": 1355.49569277486,
+      "lng": 5077.648707827729
+    },
+    {
+      "descr": "A particularly powerful monster __monster__ guards a valuable cache here",
+      "lat": 1545.496049907754,
+      "lng": 4545.643255515433
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 18 Drowners) guards a valuable cache here",
+      "lat": 1809.2464430815824,
+      "lng": 4887.914192394647
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 19 Sirens) guards a valuable cache here",
+      "lat": 1766.7461154367254,
+      "lng": 3955.6742246492704
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 13 Sirens) guards a valuable cache here",
+      "lat": 2036.4967019210192,
+      "lng": 3722.630715197154
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 21 Cyclops) guards a valuable cache here",
+      "lat": 2642.7470295658763,
+      "lng": 2644.327391582907
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 19 Echidna) guards a valuable cache here",
+      "lat": 2872.9963590416633,
+      "lng": 3227.1919765104653
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 27 Earth Elemental) guards a valuable cache here",
+      "lat": 3525.246326767658,
+      "lng": 4611.4584651704845
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 23 Wraiths) guards a valuable cache here",
+      "lat": 3456.7458615119613,
+      "lng": 3966.155468694975
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 14 Wyvern) guards a valuable cache here",
+      "lat": 3576.4963595321437,
+      "lng": 3340.6539420475324
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 7 Wraiths) guards a valuable cache here",
+      "lat": 3768.996218644855,
+      "lng": 3095.9175728282703
+    },
+    {
+      "descr": "A particularly powerful monster (lvl 13 Gargoyles and lvl 30 Ice Elemental) guards a valuable cache here",
+      "lat": 4208.996443081583,
+      "lng": 3680.420298984418
+    }
+  ],
+  "gwent": [
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 4878.4963087471915,
+      "lng": 1541.5581994436275
+    },
+    {
+      "title": "Innkeeper Gwent Player",
+      "lat": 4831.245999122802,
+      "lng": 1523.0501300214303
+    },
+    {
+      "title": "Shopkeeper Gwent Player",
+      "lat": 4830.745995846353,
+      "lng": 1569.0701945306769
+    },
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 5420.996349702798,
+      "lng": 4947.674987972992
+    },
+    {
+      "title": "Innkeeper Gwent Player",
+      "lat": 5418.2463316823305,
+      "lng": 5002.1987600546
+    },
+    {
+      "title": "Armorer Gwent Player",
+      "lat": 5368.496005675698,
+      "lng": 4975.937310198779
+    },
+    {
+      "title": "Innkeeper Gwent Player",
+      "lat": 3405.245594481403,
+      "lng": 6409.24695849529
+    },
+    {
+      "title": "Innkeeper Gwent Player",
+      "lat": 3391.4958877235495,
+      "lng": 6374.672261816844
+    },
+    {
+      "title": "Shopkeeper Gwent Player",
+      "lat": 3386.24585332084,
+      "lng": 6345.159394359827
+    },
+    {
+      "title": "Armorer Gwent Player",
+      "lat": 3393.495900829344,
+      "lng": 6320.898816873974
+    },
+    {
+      "title": "Innkeeper Gwent Player",
+      "lat": 1207.495296324583,
+      "lng": 5197.665064764615
+    },
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 1216.995358577106,
+      "lng": 5223.676405574189
+    },
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 3103.518954266676,
+      "lng": 2642.8599964104324
+    },
+    {
+      "title": "Innkeeper Gwent Player",
+      "lat": 3028.5184627993904,
+      "lng": 2678.625590023597
+    },
+    {
+      "title": "Shopkeeper Gwent Player",
+      "lat": 2175.5186135160243,
+      "lng": 2998.414737625877
+    },
+    {
+      "title": "Armorer Gwent Player",
+      "lat": 2250.0188903759285,
+      "lng": 3227.9252060654835
+    },
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 2274.769052560133,
+      "lng": 3224.423679418041
+    },
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 2502.2690902392915,
+      "lng": 3738.2145717602557
+    },
+    {
+      "title": "Shopkeeper Gwent Player",
+      "lat": 2521.7692180207855,
+      "lng": 3768.47776635601
+    },
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 3171.2687265535,
+      "lng": 3358.9068862961717
+    },
+    {
+      "title": "Shopkeeper Gwent Player",
+      "lat": 3156.268628260043,
+      "lng": 3404.677059851664
+    },
+    {
+      "title": "Shopkeeper Gwent Player",
+      "lat": 3349.268651195183,
+      "lng": 4024.6625567009587
+    },
+    {
+      "title": "Gremist Gwent Player",
+      "lat": 3628.268744573967,
+      "lng": 4476.174115603025
+    },
+    {
+      "title": "Herbalist Gwent Player",
+      "lat": 3940.51881829406,
+      "lng": 3298.1809855165166
+    },
+    {
+      "title": "Innkeeper Gwent Player",
+      "lat": 4008.5192638910657,
+      "lng": 3267.1674637820242
+    },
+    {
+      "title": "Armorer Gwent Player",
+      "lat": 4146.76904764546,
+      "lng": 3172.658412943614
+    },
+    {
+      "title": "Blacksmith Gwent Player",
+      "lat": 4152.519085324619,
+      "lng": 3166.155577741221
+    }
+  ],
+  "harbor": [
+    {
+      "lat": 4865.74633495878,
+      "lng": 1632.9176818745163
+    },
+    {
+      "lat": 5305.992679746904,
+      "lng": 4960.853029240869
+    },
+    {
+      "lat": 3472.5368404111177,
+      "lng": 6365.355428258279
+    },
+    {
+      "lat": 1303.768300615186,
+      "lng": 5293.659939591057
+    },
+    {
+      "lat": 3742.0379544036314,
+      "lng": 884.8172620722123
+    },
+    {
+      "lat": 2973.5182678507003,
+      "lng": 1444.6963610371895
+    },
+    {
+      "lat": 2727.5181531750004,
+      "lng": 1662.4309855165168
+    },
+    {
+      "lat": 3533.2688723554616,
+      "lng": 2373.6568862961717
+    },
+    {
+      "lat": 3128.768025393506,
+      "lng": 2596.1754241579756
+    },
+    {
+      "lat": 2169.267560137809,
+      "lng": 2898.437528291271
+    },
+    {
+      "lat": 2449.5189477137783,
+      "lng": 3803.180440285287
+    },
+    {
+      "lat": 2370.2685168607914,
+      "lng": 4015.1719346781065
+    },
+    {
+      "lat": 2489.018859249667,
+      "lng": 4667.938945892467
+    },
+    {
+      "lat": 3309.5188395909754,
+      "lng": 4694.16997184568
+    },
+    {
+      "lat": 3405.018842867424,
+      "lng": 3432.6342046770233
+    },
+    {
+      "lat": 3938.5190705806,
+      "lng": 3164.9073224811555
+    },
+    {
+      "lat": 4331.769049283684,
+      "lng": 3559.659830544811
+    }
+  ],
+  "herbalist": [
+    {
+      "lat": 3940.2470312041005,
+      "lng": 3295.8792975959577
+    },
+    {
+      "lat": 3297.246141648314,
+      "lng": 4414.917245689532
+    }
+  ],
+  "hidden": [
+    {
+      "lat": 5964.246718303262,
+      "lng": 2084.398380688991
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 16 Echidna))",
+      "lat": 5407.9964840371895,
+      "lng": 3915.132023752105
+    },
+    {
+      "lat": 5285.246005675698,
+      "lng": 5138.963808436534
+    },
+    {
+      "lat": 5030.518756041537,
+      "lng": 3591.6466359490564
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 18 Drowners))",
+      "lat": 4833.018670853874,
+      "lng": 2594.874390514892
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 15 Drowners))",
+      "lat": 4694.5188166558355,
+      "lng": 1717.142601237958
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 13 Sirens))",
+      "lat": 4716.518688874341,
+      "lng": 1906.162229562221
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 18 Drowners))",
+      "lat": 4164.036738841212,
+      "lng": 2308.841252246312
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 12-14 Bandits))",
+      "lat": 3798.517723960238,
+      "lng": 1844.3592330867111
+    },
+    {
+      "lat": 2907.517425803418,
+      "lng": 1759.8573793005307
+    },
+    {
+      "lat": 2895.517425803418,
+      "lng": 1047.0029129969535
+    },
+    {
+      "lat": 2527.016580479687,
+      "lng": 678.4597306835749
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 14 Bandits))",
+      "lat": 2538.766683687817,
+      "lng": 1331.054164732529
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 12 Bandits))",
+      "lat": 3518.7668573395913,
+      "lng": 2500.0891685774645
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 19 Sirens))",
+      "lat": 3303.76868068322,
+      "lng": 2931.4197537531886
+    },
+    {
+      "lat": 4120.019262252841,
+      "lng": 3594.428586499107
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 30 Cyclops))",
+      "lat": 3570.7686135160243,
+      "lng": 4773.930331239041
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 15 Drowners))",
+      "lat": 3194.7686823214444,
+      "lng": 4090.4324031177134
+    },
+    {
+      "lat": 3081.76865774808,
+      "lng": 3674.1600486373027
+    },
+    {
+      "lat": 3120.0187167241543,
+      "lng": 3482.1110868728915
+    },
+    {
+      "lat": 2415.7686151542484,
+      "lng": 3999.6454364403517
+    },
+    {
+      "lat": 2073.2687757002286,
+      "lng": 5023.686546875058
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 13 Sirens))",
+      "lat": 1664.0183595912604,
+      "lng": 4204.647290226532
+    },
+    {
+      "lat": 1147.268215427523,
+      "lng": 3129.871882451236
+    },
+    {
+      "descr": "A hidden cache of valuable goods (Guarded by (lvl 9 Endrega))",
+      "lat": 1094.268433311353,
+      "lng": 5057.381914705859
+    }
+  ],
+  "merchant": [
+    {
+      "descr": "Sells crafting supplies and fish",
+      "lat": 4825.996213730183,
+      "lng": 1564.891510775499
+    },
+    {
+      "descr": "Sells crafting supplies and fish",
+      "lat": 3380.996095778034,
+      "lng": 6337.161793377238
+    },
+    {
+      "descr": "Sells maps, crafting supplies, fish and 'Mastercrafted Cavalry Saddle' (+75)",
+      "lat": 2169.245917211587,
+      "lng": 2995.387148925663
+    },
+    {
+      "title": "Wandering Merchant",
+      "descr": "Sells maps and crafting supplies",
+      "lat": 2345.4962907267236,
+      "lng": 2911.6592853135817
+    },
+    {
+      "descr": "Sells crafting supplies and fish",
+      "lat": 2516.9962874502753,
+      "lng": 3765.9452705747303
+    },
+    {
+      "title": "Wandering Merchant",
+      "descr": "Sells maps and crafting supplies",
+      "lat": 3003.9965151634506,
+      "lng": 2753.905686787467
+    },
+    {
+      "title": "Wandering Merchant",
+      "descr": "Sells maps and crafting supplies",
+      "lat": 2987.246251409341,
+      "lng": 2967.421498493123
+    },
+    {
+      "descr": "Sells maps and crafting supplies",
+      "lat": 3152.9963939348536,
+      "lng": 3400.164519533385
+    },
+    {
+      "title": "Wandering Merchant",
+      "descr": "Sells maps and crafting supplies",
+      "lat": 3309.4967019210194,
+      "lng": 3674.6940710660256
+    },
+    {
+      "descr": "Sells maps, crafting supplies, food, and drink",
+      "lat": 3345.4964840371895,
+      "lng": 4021.9810377433873
+    },
+    {
+      "title": "Wandering Merchant",
+      "descr": "Sells maps and crafting supplies",
+      "lat": 3514.9968870403636,
+      "lng": 3569.408194851123
+    },
+    {
+      "descr": "This merchant appears after liberating the area. Sells armour and crafting supplies",
+      "lat": 3545.497086903726,
+      "lng": 3617.929349822829
+    },
+    {
+      "descr": "Sells maps and crafting supplies",
+      "lat": 3743.4966019893377,
+      "lng": 3355.15961245232
+    },
+    {
+      "title": "Wandering Merchant",
+      "descr": "Sells maps and crafting supplies",
+      "lat": 3887.747078712605,
+      "lng": 3304.6484897352375
+    },
+    {
+      "descr": "Sells maps and crafting supplies",
+      "lat": 3905.247011545409,
+      "lng": 3163.607270254285
+    },
+    {
+      "title": "Tailor",
+      "descr": "Sells clothes and crafting supplies. Is also a barber",
+      "lat": 3999.7462661533596,
+      "lng": 3310.1686632907295
+    }
+  ],
+  "monsterden": [
+    {
+      "lat": 1240.4958171764988,
+      "lng": 5369.700483677823
+    },
+    {
+      "lat": 1086.245519019679,
+      "lng": 5629.229489979235
+    },
+    {
+      "descr": "Monster-infested location. A constant worry for those living nearby (lvl 8 Nekkers and lvl 12 Nekker Warrior)",
+      "lat": 2761.995920488035,
+      "lng": 3327.908849128598
+    },
+    {
+      "descr": "Monster-infested location. A constant worry for those living nearby (lvl 29 Wraiths)",
+      "lat": 3842.4968149584947,
+      "lng": 4123.4446162972545
+    },
+    {
+      "descr": "Monster-infested location. A constant worry for those living nearby (lvl 21 Alghouls)",
+      "lat": 3946.246875572793,
+      "lng": 4271.712827020321
+    },
+    {
+      "descr": "Monster-infested location. A constant worry for those living nearby (lvl 31 Ghost)",
+      "lat": 4024.996980419148,
+      "lng": 3589.8874760644003
+    }
+  ],
+  "monsternest": [
+    {
+      "descr": "Destroy monster nests with Grapeshot or Dancing Star bombs (lvl 13 Harpies)",
+      "lat": 5402.9935447293265,
+      "lng": 4687.38072698733
+    },
+    {
+      "descr": "Destroy monster nests with Grapeshot or Dancing Star bombs (lvl 19 Echidna)",
+      "lat": 3528.7457599420554,
+      "lng": 3231.137585110647
+    },
+    {
+      "descr": "Destroy monster nests with Grapeshot or Dancing Star bombs (lvl 15 Drowners)",
+      "lat": 3497.7455879285058,
+      "lng": 3422.6559048799586
+    },
+    {
+      "descr": "Destroy monster nests with Grapeshot or Dancing Star bombs (lvl 13 Harpies)",
+      "lat": 2407.2457517509342,
+      "lng": 3527.1673547357786
+    },
+    {
+      "descr": "Destroy monster nests with Grapeshot or Dancing Star bombs (lvl 13 Sirens and lvl 19 Echidna)",
+      "lat": 2406.2455289524314,
+      "lng": 3991.9619546503536
+    }
+  ],
+  "notice": [
+    {
+      "lat": 4850.996932910643,
+      "lng": 1559.1355132319743
+    },
+    {
+      "lat": 3923.9958877235495,
+      "lng": 3284.2097737254358
+    },
+    {
+      "lat": 3430.2464791225166,
+      "lng": 3514.9436348810414
+    },
+    {
+      "lat": 3352.7460351637355,
+      "lng": 4039.201704303239
+    },
+    {
+      "lat": 3001.7458926382224,
+      "lng": 2653.9068862961717
+    },
+    {
+      "lat": 2222.7456370752343,
+      "lng": 3091.1936348810423
+    },
+    {
+      "lat": 2561.7463169383122,
+      "lng": 3735.9333845339265
+    },
+    {
+      "lat": 3411.518652833407,
+      "lng": 6358.659394359827
+    }
+  ],
+  "pid": [
+    {
+      "descr": "There's a person or a group of people here in need of assistance (lvl 12 Bandits)",
+      "lat": 3267.495907382241,
+      "lng": 3166.4063410649424
+    },
+    {
+      "descr": "There's a person or a group of people here in need of assistance (lvl 12 Bandits)",
+      "lat": 3122.7458402150455,
+      "lng": 3937.677496036648
+    }
+  ],
+  "placeofpower": [
+    {
+      "title": "Place of Power - Igni",
+      "lat": 4908.746728132608,
+      "lng": 1347.5924399648416
+    },
+    {
+      "title": "Place of Power - Quen",
+      "lat": 5558.996024269332,
+      "lng": 4894.811699947365
+    },
+    {
+      "title": "Place of Power - Yrden",
+      "lat": 1269.9957026042057,
+      "lng": 5011.187092106287
+    },
+    {
+      "title": "Place of Power - Axii",
+      "lat": 2479.9921325799937,
+      "lng": 2982.3120278524093
+    },
+    {
+      "title": "Place of Power - Yrden",
+      "lat": 3305.4960548224267,
+      "lng": 4439.631587567122
+    },
+    {
+      "title": "Place of Power - Aard",
+      "lat": 3573.9966003511136,
+      "lng": 4755.911793377238
+    },
+    {
+      "title": "Place of Power - Axii",
+      "lat": 3499.018357238203,
+      "lng": 3254.163308459706
+    },
+    {
+      "title": "Place of Power - Quen",
+      "descr": "'King's Gambit Quest'. Draw from a Place of Power to gain a temporary bonus. The first time you draw from any Place of Power, you also receive 1 Ability Point",
+      "lat": 4188.519016519198,
+      "lng": 3119.9220437243525
+    },
+    {
+      "title": "Place of Power - Igni",
+      "descr": "'The Sunstone' quest. Draw from a Place of Power to gain a temporary bonus. The first time you draw from any Place of Power, you also receive 1 Ability Point",
+      "lat": 4179.537649693914,
+      "lng": 3499.932196815397
+    }
+  ],
+  "pointofinterest": [
+    {
+      "title": "Mastercrafted Wolven Trousers Diagram",
+      "descr": "You must climb the wall of the old watchtower.",
+      "lat": 4603.746578041085,
+      "lng": 1338.932856280133
+    },
+    {
+      "title": "Ursine Crossbow Diagram",
+      "descr": "",
+      "lat": 4483.995793331652,
+      "lng": 1278.4064670886237
+    },
+    {
+      "title": "Superior Griffin Steel Sword Diagram",
+      "descr": "",
+      "lat": 5560.496575777749,
+      "lng": 4804.391292683007
+    },
+    {
+      "title": "Ursine Armor Set Diagrams",
+      "descr": "Armor, gauntlets, trousers and boots",
+      "lat": 5530.746375914387,
+      "lng": 4952.450286702042
+    },
+    {
+      "title": "Superior Wolven Steel Sword Diagram",
+      "descr": "Going down to the catacomb and enter a room filled with poison gas",
+      "lat": 3419.7461563923325,
+      "lng": 5755.410157683549
+    },
+    {
+      "title": "Mastercrafted Feline Silver Sword Diagram",
+      "descr": "Enter the monster den, go to the right and the wall crumbles.  The diagram is in a chest right there.",
+      "lat": 1240.4956862219628,
+      "lng": 5396.704539505632
+    },
+    {
+      "title": "Jutta An Dimun",
+      "descr": "todo",
+      "lat": 1256.2457894300926,
+      "lng": 5393.453121904436
+    },
+    {
+      "title": "Mastercrafted Feline Armor Diagram",
+      "descr": "Enter the monster den to the south at the shoreline.  After a little splashing, go to the left when you enter.  All of the armor diagrams will be in the chest there (Mastercrafted Feline Armor, Gautlets, Trousers and Boots).",
+      "lat": 1145.4918573583138,
+      "lng": 5621.31093738995
+    },
+    {
+      "title": "Mastercrafted Wolven Boots Diagram",
+      "descr": "s:poi.desc.mastercraftedWolvenBoots",
+      "lat": 2449.9960449930813,
+      "lng": 1632.9161552270734
+    },
+    {
+      "title": "Superior Wolven Silver Sword Diagram",
+      "descr": "s:poi.desc.superiorWolvenSilverSword",
+      "lat": 2897.2462677915837,
+      "lng": 2777.1420560067286
+    },
+    {
+      "title": "Enhanced Ursine Boots Diagram",
+      "descr": "In an unmarked cave in the mountainside",
+      "lat": 2477.4954257443014,
+      "lng": 2959.4126657472043
+    },
+    {
+      "title": "Jarl Madman Lugos",
+      "descr": "You get the Card 'Vampire: Katakan' from him (Gwent Quest: Skellige) (all cards ",
+      "lat": 2232.245686221963,
+      "lng": 3195.1753151117296
+    },
+    {
+      "title": "Superior Griffin Silver Sword Diagram",
+      "descr": "Located in the cave system below",
+      "lat": 1789.4962333888739,
+      "lng": 3882.931748840238
+    },
+    {
+      "title": "Superior Wolven Armor Diagram",
+      "descr": "You need to get to the second floor of the fortress",
+      "lat": 2400.996425061115,
+      "lng": 3540.90852198986
+    },
+    {
+      "title": "Mastercrafted Griffin Silver Sword Diagram",
+      "descr": "",
+      "lat": 2760.746149839435,
+      "lng": 3298.4176818745163
+    },
+    {
+      "title": "Ursine Steel Sword Diagram",
+      "descr": "In a chest in the basement of this ruin",
+      "lat": 2438.4958697030825,
+      "lng": 4022.1724799093363
+    },
+    {
+      "title": "Mastercrafted Griffin Steel Sword Diagram",
+      "descr": "",
+      "lat": 3082.496348064574,
+      "lng": 3748.9163733195655
+    },
+    {
+      "title": "Mastercrafted Wolven Gauntlets Diagram",
+      "descr": "s:poi.desc.mastercraftedWolvenGauntlets",
+      "lat": 3160.9964627402737,
+      "lng": 3583.8902022205484
+    },
+    {
+      "title": "Mastercrafted Griffin Armor Diagrams",
+      "descr": "",
+      "lat": 3564.746205539061,
+      "lng": 4783.412229562221
+    },
+    {
+      "title": "Mastercrafted Feline Steel Sword Diagram",
+      "descr": "When entering the monster den and fighting off foes, go left, as your climbing up the stairs there is a small alcove on the left. The diagram is in the chest.",
+      "lat": 3795.4965872453195,
+      "lng": 4097.13322326081
+    },
+    {
+      "title": "Enhanced Ursine Gauntlets Diagram",
+      "descr": "",
+      "lat": 4049.7460892251365,
+      "lng": 3809.4172456895326
+    },
+    {
+      "title": "Ursine Silver Sword Diagram",
+      "descr": "",
+      "lat": 4201.996266153359,
+      "lng": 3693.6604848222864
+    },
+    {
+      "title": "Superior Griffin Armour Set Diagrams",
+      "descr": "Armor, boots, gauntlets, trousers",
+      "lat": 4272.746361170368,
+      "lng": 4390.411030053516
+    }
+  ],
+  "smugglers": [
+    {
+      "descr": "Smuggled goods have been hidden here. (lvl 16 Echidna)",
+      "lat": 5842.99631202364,
+      "lng": 2037.662229562221
+    },
+    {
+      "descr": "Smuggled goods have been hidden here. (lvl 19 Echidna and lvl 13 Sirens)",
+      "lat": 5525.492653535316,
+      "lng": 2828.3595720156236
+    },
+    {
+      "descr": "Smuggled goods have been hidden here. (lvl 18 Drowners)",
+      "lat": 5450.984173419427,
+      "lng": 3570.8465100464646
+    },
+    {
+      "descr": "Smuggled goods have been hidden here. (lvl 16 Echidna)",
+      "lat": 5616.746182603921,
+      "lng": 3879.229074910961
+    },
+    {
+      "lat": 4553.970034725615,
+      "lng": 2419.6340191836016
+    },
+    {
+      "descr": "Smuggled goods have been hidden here. (lvl 13 Sirens)",
+      "lat": 4970.986373812515,
+      "lng": 2682.8789478594754
+    },
+    {
+      "lat": 4762.985109103368,
+      "lng": 3323.0159099443326
+    },
+    {
+      "lat": 4965.986439341486,
+      "lng": 3395.047315263153
+    },
+    {
+      "lat": 4663.984460366551,
+      "lng": 3823.234002436143
+    },
+    {
+      "lat": 4833.984953214187,
+      "lng": 4288.791550738528
+    },
+    {
+      "lat": 4987.985896831375,
+      "lng": 4841.809434322857
+    },
+    {
+      "lat": 4959.985713350255,
+      "lng": 5069.908884499122
+    },
+    {
+      "lat": 4993.985936148758,
+      "lng": 5171.953375367451
+    },
+    {
+      "descr": "Smuggled goods have been hidden here. (lvl 13 Sirens)",
+      "lat": 4669.983603317376,
+      "lng": 5998.700388076952
+    },
+    {
+      "lat": 4565.983190484856,
+      "lng": 5185.46659292573
+    },
+    {
+      "lat": 4430.492270190834,
+      "lng": 3997.8462683736234
+    },
+    {
+      "lat": 4474.984612463535,
+      "lng": 3506.514573273929
+    },
+    {
+      "lat": 4445.9843634534445,
+      "lng": 3274.5272226384536
+    },
+    {
+      "lat": 4344.98361642317,
+      "lng": 2794.503668649338
+    },
+    {
+      "lat": 4160.982410690097,
+      "lng": 2782.4984344295344
+    },
+    {
+      "lat": 4236.982908710279,
+      "lng": 2532.3893881836293
+    },
+    {
+      "lat": 4083.4912217272913,
+      "lng": 1996.6421338012883
+    },
+    {
+      "lat": 4351.986067206701,
+      "lng": 1779.5595003272417
+    },
+    {
+      "lat": 4085.9845338287696,
+      "lng": 1362.4408580116967
+    },
+    {
+      "lat": 3673.982640041497,
+      "lng": 1301.4382409017949
+    },
+    {
+      "lat": 3567.9819454344,
+      "lng": 1680.6035550105876
+    },
+    {
+      "lat": 3496.983380518873,
+      "lng": 2244.6724722379995
+    },
+    {
+      "lat": 3639.984343794753,
+      "lng": 2210.648045878917
+    },
+    {
+      "lat": 3974.9853201764263,
+      "lng": 2681.6912281922955
+    },
+    {
+      "lat": 3828.9843634534445,
+      "lng": 2897.785444148758
+    },
+    {
+      "lat": 3650.9831970377536,
+      "lng": 2976.8199027624637
+    },
+    {
+      "lat": 3410.98162434244,
+      "lng": 2947.807253397939
+    },
+    {
+      "lat": 3523.982364819817,
+      "lng": 2771.730484840821
+    },
+    {
+      "lat": 3037.9808707592692,
+      "lng": 2353.641066919179
+    },
+    {
+      "lat": 3175.981775059074,
+      "lng": 2219.5826181313737
+    },
+    {
+      "lat": 3166.49049107926,
+      "lng": 1878.263611319227
+    },
+    {
+      "lat": 3030.4895998852494,
+      "lng": 1985.8105012049664
+    },
+    {
+      "lat": 1050.490609031409,
+      "lng": 1316.8656786053944
+    },
+    {
+      "lat": 2483.9959548907455,
+      "lng": 2304.6744427417625
+    },
+    {
+      "lat": 2012.981997857577,
+      "lng": 2190.648918248884
+    },
+    {
+      "lat": 1771.9787607263902,
+      "lng": 2806.941598372894
+    },
+    {
+      "lat": 1515.4920244571908,
+      "lng": 2281.2893462332604
+    },
+    {
+      "lat": 1214.4915198841113,
+      "lng": 3012.41453132356
+    },
+    {
+      "lat": 1314.4920572216765,
+      "lng": 3581.3608805705744
+    },
+    {
+      "lat": 2033.9931450026015,
+      "lng": 4155.899482941625
+    },
+    {
+      "lat": 1910.9924536719534,
+      "lng": 4282.94462808743
+    },
+    {
+      "lat": 2265.9919884162564,
+      "lng": 4659.786729123359
+    },
+    {
+      "lat": 2327.491998245602,
+      "lng": 5001.82424103195
+    },
+    {
+      "lat": 1210.9840947846615,
+      "lng": 4393.772794784232
+    },
+    {
+      "lat": 2493.9843241360613,
+      "lng": 5891.677270272819
+    },
+    {
+      "lat": 3450.98457969905,
+      "lng": 5437.629289924621
+    },
+    {
+      "lat": 3824.9927288936333,
+      "lng": 5680.328820974279
+    },
+    {
+      "lat": 3822.492548688962,
+      "lng": 5446.753360972112
+    },
+    {
+      "lat": 3827.992456948402,
+      "lng": 5154.739621145128
+    },
+    {
+      "lat": 3920.98435034765,
+      "lng": 4966.692100562263
+    },
+    {
+      "lat": 3907.4921784502735,
+      "lng": 4731.298288025425
+    },
+    {
+      "lat": 4130.993643022784,
+      "lng": 4712.790218603228
+    },
+    {
+      "lat": 4120.492604388588,
+      "lng": 4939.899701034117
+    }
+  ],
+  "spoils": [
+    {
+      "lat": 3586.9921981089647,
+      "lng": 488.824459124442
+    },
+    {
+      "lat": 3692.496194071491,
+      "lng": 815.4398182624352
+    },
+    {
+      "descr": "Search here for loot left behind after a battle or skirmish (lvl 16 Echidna)",
+      "lat": 4779.492833739987,
+      "lng": 2637.865024327919
+    },
+    {
+      "descr": "Search here for loot left behind after a battle or skirmish (lvl 18 Drowners)",
+      "lat": 4574.991644389157,
+      "lng": 3008.8737480275913
+    },
+    {
+      "descr": "Search here for loot left behind after a battle or skirmish (lvl 18 Drowners)",
+      "lat": 5696.492794422605,
+      "lng": 3433.3654605129027
+    },
+    {
+      "descr": "Search here for loot left behind after a battle or skirmish (lvl 16 Echidna)",
+      "lat": 2737.9963005560694,
+      "lng": 5069.677277944156
+    },
+    {
+      "descr": "Search here for loot left behind after a battle or skirmish (lvl 13 Sirens)",
+      "lat": 1861.9957959829899,
+      "lng": 4658.907976758631
+    },
+    {
+      "lat": 1204.4913626145799,
+      "lng": 2645.338417043918
+    }
+  ],
+  "tavern": [
+    {
+      "lat": 4823.996498781208,
+      "lng": 1518.4248789267463
+    },
+    {
+      "lat": 5412.278051375568,
+      "lng": 4999.026472871229
+    },
+    {
+      "descr": "Sells Food and drink",
+      "lat": 3390.4962907267236,
+      "lng": 6365.91997184568
+    },
+    {
+      "lat": 1207.7682350862146,
+      "lng": 5195.598110369629
+    },
+    {
+      "lat": 3025.2691623211595,
+      "lng": 2676.3715553124985
+    },
+    {
+      "lat": 4003.5198978838635,
+      "lng": 3261.120682942531
+    }
+  ]
+}

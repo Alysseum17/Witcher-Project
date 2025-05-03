@@ -1,11 +1,16 @@
 import map from './viewMap.js';
-import { data, descriptions } from './modal.js';
+import { data, descriptions, names } from './modal.js';
 const init = () => {
   map.init();
-  map.createSideBar(data);
-  map.createMarkers(data, descriptions);
+  map.createSideBar(data, names);
+  map.createMarkers(data, descriptions, names);
   if (localStorage.getItem('waypoint'))
-    map.createMarkers(localStorage.getItem('waypoint'), descriptions, true);
+    map.createMarkers(
+      localStorage.getItem('waypoint'),
+      descriptions,
+      names,
+      true,
+    );
   map.removeMarkerListener();
   map.removeAllMarkersListener();
   map.hideAllListener();

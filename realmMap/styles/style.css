@@ -1,7 +1,7 @@
 .content {
   display: grid;
   grid-template-columns: 1.5fr 4fr;
-  height: 110.75vh;
+  height: 125vh;
   padding-top: 1.2rem;
   background-color: #fdf2e9;
 }
@@ -93,7 +93,7 @@
   color: #cf711f;
 }
 #map {
-  height: 110vh;
+  height: 120vh;
   background-color: #fff;
 }
 .leaflet-popup-content-wrapper {
@@ -287,4 +287,10 @@
   100% {
     box-shadow: 0 0 10px 2px rgba(200, 55, 43, 0.6);
   }
+}
+
+.grid-space {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
 }

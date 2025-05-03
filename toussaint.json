@@ -1,0 +1,1276 @@
+{
+  "abandoned": [
+    {
+      "lat": 3599.7696822226526,
+      "lng": 2113.059737327664
+    },
+    {
+      "lat": 2871.295453190443,
+      "lng": 1504.8191921565033
+    },
+    {
+      "lat": 2623.7246846545654,
+      "lng": 1510.8078090879008
+    },
+    {
+      "lat": 2504.789718442116,
+      "lng": 1463.542403474793
+    },
+    {
+      "lat": 2128.051966731752,
+      "lng": 1193.595837583231
+    },
+    {
+      "lat": 2150.5381608561506,
+      "lng": 1652.3045085208064
+    },
+    {
+      "lat": 1024.7956655885291,
+      "lng": 2183.559522445191
+    },
+    {
+      "lat": 991.5516127349422,
+      "lng": 2297.033020273445
+    },
+    {
+      "lat": 1832.3106042539239,
+      "lng": 3005.534739333234
+    },
+    {
+      "lat": 2809.519469824567,
+      "lng": 3251.2901113950743
+    },
+    {
+      "lat": 2917.033983693789,
+      "lng": 2514.580079535166
+    }
+  ],
+  "alchemy": [
+    {
+      "lat": 1675.2453913415916,
+      "lng": 1997.394891209122
+    }
+  ],
+  "armourer": [
+    {
+      "title": "Journeyman Armorer",
+      "lat": 2066.288231655513,
+      "lng": 2080.804846630706
+    },
+    {
+      "title": "Master Armorer",
+      "lat": 1598.0494887540804,
+      "lng": 2052.7993116496255
+    },
+    {
+      "title": "Grandmaster Smith (Lafargue)",
+      "lat": 1613.7950283942705,
+      "lng": 2092.5333105225022
+    },
+    {
+      "title": "Journeyman Armorer",
+      "lat": 1271.5344792893234,
+      "lng": 2585.798405925449
+    }
+  ],
+  "armourerstable": [
+    {
+      "lat": 3714.9979468185,
+      "lng": 2279.8104822478062
+    },
+    {
+      "lat": 3349.5463027827877,
+      "lng": 2542.0395499557203
+    },
+    {
+      "lat": 3132.2649386653948,
+      "lng": 1396.5611866999436
+    },
+    {
+      "lat": 2744.2751337735313,
+      "lng": 2035.540153771838
+    },
+    {
+      "lat": 2080.544461999374,
+      "lng": 2087.0413614040735
+    },
+    {
+      "lat": 1603.7810101205826,
+      "lng": 2059.2986071974883
+    },
+    {
+      "lat": 1272.7928336140467,
+      "lng": 2593.2895499557203
+    },
+    {
+      "lat": 2218.0272577543933,
+      "lng": 3214.836144432815
+    }
+  ],
+  "banditcamp": [
+    {
+      "lat": 3641.5451699929945,
+      "lng": 2423.034820062797
+    },
+    {
+      "lat": 3566.030797722496,
+      "lng": 2330.3045447226473
+    },
+    {
+      "lat": 3459.537665260616,
+      "lng": 2078.5658159568475
+    },
+    {
+      "lat": 3286.0369572669956,
+      "lng": 2415.2837130665807
+    },
+    {
+      "lat": 3114.532567706548,
+      "lng": 1589.8122936961597
+    },
+    {
+      "lat": 3027.7924796172365,
+      "lng": 1346.3579824490782
+    },
+    {
+      "lat": 2706.2860368752886,
+      "lng": 1304.0666210450045
+    },
+    {
+      "lat": 1209.7856120791164,
+      "lng": 1742.812494968199
+    },
+    {
+      "lat": 1661.036320072737,
+      "lng": 3208.8225585701634
+    },
+    {
+      "lat": 2193.279310935893,
+      "lng": 3707.042065856211
+    },
+    {
+      "lat": 2357.2526903757584,
+      "lng": 3629.0417639481525
+    },
+    {
+      "lat": 2337.0131686813434,
+      "lng": 3488.069036309476
+    },
+    {
+      "lat": 2464.765646659015,
+      "lng": 3308.554041542549
+    },
+    {
+      "lat": 2753.2681954360496,
+      "lng": 3500.54820465341
+    }
+  ],
+  "barber": [
+    {
+      "lat": 2055.046869177684,
+      "lng": 2031.5677280412206
+    }
+  ],
+  "blacksmith": [
+    {
+      "title": "Journeyman Blacksmith",
+      "lat": 2071.7460253343897,
+      "lng": 2066.6591762673356
+    },
+    {
+      "title": "Journeyman Blacksmith",
+      "lat": 1583.995243901406,
+      "lng": 2056.899580197696
+    }
+  ],
+  "entrance": [
+    {
+      "lat": 3473.520319416911,
+      "lng": 2634.5337130665807
+    },
+    {
+      "lat": 3433.281718114203,
+      "lng": 2580.0556517188634
+    },
+    {
+      "lat": 3258.5337004963408,
+      "lng": 2059.089163513405
+    },
+    {
+      "lat": 2969.0356120791166,
+      "lng": 1694.5454874808793
+    },
+    {
+      "lat": 3033.0260541652383,
+      "lng": 1441.799211013606
+    },
+    {
+      "lat": 3035.7752753722557,
+      "lng": 1338.0909749617583
+    },
+    {
+      "lat": 2968.044461999374,
+      "lng": 1336.5915787778763
+    },
+    {
+      "lat": 2927.0441080025635,
+      "lng": 1332.5666210450045
+    },
+    {
+      "lat": 2530.679337261884,
+      "lng": 1700.538232054187
+    },
+    {
+      "lat": 2042.5393644453056,
+      "lng": 1647.3104822478062
+    },
+    {
+      "lat": 2077.7752753722557,
+      "lng": 1394.5747725625956
+    },
+    {
+      "lat": 1799.2970107764081,
+      "lng": 1406.542669672329
+    },
+    {
+      "lat": 1888.0277187250126,
+      "lng": 1639.074303141018
+    },
+    {
+      "lat": 1840.7763373626865,
+      "lng": 1623.298909105547
+    },
+    {
+      "lat": 1470.2766205601347,
+      "lng": 1647.0546453586667
+    },
+    {
+      "lat": 1368.7908512319088,
+      "lng": 1789.300016101763
+    },
+    {
+      "lat": 1127.7926212159605,
+      "lng": 1899.05655744304
+    },
+    {
+      "lat": 1242.7982851649253,
+      "lng": 2160.7674100313984
+    },
+    {
+      "lat": 887.7880900567884,
+      "lng": 2614.052934546333
+    },
+    {
+      "lat": 1380.776762158859,
+      "lng": 3061.7988084695276
+    },
+    {
+      "lat": 1531.5169918468946,
+      "lng": 3207.280291441913
+    },
+    {
+      "lat": 1585.5229389933077,
+      "lng": 3216.2818009822076
+    },
+    {
+      "lat": 1547.5353996810302,
+      "lng": 2960.825477014733
+    },
+    {
+      "lat": 1592.525841767152,
+      "lng": 2687.818231221319
+    },
+    {
+      "lat": 1495.0427628146845,
+      "lng": 2542.5561548989613
+    },
+    {
+      "lat": 1500.791134429357,
+      "lng": 2515.8169229530636
+    },
+    {
+      "lat": 1923.036249273375,
+      "lng": 3622.519523387811
+    },
+    {
+      "lat": 2183.7776117512035,
+      "lng": 3649.046896385154
+    },
+    {
+      "lat": 2298.7781073467377,
+      "lng": 2798.5578657112956
+    },
+    {
+      "lat": 2327.273080592032,
+      "lng": 2759.563098784317
+    },
+    {
+      "lat": 2466.0181246366874,
+      "lng": 2782.0496135576846
+    },
+    {
+      "lat": 2677.7492212070174,
+      "lng": 2687.0411601320343
+    },
+    {
+      "lat": 2742.5357536778406,
+      "lng": 2330.8158159568475
+    },
+    {
+      "lat": 2903.7727973945834,
+      "lng": 2769.3136019644153
+    },
+    {
+      "lat": 3023.511894292826,
+      "lng": 3014.5326060703646
+    },
+    {
+      "lat": 3055.775629369066,
+      "lng": 3221.79800338137
+    },
+    {
+      "lat": 3082.275487770342,
+      "lng": 3393.0346187907576
+    }
+  ],
+  "fasttravel": [
+    {
+      "title": "Arthach Palace Ruins",
+      "descr": "The experimental attempts to manage the waters of the Sansretour Marsh carried out by Duke Adam of Nazair did not prove very successful - to put it lightly. They flooded a great number of villages, private estates and even Arthach, an elven summer palace. These experiments were what gave the Sansretour Marsh its current shape and put half of Crane Isle permanently underwater. They also created an unpleasant bog to the north of the city where none can tread in true safety.",
+      "lat": 3626.9921803576344,
+      "lng": 2373.388796409526
+    },
+    {
+      "title": "The Silver Salamander Inn",
+      "descr": "When the folk query this inn's Nilfgaardian owner, a certain Calixte Moire, whence came the establishment's name, the man always refers them to the Second Battle of Sodden. His Father, Antoine, showed particular courage during this battle, as evidenced by the Medal of the Silver Salamander which was awarded to him by the emperor himself in honor of his valor and dedication on the field of battle.",
+      "lat": 3510.992170528289,
+      "lng": 2109.2618665792925
+    },
+    {
+      "title": "Trading Post",
+      "descr": "Every self-respecting merchant does some business in the capital of Toussaint - going to hear the latest gossip from the famed Belles of Beauclair in San Sebastian, or strolling down to the Port to see if the dockmen have \"lost\" a barrel or two. But truly important business is conducted not in the city, but at the modest merchant's camp, an outpost far from the wine- and song-laden atmosphere of Beauclair's eternal celebrations.",
+      "lat": 3323.7459574826503,
+      "lng": 2557.946688175927
+    },
+    {
+      "title": "Prophet Lebioda Statue",
+      "descr": "During the reign of Duchess Caroberta, Toussaint was visited by a certain disciple of the Prophet Lebioda named Plegmund. His words and deed - which includes miracles - were so persuasive, soon nearly the entire duchy had converted to the new faith. They crowned this outburst of religiousity with the construction of a temple dedicated to the prophet, but that was not enough for Plegmund. He convinced the duchess to build a statue of Lebioda - the likes of which the would had never seen.",
+      "lat": 3071.9959525679774,
+      "lng": 1882.4045963250076
+    },
+    {
+      "title": "Plegmund's Bridge",
+      "descr": "Built during the reign of Duchess Caroberta, this bridge was meant to facilitate traffic between vineyards on opposite banks of the Sansretour. It was named after a pilgrim quite popular in Toussaint at the time, a certain disciple of the Prophet Lebioda who on this very spot performed one of his many miracles: traversing the river without getting his feet wet.",
+      "lat": 2982.245557755925,
+      "lng": 2107.457047569288
+    },
+    {
+      "title": "Fox Hollow",
+      "descr": "In a small valley at the foot of Mount Gorgon lies the village of Fox Hollow. This village's fields - inexplicably and miraculousely - grow pots. Earthenware vessels spring unbidden from the ground, as if though some magic trick worked by nature, no human intervention required. The ports come in all shapes and sizes, which is why Fox Hollow maintains trade connections with the village of Dudno in Maecht - for that vilage's fields, inexplicably and miraculousely, grow lids. Of all shapes and sizes.",
+      "lat": 2908.4966052657865,
+      "lng": 1510.8987078277287
+    },
+    {
+      "title": "Coronata Vineyard",
+      "descr": "This line's founder, Stefen de Coronata, once asked a druid to help him be rid of the caterpillers devouring his vines.The druid suggested he raise martens, which love to feed on that insect's larvae. Stefan duly took the druid's advice and soon eradicated the plague not only in his own vineyard, but in all the neighboring ones as well. In return for this bounteous deed, he was awarded a noble title. He chose a blue wolf to adorn his crest, after deciding he would look foolish parading about with a marten on his shield.",
+      "lat": 2972.2460597370996,
+      "lng": 2350.7032309506812
+    },
+    {
+      "title": "Dun Tynne Crossroads",
+      "descr": "Dear traveler, you have entered the territory of Dun Tynne, lands belonging to the nobly-born Sir Roderick. If you wish to pay him a visit, walk westward from here and you shall surely happen upon his castle. If, however, you seek a route to the Pittapatte river, you should make your way north.",
+      "lat": 2937.74553222888,
+      "lng": 2884.4280412678772
+    },
+    {
+      "title": "Basane Farm",
+      "descr": "Contrary to appearances, Toussaint does not live and die by the wine trade alone. It also exports valuable building materials and a great quantity of wool. The clover-rich slopes of Mont Crane provide sustenance to a broad variety of sheep, including the famed Toussaint merinos, whose fleece fetches mind-boggling sums. Basane is one of the estates specializes in the breeding and pasturing of these remarkable beasts.",
+      "lat": 2818.496349702798,
+      "lng": 3224.155359648729
+    },
+    {
+      "title": "Mont Crane Castle",
+      "descr": "Duke Roger the Reveler was, as his nickname might suggest, no teetotaler. The story of his alcohol-fueled romps number today amoung the most cherished of traditional Toussaint tales. This state of perpetual tipsiness might just be what drove his decision to surround the duchy with a series of castles, meant to protect Toussaint from the barbarous highlanders of Mount Gorgon. Thing is, no one has ever heard of such a folk.",
+      "lat": 2497.4958189181298,
+      "lng": 3429.9059048799586
+    },
+    {
+      "title": "Fort Ussar Ruins",
+      "lat": 2219.496031887287,
+      "lng": 3684.9272779441562
+    },
+    {
+      "title": "Ardaiso Quarry",
+      "descr": "Every man, be he tippler or teetotaler, knows Toussaint's economy stems from the fruit of the vine. Few, however, realize the duchy's lands are rich with deposits of slate and other valuable building materials, and that the quarrying of such was once the bedrock of local livelihoods. Thus when gods-fearing Toussaintois saw fit to build a statue of the saintly Lebioda, they had no need to send for materials from abroad - instead, they merely reactivated Ardaiso.",
+      "lat": 2286.746097416258,
+      "lng": 3196.640529359286
+    },
+    {
+      "title": "Casteldaccia Abandoned Estate",
+      "descr": "Maximus Macrinus was once a knight errant famed for showing no mercy to any bandits prowling the Champs-Dèsolès. After a long and storied career, he hung up his sword at his ancestral manor and settled in for a well-deserved retirement. No one knows what brought about the subsequent murder of his entire family. Some claim a giant descended from the mountains, others, that he ran afoul of one of the largest hanses. The only undisputed fact is that everyone with any sense now avoids going anywhere near Casteldaccia.",
+      "lat": 1908.4954798057029,
+      "lng": 3194.9325121639595
+    },
+    {
+      "title": "Flovive",
+      "descr": "Once upon a time, a plague of frogs visited the Sansretour Marsh. Duchess Ademarta declared a prize would be given to whomever freed the land of these accursed amphibians. Yet neither the knights errant nor the druids nor anyone else proved up to the task - until a poor raftsman name Flovive figured out a way. He serenaded the frogs with hid violin and they, entranced by this melody, followed him out of the duchy. In memory of this event, the settlement where Toussaint's raftsman dwell bears his name.",
+      "lat": 2056.995994208128,
+      "lng": 2902.611632104121
+    },
+    {
+      "title": "Dun Tynne Hillside",
+      "descr": "The slopes of Dun Tynne long lay barren. Potential entrepreneurs were scared off by the bloody legend of Waltharius the Burly and since the area had never produced wines worthy of historical metion anyways, they had little incentive to conquer this fear. The estate's most recent owner, however - a nobleman named Roderick - decided to plant vines along the slopes stretching from the Blessure and Sansretour valleys up to the keep. As a precaution, he also planted olive groves, a much surer investment.",
+      "lat": 2548.746302194294,
+      "lng": 3004.6752060654835
+    },
+    {
+      "title": "Dun Tynne Castle",
+      "descr": "This castle is tied to the dark legend of Waltharius the Burly, the dashing knight who wed the beautiful Nazairi princess Hiltgunt. Waltharius then embarked on a lengthy campaign and returned to find his wife in carnal relations with his relative, upon which he flew into a rage and murdered them both. The moral of the tale is held to be that nothing good ever comes from Nazair, and that when one has a young wife, one should stay at home instead of gallivanting about on campaigns.",
+      "lat": 2622.2465643101796,
+      "lng": 2739.3942369316464
+    },
+    {
+      "title": "Dulcinea Windmill",
+      "descr": "Lady Dulcinea was a noblewoman at Duchess Caroberta's court. According to legend, whenever she appeared duels knights would duel for her favor and noblewoman would faint out jealousy. Yet rather then accepting the advances of one of her gentlemen suitors, Lady Dulcinea, tired of the pomp of the ducal court, agreed to the proposal of a simple miller and abandoned the palace to dwell with him in him mill. Word is, she lived there happily ever after.",
+      "lat": 2725.2464037641994,
+      "lng": 2387.9116843309916
+    },
+    {
+      "title": "The Cockatrice Inn",
+      "descr": "There was a time when the Cockatrice's owner, Adam de Guy, loved to recount the tale of how the inn got its name. In his youth, his story went, he served as squire to a knight errant and togehter they defeated a bloodthirsty cockatrice. The beast's head decorated the auberge's entrance for many years until a certain traveler from Oxenfurt ascertained it was unfortunately but a rather amateurish hobbling thether of pheasant, weasel and pig parts. His pride wounded, de Guy took down his trophy, but the inn kept its name.",
+      "lat": 2437.2460712046695,
+      "lng": 2421.914737625877
+    },
+    {
+      "title": "Castel Ravello Vineyard",
+      "descr": "Connoisseurs claim the best wines of Metinna or Alba do not hold a candle to even the most mediocre labels from the Sansretour Valley. Among the countless larger and smaller local vineyards found here, Castel Ravello is the most renowned - and for good reason. From its slopes come Pomio, Fiorano, Erveluce and Est Est -  the wine realm's uncontested king.",
+      "lat": 2717.492538859616,
+      "lng": 1785.3281666968028
+    },
+    {
+      "title": "Fort Astre Ruins",
+      "descr": "Once upon a time, the lord Epicèa mounted his steed and vowed to complete a full circuit around the castle - riding atop its walls. Sadly, he did not fulfill his oath and instead plummeted to his doom after a few paces. Cungigunde, his beautiful daughter, swore that day she would only marry the man who could finish her father's deed. Many stripling lad lost his life attempting to fulfill that comely maid's cruel condition. When finally once succeeded, he surveyed the carnage she had wrought and decided she was unworthy of his affections. Realizing with despair how despicably she had acted, Cungigunde threw herself from the castle walls, dying smashed against the rocks below like so many of her unfortunate suitors.",
+      "lat": 2478.745799259438,
+      "lng": 1334.3653396764817
+    },
+    {
+      "title": "Chuchote Cave",
+      "descr": "To listen to the old folks' jabber, this place was once home to Whispess - a woodland witch eager to help any in need. When Whispess peered into a vertain knight's heart, she saw that it was black and refused him aid. The knight reacted with wrath and burned the witch alive in her cave. Soon afterward, the knight went mad and killed himself - claiming he was tourtured by a strange voice whispering in his ear that no one else could hear.",
+      "lat": 2496.996439805134,
+      "lng": 1681.1911268173858
+    },
+    {
+      "title": "Sansretour Valley",
+      "descr": "The Sansretour Valley is the center of the world wine production. It is on this valley's vine-covered slopes that one can find Castel Ravello, Coronata and Vermentino - the estates of famous winemaking families which have for centuries been envy of every other vintner.",
+      "lat": 2450.496325129434,
+      "lng": 2104.6951615284843
+    },
+    {
+      "title": "Corvo Bianco Vineyard",
+      "descr": "Constructed on elven ruins, Corvo Bianco - Known as Gwyn Cerbin in the Elder Speech - is one of the older vineyards in the duchy and producer of the startlingly unique wine, Sepremento. Sadly, the rakish lifestyle of one of its owners, the member of the Bolius line, drove the possession into ruin. The next owner, Baron Rossell, tried to return the vineyard to its former glory, but to no avail. Corvo Bianco was then auctioned off and eventually passed under the control of the Ducal Treasury.",
+      "lat": 2249.7454879968245,
+      "lng": 2208.7110822803866
+    },
+    {
+      "title": "Count de la Croix's Mill",
+      "descr": "The de la Croix family never had much luck in business. Their grapevines fell victim to Duke Adam of Nazair's attempts to regulate the flow of the Sansretour and their olive groves were devoured by a plague of armored scale insects. After this, they restored their old water mill, counting on the production of bread to be their ticket to success. And it nearly was - until they found oud the hard way high concentrations of flour in restricted spaces can lead to powerful dust explosions.",
+      "lat": 2093.2453864269187,
+      "lng": 2387.4544304593865
+    },
+    {
+      "title": "Tourney Grounds",
+      "descr": "Tradition is sacred in Toussaint. This fair duchy has a great many traditions, perhaps the most hallowed of which are the spectacular knightly tourneys held during nearly every important local festival. These events have earned fame and respect not only in all of Nilfgaard, but in the North as well. Thus knights journey from almost literally the entire would to enter the lists and gain glory testing their mettle against each other and the best of Toussaint chivarly.",
+      "lat": 2062.4954929114974,
+      "lng": 2047.1579767586309
+    },
+    {
+      "title": "Rioux-Cannes Outpost",
+      "descr": "The second most popularly cultivated plant in Toussaint - the first being the grapevine, of course - is the ovlive tree. It is mainly grown for its olives, which are pressed for their oil, but is also prized amoung woodcarvers. The unquestionably most cherished tree in the region, however, is the Beauclair oak, which is used in the making of wine barrels. And the most important place in Toussaint for the processing of this tree is the Rioux-Cannes woodcutters' outpost.",
+      "lat": 1864.995969634764,
+      "lng": 1354.147181180286
+    },
+    {
+      "title": "Beauclair Palace",
+      "descr": "One of the best-preserved artifacts of the elven era, the Beauclair Palace was painstakingly restored and partially rebuilt by the famed Nilfgaardian architect Faramond. Master Faramond, a scholar and expert on nonhuman architecture, is considered the found of the Noeelven School, of which Beauclair Palace, home to the rulers of Toussaint, is the most characteristic example.",
+      "lat": 1867.7461678599025,
+      "lng": 1781.6718256318607
+    },
+    {
+      "title": "Palace Gardens",
+      "descr": "The fabulous gardens on the shores of Seidhe Llygad were, like Beauclair Palace, nearly destroyed during the Elven Conflicts. Master Faramond, who let the renovation efforts, did what he could, but some of the more delicate plants could not be saved. Today this popular recreation spot for courtiers is filled mainly with spruces, olive trees, Beauclair oaks, rose bushes, juniper thickets, rhododendrons and, of course, grapevines.",
+      "lat": 1660.9960138668198,
+      "lng": 1719.1620114697294
+    },
+    {
+      "title": "Seidhe Llyghad Amphitheater",
+      "descr": "On the banks of the lake known as Seidhe Llyghad, or Eye of the Mountains, lies and ancient amphitheater - another relict of Toussaint's elven past. In 1178 the structure was restored so it could stage the works of Beauclair's most renowned theatrical virtuosos. unfortunately, its grand opening was marred by an unplanned tragic ending: the mysterious death of the play's leading lady. Ever since, the place has been deemed cursed and few dare venture anywhere near it.",
+      "lat": 1404.7458844471012,
+      "lng": 1727.6524154000895
+    },
+    {
+      "title": "Hortense Vineyard",
+      "descr": "Toussaint can boast many world-famous vineyards, such as Castel Ravello, Pomerol, Vermentino and Tufo. Their owners take great care to maintain the time-tested traditions and heirloom recipes on which the reputation of the wines they produce rests. But Toussaint is also home to numerous smaller vineyards which do not even possess their own crests and whose wines have yet to win any particular renown, making it difficult to say much about them. Hortense is just such a place.",
+      "lat": 1101.24553222888,
+      "lng": 2151.1733522793033
+    },
+    {
+      "title": "Tesham Mutna Ruins",
+      "descr": "It is widely accepted that vampires came into our would during the Conjuntion of the Spheres. They quickly spread across all the Continent, trying to adapt to their new situation. According to legend, one of them, Khagmar, settled in Toussaint. Grim tales are whispered about his deeds, but whether he truly even existed is hard to say. The tales do agree on one thing, however: Khagmar's story is inextricably tied to the mysterious fortress known as Tesham Mutna.",
+      "lat": 872.2459450613997,
+      "lng": 2554.9223708630902
+    },
+    {
+      "title": "Trastamara Hunting Cottage",
+      "descr": "Amadis de Trastamara obtained this property from Duchess Caroberta in recognition for his service to Toussaint. The ruler's gift came with an unexpected barb, however, for the house turned out to be haunted and, even worse, deep in tax arrears. Trastamara consulted the druids of Caed Myrkvid about his case and was given the following advice: if you cannot reach a deal with the spectar, let it be and call it a day.",
+      "lat": 1132.4959761876612,
+      "lng": 3014.1532877700565
+    },
+    {
+      "title": "Francollarts",
+      "descr": "The Caroberta Woods are named after Toussaint's reigning duchess' grandmother - Duchess Carolina Roberta - who loved organizing elaborate games of hide and seek in this forest. A small trappers' post located on its outskirts has grown into the tranquil village known as Francollarts. Here hunters, woodcutters and beekeepers come to sell the fruit of the woods. The village springs to life once a year, when Baron Trastamara organizes his annual Wood Festival and invites all the court out for a spectacular hunt.",
+      "lat": 1256.746308747191,
+      "lng": 2537.362613520334
+    },
+    {
+      "title": "Gelenser Farm",
+      "descr": "Old man Gelenser grew radishes. Yes, radishes. Not grapes, not olives, not even beets. As he himself put it: \"Dadgummit, I can't very well live on bread and wine alone now can I?!\" Old Man Gelenser did not found a radish empire,. The history of his line is not filled with amazing legends. He lived, sired children, planted radishes and died. O Lebioda, give us all such a clam and simple life.",
+      "lat": 1484.9964627402737,
+      "lng": 2945.9338207189103
+    },
+    {
+      "title": "Termes Palace Runins",
+      "descr": "Toussaint was once a land of elves. The ducal palace is the most prominent remnant of that era, but it is not the only. The Aen Seidhe left behind a great many smaller and larger structures whose function can today only be guessed at. An example of this are the Termes Palace ruins, which some tie to the legendary resting place of the last elven king, while others consider them a tmeple to shome forgotten deity. What they were in truth, we shall never know.",
+      "lat": 1477.9963824672836,
+      "lng": 3178.960755141649
+    },
+    {
+      "title": "Toussaint Prison",
+      "descr": "It is hard to believe Toussaint, now so vibrant and full of life, once fell victim to a leprosy epidemic. To isolate the infected from the healthy, by ducal decree a leper colony was created on Crane Island. When all the colony's inhabitants died, the complex gradually fell into ruin and the decision was made to adapt it into a prison, which it remains to this day.",
+      "lat": 1763.2464250611151,
+      "lng": 2818.6686632907295
+    },
+    {
+      "title": "Mère-Lachaiselongue Cemetry",
+      "descr": "At Belgaard Vineyard, a famous act of poisoning once occurred which took the lives of a large gang of bandits who were ransacking the area. The folk charged with cleaning up in the aftermath originally planned to burn the bodies, but on pious sould thought even rotten dung-diddlers such as they deserve better. He thus paid for their bodies to be laid to rest in a small cemetery: Mère-Lachaiselongue. Later, Sir Ramon of Gichon died a martyr's death here trying to get rid of the bandites' constantly returning wraiths.",
+      "lat": 1524.4962317506497,
+      "lng": 2492.9167004583032
+    },
+    {
+      "title": "Belgaard Vineyard",
+      "descr": "The vineyard's former owner racked up significant debts with a loan shark, who then sold them to bandits for collection. When they found he had no coin to collect, they murdered him alongside all other residents of his estate. As if that were not heinous enough, they then made the vineyard their base, from which they would hijack transports of wine to fuel their drunken orgies. So fierce and well-stocked were they, none could chase them off - until one brave alchemist spiced a transport crossing their territory with a powerful extract of ricin.",
+      "lat": 1368.2455633551413,
+      "lng": 2261.866212046449
+    },
+    {
+      "title": "Lebioda's Gate",
+      "descr": "Work on the Temple of Lebioda in Beauclair was begun by the prophet's most famed disciple, Plegmund. He convinced Duchess Coronata to rebuild that area of the city and dig deep catacombs for the city's wealthiest inhabitants. Those of less coin were to be buried in the new cemetry beside the temple. The poorest of the poor, however, had to continue to make do with the Orlèmurs Cemetry, connected to the city by the Temple Gate, also known as the Gate of Lebioda.",
+      "lat": 1432.9956452663555,
+      "lng": 2091.823793056792
+    },
+    {
+      "title": "Metinna Gate",
+      "descr": "Toussaint's mighty rivers are not the only route for getting wine out of the duchy. During the spring run-off, the Sansretour becomes very dangerous to navigate and the local exporters turn to transport methods less likely to result in catastrophic loss. These merchants group together into caravans, hire guards and set out with their goods overland. Their favored destination? Metinna, whose capital is likewise name Metinna, leading some Toussaintois to joke their win is medicine from that kingdom's fabled lack of imagination.",
+      "lat": 1568.7461973479394,
+      "lng": 2158.92716889791
+    },
+    {
+      "title": "Nilfgaardian Embassy",
+      "descr": "Toussaint is a vassal duchy of the Nilfgaardian Empire. Duchess Anna Henrietta is the rightful ruler of the region, but in practice she submits to the will of her dearest elder cousin - Emhyr van Emreis. It was certainly out of concern for Her Enlightened Grace and her little realm that the emperor founded an embassy in Toussaint, consisting of a handful of dignataries who dwell in the duchy full-time and use their experience to help with her, de facto enlightened, decisions.",
+      "lat": 1528.2459909316797,
+      "lng": 2010.1364946481874
+    },
+    {
+      "title": "Gran'Place",
+      "descr": "Toussaint's largest marketplace overflows with colorful stalls and merchants from every corner of the world. They say if you cannot find what you seek at Beauclair's market, it doesn't exist. In addition to wine of every label and vintage, here one can buy slate from Ardaiso, fleece from Toussaint merinos raised at Basane or olive oil from the groves of Dun Tynne.",
+      "lat": 1713.9961465629867,
+      "lng": 2030.157540573647
+    },
+    {
+      "title": "Coopers Gate",
+      "descr": "Experts know the secret to Toussaint wine lies not in the vines of its hills but in the oaks of its forests. So desirable are barrels made from this wood, it seemed loggers would cut the duchy clear until protests from angry druids stopped them. After years of negotiations, a compromise was reached and a special organization, the Coopers' Guild, was created. Thanks to its strict supervision of the industry, logging became sustainable and it became the richest guild in the city - as evidenced by the proud gate it funded.",
+      "lat": 1826.2462677915837,
+      "lng": 2057.910702914778
+    },
+    {
+      "title": "Habor Gate",
+      "descr": "When laying the stones of the defensive walls surrounding the Haunteville, the inhabitants of Beauclair had no inkling how much their city would eventually grow. The mushroom-like expansion of San Sebastian and the Port District forced Beauclair's residents to knock though an additional passageway to facilitate the circulation of traffic between the capital's districts. Some even called for the wall to be torn down altogether - for what had they to fear, with their town protected by the bravest knights errant the would has ever known?",
+      "lat": 1745.995907382241,
+      "lng": 2193.437637337517
+    },
+    {
+      "title": "San Sebastian",
+      "descr": "The city of Beauclair quickly grew to fill all the space within its walls and spill out beyond it. This gave rise to the Lower Town, also known by the name if its founder - San Sebastian. Currently the district is primarily home to laborers and their workshops and links Haunteville with the port - the center of trade for Beauclair and the entire duchy.",
+      "lat": 1862.9966740712064,
+      "lng": 2235.706066153075
+    },
+    {
+      "title": "Beauclair Port",
+      "descr": "The best wine comes from Toussaint - any sommelier will tell you as much. Bottles bearing its famed labels are worth fortunes and even grace the tables of kings - indeed, today one can barely imagine a royal feast without Cote-de-Blessure or Est Est. And it is here, at Beauclair's port, that this wine begins its journey both to the sound - into the heart of the Nilfgaardian Empire - and to the far-off North.",
+      "lat": 1775.9961482012109,
+      "lng": 2330.4798382346826
+    }
+  ],
+  "grindstone": [
+    {
+      "lat": 3715.274425779911,
+      "lng": 2273.5615892440223
+    },
+    {
+      "lat": 3347.5470815757703,
+      "lng": 2542.2895499557203
+    },
+    {
+      "lat": 3127.015151063481,
+      "lng": 1393.5818170839707
+    },
+    {
+      "lat": 2744.5391520472194,
+      "lng": 2032.541864584172
+    },
+    {
+      "lat": 2086.0378068593404,
+      "lng": 2078.5433741244665
+    },
+    {
+      "lat": 1599.5380192574264,
+      "lng": 2056.802330730215
+    },
+    {
+      "lat": 1275.5518959323904,
+      "lng": 2586.052129458176
+    },
+    {
+      "lat": 2217.2784613435483,
+      "lng": 3214.303135818372
+    },
+    {
+      "lat": 2539.5217354041524,
+      "lng": 3484.0357257869737
+    }
+  ],
+  "guarded": [
+    {
+      "lat": 3636.5119650921883,
+      "lng": 2423.511975686338
+    },
+    {
+      "lat": 3562.782850903996,
+      "lng": 2325.3015256420576
+    },
+    {
+      "lat": 3391.267558241791,
+      "lng": 2755.7994122856453
+    },
+    {
+      "lat": 3161.040922031271,
+      "lng": 2529.074168746478
+    },
+    {
+      "lat": 2743.9968140287074,
+      "lng": 1385.527976813461
+    },
+    {
+      "lat": 2708.0348332861336,
+      "lng": 1302.3134006923758
+    },
+    {
+      "lat": 2536.547860368753,
+      "lng": 2154.051726914097
+    },
+    {
+      "lat": 1187.2794525346171,
+      "lng": 2012.3052491747846
+    },
+    {
+      "lat": 1468.5099827100505,
+      "lng": 2813.276869817245
+    },
+    {
+      "lat": 1202.2847624867718,
+      "lng": 2979.772341196361
+    },
+    {
+      "lat": 1422.7769037575829,
+      "lng": 3307.0405563159165
+    },
+    {
+      "lat": 1906.2807977224963,
+      "lng": 3564.7693221157715
+    },
+    {
+      "lat": 2129.274496579273,
+      "lng": 2937.8284960953224
+    },
+    {
+      "lat": 2220.272514197135,
+      "lng": 2600.105969728685
+    },
+    {
+      "lat": 2333.0453823910807,
+      "lng": 3485.557362531197
+    },
+    {
+      "lat": 2354.0370988657196,
+      "lng": 3627.0465944770954
+    },
+    {
+      "lat": 2438.286107674651,
+      "lng": 3629.80655744304
+    },
+    {
+      "lat": 2854.0107615030333,
+      "lng": 2978.8297037275584
+    }
+  ],
+  "gwent": [
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 2728.9965118870023,
+      "lng": 1715.646090717827
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 2411.245781238971,
+      "lng": 2402.4510500257634
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 2031.746176051024,
+      "lng": 2892.916591412057
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 2074.491300362057,
+      "lng": 2077.7487810297835
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 2083.745678030841,
+      "lng": 2066.8715553124985
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 2065.745560078693,
+      "lng": 2030.8558526530878
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 2069.245583013833,
+      "lng": 2003.3438575660384
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1858.2462333888739,
+      "lng": 2296.4093943598273
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1859.9962448564438,
+      "lng": 2319.9196447069426
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1768.2458729795312,
+      "lng": 1974.8670844164162
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1709.9955305906556,
+      "lng": 1957.6496892439418
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1685.2453684064515,
+      "lng": 1998.9176818745163
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1635.2452160515932,
+      "lng": 1940.404378232516
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1666.2458516826155,
+      "lng": 2075.6953796209764
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1609.4954798057029,
+      "lng": 2052.935456412599
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1617.9958746177554,
+      "lng": 2079.4186632907295
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1626.7459319556056,
+      "lng": 2114.1838207189103
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1326.7459254027083,
+      "lng": 2588.4329483489432
+    },
+    {
+      "descr": "Gwent Player from that you can win a Skellige Card (I Have a Gwent Problem Achievement).",
+      "lat": 1281.2456272458885,
+      "lng": 2585.431639793992
+    }
+  ],
+  "hansebase": [
+    {
+      "lat": 3073.992250532142,
+      "lng": 1433.319879182114
+    },
+    {
+      "lat": 3702.5191230037767,
+      "lng": 2288.1758603429594
+    },
+    {
+      "lat": 2575.0192016385427,
+      "lng": 3458.427496036648
+    }
+  ],
+  "harbor": [
+    {
+      "lat": 3066.9966970063465,
+      "lng": 1934.4084129436144
+    },
+    {
+      "lat": 1968.9961744127995,
+      "lng": 2810.660811961024
+    },
+    {
+      "lat": 1783.9957550273825,
+      "lng": 2386.1095602254486
+    },
+    {
+      "lat": 1504.4959041057925,
+      "lng": 1942.4056867874667
+    }
+  ],
+  "herbalist": [
+    {
+      "lat": 2719.783204900806,
+      "lng": 1716.3251751066741
+    },
+    {
+      "lat": 1625.2903556363744,
+      "lng": 2115.572156026085
+    }
+  ],
+  "hidden": [
+    {
+      "lat": 3257.4930139446587,
+      "lng": 2050.358263460673
+    },
+    {
+      "lat": 3025.996118713174,
+      "lng": 1345.1713894468771
+    },
+    {
+      "lat": 2936.7458582355125,
+      "lng": 1755.9498505170584
+    },
+    {
+      "lat": 2838.2457533891584,
+      "lng": 1704.9092853135817
+    },
+    {
+      "lat": 3059.2461465629867,
+      "lng": 2567.647399272778
+    },
+    {
+      "lat": 3057.4959368702785,
+      "lng": 2830.909830544811
+    },
+    {
+      "lat": 2453.746090863361,
+      "lng": 1343.4006706601551
+    },
+    {
+      "lat": 2202.745786153644,
+      "lng": 1342.157431527401
+    },
+    {
+      "lat": 2023.2459745494368,
+      "lng": 2594.6709532618934
+    },
+    {
+      "lat": 1946.7459909316797,
+      "lng": 3277.6682271057457
+    },
+    {
+      "lat": 1723.745261921873,
+      "lng": 3412.4450524822387
+    },
+    {
+      "lat": 1840.4962071772852,
+      "lng": 2716.401652076368
+    },
+    {
+      "lat": 1348.9956550957013,
+      "lng": 1748.6604848222864
+    },
+    {
+      "lat": 1404.4960466313055,
+      "lng": 2060.4345840426317
+    },
+    {
+      "lat": 765.2456813072899,
+      "lng": 2312.162229562221
+    }
+  ],
+  "kid": [
+    {
+      "lat": 3118.2786029422723,
+      "lng": 1581.0693382175348
+    },
+    {
+      "lat": 1220.5320013116514,
+      "lng": 1744.5482046534096
+    },
+    {
+      "lat": 2457.284125292513,
+      "lng": 3310.289851863779
+    }
+  ],
+  "merchant": [
+    {
+      "lat": 3606.9963873819565,
+      "lng": 2613.1938529735335
+    },
+    {
+      "lat": 2723.995363491779,
+      "lng": 2319.653069677565
+    },
+    {
+      "lat": 2030.7458926382226,
+      "lng": 2849.1674637820242
+    },
+    {
+      "lat": 1576.2890250816306,
+      "lng": 2021.4467428895089
+    },
+    {
+      "lat": 1613.0392659006004,
+      "lng": 2079.221932572313
+    }
+  ],
+  "monsterden": [
+    {
+      "lat": 3427.2462907267236,
+      "lng": 2444.690363493665
+    },
+    {
+      "lat": 3065.9962022626123,
+      "lng": 3221.695706759714
+    },
+    {
+      "lat": 2854.2455404200014,
+      "lng": 3459.4288045915987
+    },
+    {
+      "lat": 2413.7461809656966,
+      "lng": 2859.1650647646147
+    },
+    {
+      "lat": 2081.7459041057928,
+      "lng": 1404.431857886484
+    }
+  ],
+  "monsternest": [
+    {
+      "lat": 2405.677583372042,
+      "lng": 1289.1537239550405
+    },
+    {
+      "lat": 2399.6775440546594,
+      "lng": 1296.156559157434
+    },
+    {
+      "lat": 1874.6766004374713,
+      "lng": 1325.8988168739747
+    },
+    {
+      "lat": 2234.9278962728804,
+      "lng": 2364.6788045915987
+    },
+    {
+      "lat": 1532.9276603685835,
+      "lng": 2686.6748789267463
+    },
+    {
+      "lat": 2429.9280453512906,
+      "lng": 2779.1789136378447
+    },
+    {
+      "lat": 2971.6787923815646,
+      "lng": 3523.979947280928
+    },
+    {
+      "lat": 2191.927657092135,
+      "lng": 3673.4209532618934
+    },
+    {
+      "lat": 1055.854812887639,
+      "lng": 2706.391413519428
+    },
+    {
+      "lat": 1019.8554452422129,
+      "lng": 2555.844523633689
+    }
+  ],
+  "notice": [
+    {
+      "lat": 2982.782001311651,
+      "lng": 2103.3168223170437
+    },
+    {
+      "lat": 2692.786390872099,
+      "lng": 1759.3426857740924
+    },
+    {
+      "lat": 2396.530797722496,
+      "lng": 2391.608083085098
+    },
+    {
+      "lat": 1698.7960903847013,
+      "lng": 2037.0935914982692
+    },
+    {
+      "lat": 1328.7932584102189,
+      "lng": 2564.7888455035827
+    },
+    {
+      "lat": 2049.285116483582,
+      "lng": 2854.316218500926
+    },
+    {
+      "lat": 2289.2891520472194,
+      "lng": 3265.322055390065
+    }
+  ],
+  "pid": [
+    {
+      "lat": 3598.9966282009264,
+      "lng": 2611.188727799976
+    },
+    {
+      "lat": 3458.7457091571027,
+      "lng": 2627.195706759714
+    },
+    {
+      "lat": 2828.7461400100897,
+      "lng": 1306.911139099762
+    },
+    {
+      "lat": 1913.2453571962567,
+      "lng": 3610.4019965679067
+    },
+    {
+      "lat": 1621.495740283364,
+      "lng": 3281.6724799093363
+    }
+  ],
+  "placeofpower": [
+    {
+      "title": "Place of Power - Yrden",
+      "lat": 3800.768620232222,
+      "lng": 2368.302833910313
+    },
+    {
+      "title": "Place of Power - Axii",
+      "lat": 1958.023505388204,
+      "lng": 1436.0409588599953
+    },
+    {
+      "title": "Place of Power - Aard",
+      "lat": 1155.0992083820342,
+      "lng": 1898.067424812603
+    },
+    {
+      "title": "Place of Power - Quen",
+      "lat": 1540.2927628146845,
+      "lng": 3203.5513243700184
+    },
+    {
+      "title": "Place of Power - Igni",
+      "lat": 2186.0382316555124,
+      "lng": 3666.785121970856
+    }
+  ],
+  "pointofinterest": [
+    {
+      "title": "Witchergear: Feline trousers and boots",
+      "descr": "located in a chest, ontop of the broken bridge",
+      "lat": 3725.496538098591,
+      "lng": 2281.6757512967133
+    },
+    {
+      "title": "Witchergear: Feline armor",
+      "descr": "the Diagram is inside the House, behind a Picurefarm on the Wall",
+      "lat": 3623.246084310464,
+      "lng": 2587.476566847305
+    },
+    {
+      "title": "Witchergear: Feline steel sword, silver sword and gauntlets",
+      "descr": "inside the Cave",
+      "lat": 3427.9956272458885,
+      "lng": 2445.958574216731
+    },
+    {
+      "title": "Witchergear: Manticore trousers & boots",
+      "descr": "inside the temple",
+      "lat": 3125.7455518875713,
+      "lng": 1939.1689904294672
+    },
+    {
+      "title": "Witchergear: Manticore gauntlets",
+      "descr": "bottom of the lake",
+      "lat": 2916.9957997564784,
+      "lng": 3391.901610968631
+    },
+    {
+      "title": "Witchergear: Griffin armor, trousers and silver sword",
+      "descr": "Located behind a Illustion. In the next Room find the Crystal and use it on the Door, use Aard to activate the Portal. After the Portal there are the three Diagrams.",
+      "lat": 2564.746297279621,
+      "lng": 3443.926078435451
+    },
+    {
+      "title": "Witchergear: Griffin steel sword, gauntlets and boots",
+      "lat": 2200.4958598737367,
+      "lng": 3721.2089013554687
+    },
+    {
+      "title": "Witchergear: Ursine steel sword, trousers and boots",
+      "descr": "inside the Cave",
+      "lat": 2330.746079395791,
+      "lng": 2765.6354041857285
+    },
+    {
+      "title": "Witchergear: Ursine silver sword, armor and gauntlets",
+      "lat": 2090.2459335938297,
+      "lng": 2926.664628579631
+    },
+    {
+      "title": "Witchergear: Wolven steel sword, silver sword, gauntlets, armor, trousers and boots",
+      "descr": "The Key for the Portal is jsut outside the Cave. The are all Wolven Digramms inside, three on two locations inside the cave",
+      "lat": 1585.995779600747,
+      "lng": 3222.928368406615
+    },
+    {
+      "title": "Witchergear: Manticore silver sword",
+      "descr": "At the end Cave",
+      "lat": 1496.995699327757,
+      "lng": 1639.6540510937782
+    },
+    {
+      "title": "Witchergear: Manticore steel sword",
+      "lat": 2230.246210453734,
+      "lng": 1364.1754241579756
+    }
+  ],
+  "signalfire": [
+    {
+      "lat": 3731.746765811766,
+      "lng": 2284.9152828571064
+    },
+    {
+      "lat": 2589.2463054707423,
+      "lng": 3502.169862799434
+    }
+  ],
+  "tavern": [
+    {
+      "title": "The Silver Salamander Inn",
+      "descr": "Will become accessible when the area is cleared.",
+      "lat": 3628.7469099755035,
+      "lng": 2119.6569953424178
+    },
+    {
+      "title": "The Ruddy Brush Auberge",
+      "descr": "Will become accessible when the area is cleared.",
+      "lat": 2890.496372637938,
+      "lng": 1520.1559048799586
+    },
+    {
+      "title": "The Cockatrice Inn",
+      "lat": 2401.745820556354,
+      "lng": 2402.6733522793033
+    },
+    {
+      "lat": 2059.7456452663555,
+      "lng": 2003.1567772499257
+    },
+    {
+      "title": "The Barrel and Bung Inn",
+      "lat": 2019.4960482695296,
+      "lng": 2895.6867649675496
+    },
+    {
+      "title": "The Bells of Beauclair - House of Pleasure",
+      "lat": 1656.4911201573855,
+      "lng": 2078.3362361189998
+    },
+    {
+      "title": "The Pheasantry",
+      "lat": 1635.4909825465456,
+      "lng": 1957.2834577359818
+    },
+    {
+      "lat": 1314.4959794641097,
+      "lng": 2591.6916720486156
+    }
+  ],
+  "tempcontract": [
+    {
+      "title": "Contract: Big Game Hunter",
+      "descr": "Level 37 Witcher Contract. Started on the Notice Board near Dulcinea Windmill",
+      "lat": 2377.996108883828,
+      "lng": 2381.4232432330573
+    },
+    {
+      "title": "Contract: Feet as Cold as Ice",
+      "descr": "Level 45 - You get this Quest at the Notice Board near the Cockatrice Inn",
+      "lat": 2380.746126904295,
+      "lng": 2391.4276050828935
+    },
+    {
+      "title": "Contract: The Tufo Monster",
+      "descr": "Level 48 - You get this Quest at the Notice Board in Flovive",
+      "lat": 2048.9959221262598,
+      "lng": 2868.9071043886634
+    },
+    {
+      "title": "Contract: Bovine Blues",
+      "descr": "Level 38 - ",
+      "lat": 2284.996113798501,
+      "lng": 3280.672588955582
+    }
+  ],
+  "vineyardinfestation": [
+    {
+      "lat": 3117.746723217935,
+      "lng": 2256.929349822828
+    },
+    {
+      "lat": 2405.74597946411,
+      "lng": 2000.1825121639595
+    },
+    {
+      "lat": 2522.4960449930813,
+      "lng": 2760.4288045915987
+    },
+    {
+      "lat": 2484.2457402833643,
+      "lng": 3046.2251492461082
+    },
+    {
+      "lat": 1484.2455748227114,
+      "lng": 2415.91571904209
+    }
+  ]
+}

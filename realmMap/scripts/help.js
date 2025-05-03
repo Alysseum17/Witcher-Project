@@ -1,5 +1,4 @@
 import { imageUrl, mapCenter, initialZoom, imageBounds } from './helper.js';
-import L from 'leaflet.js';
 const map = L.map('map', {
   crs: L.CRS.Simple,
   center: mapCenter,
@@ -45,7 +44,7 @@ const features = {
   tavern: [],
   vineyardinfestation: [],
 };
-map.on('click', onMapClick);
+map.on('contextmenu', onMapClick);
 
 function onMapClick(e) {
   const { lat, lng } = e.latlng;
@@ -60,6 +59,8 @@ function onMapClick(e) {
   `;
 
   const popup = L.popup().setLatLng(e.latlng).setContent(formHtml).openOn(map);
+
+  const marker = L.marker().setLatLng(e.latlng).addTo(map);
 
   document.getElementById('featureForm').addEventListener('submit', (ev) => {
     ev.preventDefault();
@@ -78,3 +79,7 @@ function onMapClick(e) {
     map.closePopup(popup);
   });
 }
+
+document.querySelector('.del--markers').addEventListener('click', () => {
+  console.log(features);
+});

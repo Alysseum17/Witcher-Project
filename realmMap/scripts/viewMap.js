@@ -31,7 +31,7 @@ class Map {
     this.#map.setMaxBounds(this.#imageBounds);
     L.imageOverlay(this.#imageUrl, this.#imageBounds).addTo(this.#map);
   }
-  createMarkers(features, descriptions = [], ownMarker = false) {
+  createMarkers(features, descriptions = [], names = [], ownMarker = false) {
     const featuresObj = ownMarker ? JSON.parse(features) : features;
     const entries = ownMarker
       ? [[this.#ownType, featuresObj]]
@@ -56,13 +56,15 @@ class Map {
         });
         this.#featureGroup[key].addLayer(marker);
         marker.bindPopup(
-          descriptions[key]
-            ? `<span class = "heading">${item.title}</span>
-          <br>${descriptions[key]}`
-            : `<span class = "heading">${item.title}</span>
-          <br>${item.descr}`,
+          // descriptions[key]
+          //   ? `<span class = "heading">${item.title}</span>
+          // <br>${descriptions[key]}`
+          //   : `<span class = "heading">${item.title}</span>
+          // <br>${item.descr}`,
+          `<span class = "heading">${item.title ? item.title : names[key]}</span>
+          <br>${item.descr ? item.descr : descriptions[key] ? descriptions[key] : ''}`,
         );
-        marker.bindTooltip(item.title, {
+        marker.bindTooltip(`${item.title ? item.title : names[key]}`, {
           offset: L.point(10, -25),
         });
         marker.on('click', () => {
@@ -74,13 +76,13 @@ class Map {
     }
   }
 
-  createSideBar(features) {
+  createSideBar(features, names) {
     for (const [key, value] of Object.entries(features)) {
       if (value.length > 0) {
         const markup = `
           <div class="activity" data-name = "${key}">
               <img src="images/icons/${key}.png" />
-              <p class="name">${value[0].title}</p>
+              <p class="name">${names[key]}</p>
               <p class="counter">${value.length}</p>
           </div>
         `;

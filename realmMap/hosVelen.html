@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/navigation.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      defer
+    ></script>
+    <script type="module" src="scripts/controller.js"></script>
+    <script type="module" src="scripts/viewMap.js"></script>
+    <script type="module" src="scripts/modal.js"></script>
+    <script type="module" src="scripts/helper.js"></script>
+    <title>Velen & Novigrad|Realm Map</title>
+  </head>
+  <body>
+    <main>
+      <div class="content">
+        <div class="side--bar blur">
+          <div class="title">
+            <a href="../realmMap.html" class="maps--nav-link arrow">&larr;</a>
+            <h1 class="secondary--heading">The Witcher's Atlas</h1>
+          </div>
+          <div class="grid-space">
+            <div class="grid grid--2-cols activities"></div>
+            <div class="grid grid--2-cols abilities">
+              <div class="hide flex--container">
+                <p class="name--show">Hide all</p>
+                <img src="images/icons/show.png" class="show" />
+              </div>
+              <a href="#" class="del del--markers button--cta"
+                >Delete all markers</a
+              >
+              <a href="#" class="del del--markers--one button--cta"
+                >Delete one marker</a
+              >
+            </div>
+            <nav class="flex--container maps--nav">
+              <a href="whiteOrchard.html" class="maps--nav-link">
+                White Orchard
+              </a>
+              <a href="skellige.html" class="maps--nav-link"> Skellige </a>
+              <a href="kaerMorhen.html" class="maps--nav-link"> Kaer Morhen </a>
+              <a href="toussaint.html" class="maps--nav-link"> Toussaint </a>
+            </nav>
+          </div>
+        </div>
+        <div class="map" id="map"></div>
+      </div>
+    </main>
+    <div class="modal">
+      <div class="modal__backdrop"></div>
+      <div class="modal__box">
+        <p class="modal__text">Are you sure?</p>
+        <div class="modal__actions">
+          <button class="btn btn--yes">Yes</button>
+          <button class="btn btn--no">No</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
