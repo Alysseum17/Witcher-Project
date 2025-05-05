@@ -56,20 +56,15 @@ class Map {
         });
         this.#featureGroup[key].addLayer(marker);
         marker.bindPopup(
-          // descriptions[key]
-          //   ? `<span class = "heading">${item.title}</span>
-          // <br>${descriptions[key]}`
-          //   : `<span class = "heading">${item.title}</span>
-          // <br>${item.descr}`,
-          `<span class = "heading">${item.title ? item.title : names[key]}</span>
-          <br>${item.descr ? item.descr : descriptions[key] ? descriptions[key] : ''}`,
+          `<span class = "heading">${item.title || names[key]}</span>
+          <br>${key === 'pointofinterest' ? '' : item.descr || descriptions[key]}`,
         );
-        marker.bindTooltip(`${item.title ? item.title : names[key]}`, {
+        marker.bindTooltip(`${names[key]}`, {
           offset: L.point(10, -25),
         });
         marker.on('click', () => {
           const { lat, lng } = item;
-          this.#map.setView([lat, lng], 0);
+          this.#map.setView([lat, lng], this.#map.getZoom());
         });
       });
       this.#featureGroup[key].addTo(this.#map);
@@ -201,7 +196,7 @@ class Map {
       const arr = raw ? JSON.parse(raw) : [];
       arr.push(feature);
       localStorage.setItem(this.#ownType, JSON.stringify(arr));
-      this.createMarkers(localStorage.getItem(this.#ownType), [], true);
+      this.createMarkers(localStorage.getItem(this.#ownType), [], [], true);
     });
   }
   _openModal(e) {

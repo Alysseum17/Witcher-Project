@@ -1,28 +1,20 @@
+const width = {
+  whiteOrchard: 5100,
+  hosVelen: 8200,
+  skellige: 7400,
+  kaerMorhen: 4100,
+  toussaint: 4600,
+};
+const height = {
+  whiteOrchard: 4100,
+  hosVelen: 9200,
+  skellige: 7400,
+  kaerMorhen: 5100,
+  toussaint: 4600,
+};
 export const mapName = location.pathname.split('/').pop().replace('.html', '');
-export const imageWidth =
-  mapName === 'whiteOrchard'
-    ? 5100
-    : mapName === 'hosVelen'
-      ? 8200
-      : mapName === 'skellige'
-        ? 7400
-        : mapName === 'kaerMorhen'
-          ? 4100
-          : mapName === 'toussaint'
-            ? 4600
-            : 0;
-export const imageHeight =
-  mapName === 'whiteOrchard'
-    ? 4100
-    : mapName === 'hosVelen'
-      ? 9200
-      : mapName === 'skellige'
-        ? 7400
-        : mapName === 'kaerMorhen'
-          ? 5100
-          : mapName === 'toussaint'
-            ? 4600
-            : 0;
+export const imageWidth = width[mapName];
+export const imageHeight = height[mapName];
 export const imageUrl = `../images/${mapName}.webp`;
 export const mapCenter = [imageHeight / 2, imageWidth / 2];
 export const initialZoom = -1;
