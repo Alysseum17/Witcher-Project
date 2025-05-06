@@ -124,3 +124,10 @@ html {
 .margin--bottom {
   margin-bottom: 6.4rem;
 }
+.hidden {
+  display: none;
+}
+.full--grid {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
