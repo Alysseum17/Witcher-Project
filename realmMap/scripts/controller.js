@@ -4,10 +4,6 @@ const init = () => {
   map.init();
   map.createSideBar(data, names);
   map.createMarkers(data, descriptions, names);
-  // // ► Запустити «ефект маяка» на Waypoints відразу
-
-  // // ► Увімкнути автофокус на POI
-  // map.startAutoFocus('pointofinterest');
   if (localStorage.getItem('waypoint'))
     map.createMarkers(
       localStorage.getItem('waypoint'),
@@ -15,7 +11,7 @@ const init = () => {
       names,
       true,
     );
-  map.pulseOneMarker();
+  map.pulseOneMarkerListener();
   map.removeMarkerListener();
   map.removeAllMarkersListener();
   map.hideAllListener();

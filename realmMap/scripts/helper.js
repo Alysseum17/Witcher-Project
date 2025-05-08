@@ -22,17 +22,18 @@ export const imageBounds = [
   [0, 0],
   [imageHeight, imageWidth],
 ];
-export function* colorCycle(list = ['#c00', '#0c0', '#00c', '#cc0']) {
+// Generators
+const colorCycle = function* (list = ['#c00', '#0c0', '#00c', '#cc0']) {
   for (;;) for (const c of list) yield c;
-}
+};
 
-export function* randomFeatureCoords(featureGroup) {
+const randomFeatureCoords = function* (featureGroup) {
   while (true) {
     const layers = Object.values(featureGroup._layers);
     const r = Math.floor(Math.random() * layers.length);
     yield layers[r].getLatLng();
   }
-}
+};
 export const opacityGenerator = function* () {
   while (true) {
     yield 0.3;
@@ -40,7 +41,12 @@ export const opacityGenerator = function* () {
   }
 };
 
-export function consumeWithTimeout(iterator, ms, func, interval = 200) {
+export const consumeWithTimeout = function (
+  iterator,
+  ms,
+  func,
+  interval = 200,
+) {
   const deadline = Date.now() + ms;
   (function step() {
     if (Date.now() >= deadline) {
@@ -55,4 +61,4 @@ export function consumeWithTimeout(iterator, ms, func, interval = 200) {
     func(value);
     setTimeout(step, interval);
   })();
-}
+};

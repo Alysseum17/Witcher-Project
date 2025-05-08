@@ -3,7 +3,6 @@ import {
   mapCenter,
   initialZoom,
   imageBounds,
-  randomFeatureCoords,
   opacityGenerator,
   consumeWithTimeout,
 } from './helper.js';
@@ -119,7 +118,7 @@ class Map {
       this._cancelDelete.bind(this),
     );
   }
-  pulseOneMarker() {
+  pulseOneMarkerListener() {
     this.#activitiesList.addEventListener(
       'contextmenu',
       this._startMarkerPulse.bind(this),
