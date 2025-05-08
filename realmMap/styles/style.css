@@ -294,3 +294,36 @@
   flex-direction: column;
   justify-items: space-between;
 }
+.witchers {
+  gap: 2.4rem;
+  padding: 0 2.4rem;
+}
+.witchers:not(:last-child) {
+  margin-bottom: 4.8rem;
+}
+
+.witcher--card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.witcher--card:hover {
+  transform: translateY(-10%);
+}
+.witcher--active {
+  box-shadow: 0 0 12px 3px rgba(225, 65, 55, 0.6);
+}
+.witcher--img {
+  width: 100%;
+  height: auto;
+}
+.witcher--name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4e372b;
+}
