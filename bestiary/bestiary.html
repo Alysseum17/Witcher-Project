@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/navigationFooter.css" />
+    <link rel="stylesheet" href="styles/bestiary.css" />
+    <script defer src="scripts/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Witcher|Explore Witcher`s world</title>
+  </head>
+  <body>
+    <header class="main--header">
+      <div class="flex--container flex--header">
+        <a href="#">
+          <img
+            src="../images/logo.png"
+            alt="Witcher logo"
+            class="logo--image"
+          />
+        </a>
+        <nav class="main--nav">
+          <ul class="main--nav-list">
+            <li><a href="../homePage.html" class="main--nav-link">Home</a></li>
+            <li><a href="#" class="main--nav-link">Bestiary</a></li>
+            <li><a href="../realmMap.html" class="main--nav-link">Map</a></li>
+            <li><a href="#" class="main--nav-link">Questions</a></li>
+          </ul>
+        </nav>
+        <form action="#" class="login--form flex--container">
+          <div>
+            <input class="login" type="text" placeholder="Login" required />
+          </div>
+          <div>
+            <input
+              class="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div>
+            <button class="confirm--button">
+              <span class="arrow">&rarr;</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </header>
+    <main>
+      <div class="content content--grid grid">
+        <div class="search">
+          <div class="search--container flex--container">
+            <input
+              type="text"
+              class="search--input"
+              placeholder="Search for a character..."
+            />
+            <button class="search--button">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="popular--searches grid grid--2-cols">
+          <h2 class="secondary--heading heading--popular">Popular Searches</h2>
+          <div class="popular--card flex--container card" data-name="Geralt">
+            <img
+              src="../images/geralt.webp"
+              alt="Geralt"
+              class="img--popular"
+            /><a href="#" class="popular--link">Geralt of Rivia</a>
+          </div>
+          <div class="popular--card flex--container card" data-name="Ciri">
+            <img src="../images/ciri.png" alt="Ciri" class="img--popular" /><a
+              href="#"
+              class="popular--link"
+              >Cirrila</a
+            >
+          </div>
+          <div class="popular--card flex--container card" data-name="Yennefer">
+            <img
+              src="../images/yennefer.png"
+              alt="Yennefer"
+              class="img--popular"
+            /><a href="#" class="popular--link">Yennefer of Vengerberg</a>
+          </div>
+          <div class="popular--card flex--container card" data-name="Triss">
+            <img
+              src="../images/triss.png"
+              alt="Triss Merigold"
+              class="img--popular"
+            /><a href="#" class="popular--link">Triss Merigold</a>
+          </div>
+          <div class="popular--card flex--container card" data-name="Dandelion">
+            <img
+              src="../images/dandelion.png"
+              alt="Dandelion"
+              class="img--popular"
+            /><a href="#" class="popular--link">Dandelion</a>
+          </div>
+          <div class="popular--card flex--container card" data-name="Regis">
+            <img src="../images/regis.png" alt="Regis" class="img--popular" /><a
+              href="#"
+              class="popular--link"
+              >Regis</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo--col">
+          <a href="#" class="footer--logo">
+            <img
+              class="footer--logo logo--image"
+              alt="Witcher logo"
+              src="../images/logo.png"
+            />
+          </a>
+
+          <ul class="social--links">
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer--link" href="#"
+                ><ion-icon class="social--icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy; 2025 by Witcher, Inc. All rights reserved.
+          </p>
+        </div>
+        <div class="address--col">
+          <p class="footer--heading">Contact us</p>
+          <address class="contacts">
+            <p class="info">You can mail or phone us</p>
+            <p>
+              <a class="footer--link" href="tel:+380682580514">+380682580514</a
+              ><br />
+              <a class="footer--link" href="mailto:witcher@gmail.com"
+                >witcher@gmail.com</a
+              >
+            </p>
+          </address>
+        </div>
+        <nav class="nav--col">
+          <p class="footer--heading">Account</p>
+          <ul class="footer--nav">
+            <li><a class="footer--link" href="#">Create account</a></li>
+            <li><a class="footer--link" href="#">Sign in</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav--col">
+          <p class="footer--heading">Resources</p>
+          <ul class="footer--nav">
+            <li>
+              <a
+                class="footer--link"
+                href="https://witcher.fandom.com/wiki/Witcher_Wiki"
+                >Witcher Bestiary</a
+              >
+            </li>
+            <li><a class="footer--link" href="#">Help center</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
