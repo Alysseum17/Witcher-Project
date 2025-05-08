@@ -1,6 +1,8 @@
 .content {
-  grid-template-columns: 3fr 2fr;
   margin: 2.4rem 1.2rem 9.6rem 1.2rem;
+}
+.content--grid {
+  grid-template-columns: 3fr 2fr;
   align-items: start;
 }
 .search--container {
@@ -137,10 +139,6 @@
 .popular--searches {
   row-gap: 1.6rem;
 }
-/* .one--column {
-  grid-template-columns: 1fr;
-  justify-items: center;
-} */
 .one--column .popular--card {
   width: 30rem;
 }
