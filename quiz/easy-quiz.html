@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/level-quiz.css" />
+    <script defer src="./script/easy-quiz.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <header class="main--header">
+      <div class="flex--container flex--header">
+        <a href="#">
+          <img src="../images/logo.png" alt="Witcher logo" class="logo--image" />
+        </a>
+        <nav class="main--nav">
+          <ul class="main--nav-list">
+            <li><a href = "../homePage.html" class="main--nav-link">Home</a></li>
+            <li><a href "#" class="main--nav-link">Bestiary</a></li>
+            <li><a href "#" class="main--nav-link">Map</a></li>
+            <li><a href = "../questions.html" class="main--nav-link">Questions</a></li>
+          </ul>
+        </nav>
+        <form action="#" class="login--form flex--container">
+          <div>
+            <input class="login" type="text" placeholder="Login" required />
+          </div>
+          <div>
+            <input
+              class="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div>
+            <button class="confirm--button"><span class = "arrow">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+    </header>
+    <div class="quiz-container">
+        <div class="quiz" id="quiz">
+        <div class="quiz-header" id="header">
+        <h2 class="title">Loading question...</h2>
+
+        <h2 class="title">%title%</h2>
+        <h3 class="summary">%message%</h3>
+        <p class="result">%result%</p>
+      </div>
+
+      <ul class="quiz-list" id="list">
+        <li>
+          <label>
+            <input type="radio" class="answer" name="answer" />
+            <span>answer...</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" class="answer" name="answer" />
+            <span>answer</span>
+          </label>
+        </li>
+      </ul>
+
+      <button class="quiz-submit submit" id="submit">Answer</button>
+    </div>
+  </div>
+  </body>
+</html>

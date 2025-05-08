@@ -11,6 +11,7 @@ const init = () => {
       names,
       true,
     );
+  map.pulseOneMarkerListener();
   map.removeMarkerListener();
   map.removeAllMarkersListener();
   map.hideAllListener();

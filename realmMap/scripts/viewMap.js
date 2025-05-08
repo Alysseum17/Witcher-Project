@@ -1,4 +1,11 @@
-import { imageUrl, mapCenter, initialZoom, imageBounds } from './helper.js';
+import {
+  imageUrl,
+  mapCenter,
+  initialZoom,
+  imageBounds,
+  opacityGenerator,
+  consumeWithTimeout,
+} from './helper.js';
 class Map {
   #map = L.map('map', {
     crs: L.CRS.Simple,
@@ -111,6 +118,12 @@ class Map {
       this._cancelDelete.bind(this),
     );
   }
+  pulseOneMarkerListener() {
+    this.#activitiesList.addEventListener(
+      'contextmenu',
+      this._startMarkerPulse.bind(this),
+    );
+  }
   _hideAll(e) {
     e.preventDefault();
     if (this.#isShown) {
@@ -165,38 +178,83 @@ class Map {
   }
   _createOwnMarker(e) {
     const { lat, lng } = e.latlng;
-    const formHtml = `
-        <form class="popup-form" id="featureForm">
-          <label>Name:
-            <input type="text" name="title" required />
-          </label>
 
-          <label>Description:
-            <textarea name="descr"></textarea>
-          </label>
+    const markerForm = `
+      <form class="popup-form" id="markerForm">
+        <label>Name:
+          <input type="text" name="title" required />
+        </label>
+        <label>Description:
+          <textarea name="descr"></textarea>
+        </label>
+        <button type="submit" class="btnPopup" >Save Marker</button>
+      </form>
+    `;
+    const contractForm = `
+      <form class="popup-form" id="contractForm">
+        <label>Monster:
+          <input type="text" name="monster" required></input>
+        </label>
+        <label>Reward:
+          <input type="number" name="reward" min="0" required />
+        </label>
+        <button type="submit" class="btnPopup" >Save Contract</button>
+      </form>
+    `;
 
-          <button type="submit">Save</button>
-        </form>
-      `;
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `
+      <div id="formContainer">${markerForm}</div>
+      <button class="btnPopup switchBtn" style="margin-top:8px;">Switch to Contract</button>
+    `;
     const popup = L.popup()
       .setLatLng(e.latlng)
-      .setContent(formHtml)
+      .setContent(wrapper)
       .openOn(this.#map);
-    document.getElementById('featureForm').addEventListener('submit', (ev) => {
-      ev.preventDefault();
-      const data = Object.fromEntries(new FormData(ev.target).entries());
-      const feature = {
-        title: data.title,
-        descr: data.descr,
-        lat,
-        lng,
-      };
-      this.#map.closePopup(popup);
-      const raw = localStorage.getItem(this.#ownType);
-      const arr = raw ? JSON.parse(raw) : [];
-      arr.push(feature);
-      localStorage.setItem(this.#ownType, JSON.stringify(arr));
-      this.createMarkers(localStorage.getItem(this.#ownType), [], [], true);
+
+    const attachHandler = () => {
+      if (document.getElementById('markerForm')) {
+        document
+          .getElementById('markerForm')
+          .addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            const data = Object.fromEntries(new FormData(ev.target).entries());
+            const feature = { title: data.title, descr: data.descr, lat, lng };
+            this.#map.closePopup(popup);
+            const raw = localStorage.getItem(this.#ownType);
+            const arr = raw ? JSON.parse(raw) : [];
+            arr.push(feature);
+            localStorage.setItem(this.#ownType, JSON.stringify(arr));
+            this.createMarkers(
+              localStorage.getItem(this.#ownType),
+              [],
+              [],
+              true,
+            );
+          });
+      }
+      if (document.getElementById('contractForm')) {
+        document
+          .getElementById('contractForm')
+          .addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            const data = Object.fromEntries(new FormData(ev.target).entries());
+            console.log('New contract:', data.monster, data.reward);
+            this.#map.closePopup(popup);
+          });
+      }
+    };
+    attachHandler();
+    wrapper.querySelector('.switchBtn').addEventListener('click', () => {
+      const container = wrapper.querySelector('#formContainer');
+      if (container.querySelector('#markerForm')) {
+        container.innerHTML = contractForm;
+        wrapper.querySelector('.switchBtn').textContent = 'Switch to Marker';
+      } else {
+        container.innerHTML = markerForm;
+        wrapper.querySelector('.switchBtn').textContent = 'Switch to Contract';
+      }
+      attachHandler();
     });
   }
   _openModal(e) {
@@ -253,6 +311,32 @@ class Map {
     };
     this.#sideBar.addEventListener('click', func);
   }
+  _startMarkerPulse(e) {
+    e.preventDefault();
+    const activity = e.target.closest('.activity');
+    if (!activity) return;
+    const key = activity.dataset.name;
+    const group = this.#featureGroup[key];
+    if (!group) return;
+    const gen = opacityGenerator();
+    consumeWithTimeout(
+      gen,
+      5000,
+      (opacity) => {
+        group.eachLayer((layer) => layer.setOpacity(opacity));
+      },
+      250,
+    );
+  }
+  // startAutoFocus(key = 'pointofinterest') {
+  //   if (!this.#featureGroup[key]) return;
+  //   const coordsGen = randomFeatureCoords(this.#featureGroup[key]);
+  //   this._focusInterval && clearInterval(this._focusInterval);
+  //   this._focusInterval = setInterval(() => {
+  //     const { lat, lng } = coordsGen.next().value;
+  //     this.#map.setView([lat, lng], this.#map.getZoom());
+  //   }, 5000);
+  // }
 }
 
 export default new Map(imageUrl, imageBounds);

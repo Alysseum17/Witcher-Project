@@ -1,0 +1,74 @@
+/*//////////////////////////////////////*/
+/*Section 2*/
+
+.test--section {
+  padding-top: 4.8rem;
+  margin-bottom: 15rem;
+}
+
+/* Стилі для контейнера */
+.difficulty-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16rem;
+  margin-top: 15rem;
+}
+
+/* Стилі для блоку з кнопками */
+.difficulty-buttons {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  width: 50%;
+}
+
+/* Загальні стилі для ВСІХ кнопок */
+.difficulty-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 600;
+  padding: 1.6rem 2.4rem;
+  border-radius: 9px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+/* Унікальні стилі для кожної кнопки */
+.difficulty-btn.easy {
+  background-color: #e67e22;
+  color: #eee;
+}
+
+.difficulty-btn.medium {
+  background-color: #e67e22;
+  color: #eee;
+}
+
+.difficulty-btn.hard {
+  background-color: #e67e22;
+  color: #eee;
+}
+
+/* Стилі для зображення */
+.difficulty-image {
+  margin-right: auto;
+  width: 60%;
+  border-radius: 12px;
+}
+
+/* /////////// */
+/* SECTION 3 */
+.testcreate--section {
+  margin-bottom: 9.6rem;
+  padding-bottom: 6.4rem;
+  position: relative;
+}
+
+.custom-test-image {
+  width: 105%;
+}
