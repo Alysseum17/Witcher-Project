@@ -212,14 +212,14 @@
 .open--modal {
   display: block;
 }
-.modal__backdrop {
+.modal--backdrop {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
 }
 
-.modal__box {
+.modal--box {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -233,14 +233,14 @@
   font-family: 'Rubik', sans-serif;
 }
 
-.modal__text {
+.modal--text {
   margin: 0 0 1rem;
   font-size: 2.2rem;
   font-weight: 600;
   color: #4e372b;
 }
 
-.modal__actions {
+.modal--actions {
   display: flex;
   gap: 0.8rem;
   justify-content: center;

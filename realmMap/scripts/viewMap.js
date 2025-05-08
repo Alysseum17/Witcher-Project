@@ -5,6 +5,9 @@ import {
   imageBounds,
   opacityGenerator,
   consumeWithTimeout,
+  subscribe,
+  publish,
+  mapName,
 } from './helper.js';
 class Map {
   #map = L.map('map', {
@@ -18,6 +21,10 @@ class Map {
   #isShown = true;
   #imageUrl;
   #imageBounds;
+  #mapName;
+  #contracts = [];
+  #offSubscriptions = {};
+  #activeWitchers = [];
   #featureGroup = {};
   #btnDeleteOne = document.querySelector('.del--markers--one');
   #btnDeleteAll = document.querySelector('.del--markers');
@@ -28,10 +35,12 @@ class Map {
   #modalWindow = document.querySelector('.modal');
   #btnConfirmModal = document.querySelector('.btn--yes');
   #btnCloseModal = document.querySelector('.btn--no');
+  #witchers = document.querySelector('.witchers');
 
   constructor(imageUrl, imageBounds) {
     this.#imageUrl = imageUrl;
     this.#imageBounds = imageBounds;
+    this.#mapName = mapName;
   }
 
   init() {
@@ -66,7 +75,7 @@ class Map {
           `<span class = "heading">${item.title || names[key]}</span>
           <br>${key === 'pointofinterest' ? '' : item.descr || descriptions[key]}`,
         );
-        marker.bindTooltip(`${names[key]}`, {
+        marker.bindTooltip(`${key === 'waypoint' ? item.title : names[key]}`, {
           offset: L.point(10, -25),
         });
         marker.on('click', () => {
@@ -221,12 +230,12 @@ class Map {
             const data = Object.fromEntries(new FormData(ev.target).entries());
             const feature = { title: data.title, descr: data.descr, lat, lng };
             this.#map.closePopup(popup);
-            const raw = localStorage.getItem(this.#ownType);
+            const raw = localStorage.getItem(this.#mapName);
             const arr = raw ? JSON.parse(raw) : [];
             arr.push(feature);
-            localStorage.setItem(this.#ownType, JSON.stringify(arr));
+            localStorage.setItem(this.#mapName, JSON.stringify(arr));
             this.createMarkers(
-              localStorage.getItem(this.#ownType),
+              localStorage.getItem(this.#mapName),
               [],
               [],
               true,
@@ -240,6 +249,32 @@ class Map {
             ev.preventDefault();
             const data = Object.fromEntries(new FormData(ev.target).entries());
             console.log('New contract:', data.monster, data.reward);
+            publish('new-contract', {
+              monster: data.monster,
+              reward: data.reward,
+              coords: { lat, lng },
+            });
+            const marker = L.marker([lat, lng], {
+              icon: L.icon({
+                iconUrl: `./images/icons/tempcontract.png`,
+                iconSize: [25, 35],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41],
+              }),
+            }).addTo(this.#map);
+            marker.bindPopup(
+              `<span class = "heading">Contract</span>
+              <br>Contract for ${data.monster} for ${data.reward} crowns}`,
+            );
+            this.#contracts.push([
+              marker,
+              {
+                monster: data.monster,
+                reward: data.reward,
+                coords: { lat, lng },
+              },
+            ]);
             this.#map.closePopup(popup);
           });
       }
@@ -263,9 +298,9 @@ class Map {
   }
   _confirmDelete(e) {
     e.preventDefault();
-    const raw = localStorage.getItem(this.#ownType);
+    const raw = localStorage.getItem(this.#mapName);
     if (raw) {
-      localStorage.removeItem(this.#ownType);
+      localStorage.removeItem(this.#mapName);
       this.#map.removeLayer(this.#featureGroup.waypoint);
       this.#featureGroup.waypoint.clearLayers();
     }
@@ -286,7 +321,7 @@ class Map {
         const marker = e.layer;
         this.#map.removeLayer(marker);
         this.#featureGroup.waypoint.removeLayer(marker);
-        const raw = localStorage.getItem(this.#ownType);
+        const raw = localStorage.getItem(this.#mapName);
         const arr = raw ? JSON.parse(raw) : [];
         const { lat, lng } = marker.getLatLng();
         const index = arr.findIndex(
@@ -294,7 +329,7 @@ class Map {
         );
         if (index !== -1) {
           arr.splice(index, 1);
-          localStorage.setItem(this.#ownType, JSON.stringify(arr));
+          localStorage.setItem(this.#mapName, JSON.stringify(arr));
         }
       });
     }
@@ -327,6 +362,55 @@ class Map {
       },
       250,
     );
+  }
+  _showToast(text, duration = 1000) {
+    const container = document.querySelector('.message');
+    const textInfo = document.querySelector('.contract--text');
+    container.classList.add('open--modal');
+    textInfo.textContent = text;
+    setTimeout(() => container.classList.remove('open--modal'), duration);
+  }
+  _activateWitchers() {
+    this.#witchers.addEventListener('click', (e) => {
+      const card = e.target.closest('.witcher--card');
+      if (!card) return;
+
+      const name = card.dataset.name;
+      card.classList.toggle('witcher--active');
+
+      if (card.classList.contains('witcher--active')) {
+        this.#activeWitchers.push(name);
+        this.#offSubscriptions[name] = this._subscribeWitcher(name);
+        if (this.#contracts.length > 0) {
+          publish('new-contract', this.#contracts[0][1]);
+        }
+      } else {
+        this.#activeWitchers = this.#activeWitchers.filter((n) => n !== name);
+        this.#offSubscriptions[name]?.();
+        this.#offSubscriptions[name] = '';
+      }
+    });
+  }
+  _subscribeWitcher(name) {
+    return subscribe('new-contract', ({ monster, reward, coords }) => {
+      document
+        .querySelector(`.${name.toLowerCase()}`)
+        .classList.remove('witcher--active');
+      this._showToast(
+        `${name} takes the ${monster} contract for ${reward} crowns`,
+      );
+      setTimeout(() => {
+        const index = this.#contracts.findIndex(
+          ([, c]) => c.coords.lat === coords.lat && c.coords.lng === coords.lng,
+        );
+        if (index !== -1) {
+          const [mkr] = this.#contracts[index];
+          this.#map.removeLayer(mkr);
+          this.#contracts.splice(index, 1);
+        }
+      }, 10000);
+      this.#offSubscriptions[name]?.();
+    });
   }
   // startAutoFocus(key = 'pointofinterest') {
   //   if (!this.#featureGroup[key]) return;
