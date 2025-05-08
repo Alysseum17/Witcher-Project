@@ -62,3 +62,14 @@ export const consumeWithTimeout = function (
     setTimeout(step, interval);
   })();
 };
+//
+const bus = new EventTarget();
+export const publish = (eventName, detail) => {
+  const e = new CustomEvent(eventName, { detail });
+  bus.dispatchEvent(e);
+};
+export const subscribe = (eventName, handler) => {
+  const wrapper = (event) => handler(event.detail);
+  bus.addEventListener(eventName, wrapper);
+  return () => bus.removeEventListener(eventName, wrapper);
+};

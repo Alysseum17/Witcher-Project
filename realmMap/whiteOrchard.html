@@ -56,15 +56,15 @@
               >
             </div>
             <div class="grid grid--3-cols witchers">
-              <div class="witcher--card witcher--active">
+              <div class="witcher--card geralt" data-name="Geralt">
                 <img
-                  src="images/geralt.avif"
+                  src="images/Geralt.avif"
                   alt="Geralt of Rivia"
                   class="witcher--img"
                 />
                 <p class="witcher--name">Geralt of Rivia</p>
               </div>
-              <div class="witcher--card">
+              <div class="witcher--card lambert" data-name="Lambert">
                 <img
                   src="images/lambert.webp"
                   alt="Lambert"
@@ -72,7 +72,7 @@
                 />
                 <p class="witcher--name">Lambert</p>
               </div>
-              <div class="witcher--card">
+              <div class="witcher--card eskel" data-name="Eskel">
                 <img src="images/eskel.webp" alt="Eskel" class="witcher--img" />
                 <p class="witcher--name">Eskel</p>
               </div>
@@ -91,13 +91,19 @@
       </div>
     </main>
     <div class="modal">
-      <div class="modal__backdrop"></div>
-      <div class="modal__box">
-        <p class="modal__text">Are you sure?</p>
-        <div class="modal__actions">
+      <div class="modal--backdrop"></div>
+      <div class="modal--box">
+        <p class="modal--text">Are you sure?</p>
+        <div class="modal--actions">
           <button class="btn btn--yes">Yes</button>
           <button class="btn btn--no">No</button>
         </div>
+      </div>
+    </div>
+    <div class="modal message">
+      <div class="modal--backdrop"></div>
+      <div class="modal--box">
+        <p class="modal--text contract--text"></p>
       </div>
     </div>
   </body>
