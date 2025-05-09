@@ -23,8 +23,6 @@ class Map {
   #imageBounds;
   #mapName;
   #contracts = [];
-  #offSubscriptions = {};
-  #activeWitchers = [];
   #featureGroup = {};
   #btnDeleteOne = document.querySelector('.del--markers--one');
   #btnDeleteAll = document.querySelector('.del--markers');
@@ -36,6 +34,9 @@ class Map {
   #btnConfirmModal = document.querySelector('.btn--yes');
   #btnCloseModal = document.querySelector('.btn--no');
   #witchers = document.querySelector('.witchers');
+  #isProcessing = false;
+  #waitingWitchers = [];
+  #witcherSubscriptions = {};
 
   constructor(imageUrl, imageBounds) {
     this.#imageUrl = imageUrl;
@@ -202,11 +203,32 @@ class Map {
     const contractForm = `
       <form class="popup-form" id="contractForm">
         <label>Monster:
-          <input type="text" name="monster" required></input>
+        <select name="monster" required>
+          <option value="" disabled selected>Select a monster…</option>
+          <option value="griffin">Griffin</option>
+          <option value="fiend">Fiend</option>
+          <option value="leshen">Leshen</option>
+          <option value="drowner">Drowner</option>
+          <option value="kikimora">Kikimora</option>
+          <option value="noonwraith">Noonwraith</option>
+          <option value="doppler">Doppler</option>
+          <option value="water-hag">Water Hag</option>
+          <option value="wyvern">Wyvern</option>
+          <option value="striga">Striga</option>
+        </select>
         </label>
         <label>Reward:
           <input type="number" name="reward" min="0" required />
         </label>
+       <label>Difficulty:
+         <select name="difficulty" required>
+          <option value="" disabled selected>Select contract difficulty...</option>
+          <option value="easy">Easy</option>
+          <option value="moderate">Moderate</option>        
+          <option value="hard">Hard</option>
+          <option value="very-hard">Very Hard</option>
+        </select>
+      </label>
         <button type="submit" class="btnPopup" >Save Contract</button>
       </form>
     `;
@@ -249,14 +271,25 @@ class Map {
             ev.preventDefault();
             const data = Object.fromEntries(new FormData(ev.target).entries());
             console.log('New contract:', data.monster, data.reward);
+            this._showToast(
+              `New contract for ${data.monster} for ${data.reward} crowns`,
+            );
             publish('new-contract', {
               monster: data.monster,
               reward: data.reward,
               coords: { lat, lng },
+              duration:
+                data.difficulty === 'easy'
+                  ? 5000
+                  : data.difficulty === 'moderate'
+                    ? 10000
+                    : data.difficulty === 'hard'
+                      ? 15000
+                      : 20000,
             });
             const marker = L.marker([lat, lng], {
               icon: L.icon({
-                iconUrl: `./images/icons/tempcontract.png`,
+                iconUrl: `images/icons/tempcontract.png`,
                 iconSize: [25, 35],
                 iconAnchor: [12, 41],
                 popupAnchor: [1, -34],
@@ -273,6 +306,14 @@ class Map {
                 monster: data.monster,
                 reward: data.reward,
                 coords: { lat, lng },
+                duration:
+                  data.difficulty === 'easy'
+                    ? 5000
+                    : data.difficulty === 'moderate'
+                      ? 10000
+                      : data.difficulty === 'hard'
+                        ? 15000
+                        : 20000,
               },
             ]);
             this.#map.closePopup(popup);
@@ -367,8 +408,11 @@ class Map {
     const container = document.querySelector('.message');
     const textInfo = document.querySelector('.contract--text');
     container.classList.add('open--modal');
-    textInfo.textContent = text;
-    setTimeout(() => container.classList.remove('open--modal'), duration);
+    textInfo.innerHTML += `${text}<br>`;
+    setTimeout(() => {
+      container.classList.remove('open--modal');
+      textInfo.innerHTML = '';
+    }, duration);
   }
   _activateWitchers() {
     this.#witchers.addEventListener('click', (e) => {
@@ -379,38 +423,63 @@ class Map {
       card.classList.toggle('witcher--active');
 
       if (card.classList.contains('witcher--active')) {
-        this.#activeWitchers.push(name);
-        this.#offSubscriptions[name] = this._subscribeWitcher(name);
+        this.#witcherSubscriptions[name] = this._subscribeWitcher(name);
         if (this.#contracts.length > 0) {
           publish('new-contract', this.#contracts[0][1]);
         }
       } else {
-        this.#activeWitchers = this.#activeWitchers.filter((n) => n !== name);
-        this.#offSubscriptions[name]?.();
-        this.#offSubscriptions[name] = '';
+        this.#witcherSubscriptions[name]?.();
+        this.#witcherSubscriptions[name] = null;
       }
     });
   }
   _subscribeWitcher(name) {
-    return subscribe('new-contract', ({ monster, reward, coords }) => {
-      document
-        .querySelector(`.${name.toLowerCase()}`)
-        .classList.remove('witcher--active');
-      this._showToast(
-        `${name} takes the ${monster} contract for ${reward} crowns`,
-      );
-      setTimeout(() => {
-        const index = this.#contracts.findIndex(
-          ([, c]) => c.coords.lat === coords.lat && c.coords.lng === coords.lng,
-        );
-        if (index !== -1) {
-          const [mkr] = this.#contracts[index];
-          this.#map.removeLayer(mkr);
-          this.#contracts.splice(index, 1);
+    return subscribe(
+      'new-contract',
+      ({ monster, reward, coords, duration }) => {
+        if (this.#isProcessing) {
+          this.#waitingWitchers.push(name);
+          return;
         }
-      }, 10000);
-      this.#offSubscriptions[name]?.();
-    });
+        this.#isProcessing = true;
+        const witcherCard = document.querySelector(`.${name.toLowerCase()}`);
+        if (witcherCard) {
+          witcherCard.classList.remove('witcher--active');
+        }
+
+        this._showToast(
+          `${name} takes the ${monster} contract for ${reward} crowns`,
+        );
+        setTimeout(() => {
+          const index = this.#contracts.findIndex(
+            ([, c]) =>
+              c.coords.lat === coords.lat && c.coords.lng === coords.lng,
+          );
+          if (index !== -1) {
+            const [mkr] = this.#contracts[index];
+            this.#map.removeLayer(mkr);
+            this.#contracts.splice(index, 1);
+          }
+
+          this.#isProcessing = false;
+
+          if (this.#waitingWitchers.length > 0) {
+            const nextWitcher = this.#waitingWitchers.shift();
+            this.#witcherSubscriptions[nextWitcher]?.();
+            this.#witcherSubscriptions[nextWitcher] =
+              this._subscribeWitcher(nextWitcher);
+            if (this.#contracts.length > 0) {
+              publish('new-contract', this.#contracts[0][1]);
+            }
+          }
+        }, duration);
+
+        if (this.#witcherSubscriptions[name]) {
+          this.#witcherSubscriptions[name]();
+          this.#witcherSubscriptions[name] = null;
+        }
+      },
+    );
   }
   // startAutoFocus(key = 'pointofinterest') {
   //   if (!this.#featureGroup[key]) return;

@@ -169,10 +169,12 @@
   font-size: 1.8rem;
   font-weight: 600;
   color: #4e372b;
+  margin-bottom: 0.4rem;
 }
 
 .popup-form input,
-.popup-form textarea {
+.popup-form textarea,
+.popup-form select {
   width: 100%;
   font-size: 1.6rem;
   padding: 4px 6px;
