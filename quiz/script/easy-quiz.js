@@ -3,6 +3,7 @@
 class Quiz {
   constructor(questions, containerIds) {
     this.questions = questions;
+    this.shuffledQuestions = [];
     this.score = 0;
     this.currentQuestionIndex = 0;
     this.isCompleted = false;
@@ -21,6 +22,7 @@ class Quiz {
     this.score = 0;
     this.currentQuestionIndex = 0;
     this._clearPage();
+    this.shuffledQuestions = this._shuffleQuestions();
     this._renderQuestion();
     this._updateSubmitButton("Answer");
   }
@@ -30,8 +32,19 @@ class Quiz {
     this.listContainer.innerHTML = "";
   }
 
+    _shuffleQuestions() {
+      const shuffled = [...this.questions];
+
+    for(let i = shuffled.length - 1; i > 0; i--) {
+      const k = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[k]] = [shuffled[k], shuffled[i]];     
+    }
+
+    return shuffled;
+  }
+
   _renderQuestion() {
-    const question = this.questions[this.currentQuestionIndex];
+    const question = this.shuffledQuestions[this.currentQuestionIndex];;
 
     this.headerContainer.innerHTML = `<h2 class="title">${question.question}</h2>`;
 
@@ -74,7 +87,7 @@ class Quiz {
     if (!selectedAnswer) return;
 
     // Перевірка чи правильна відповідь
-    const correctIndex = this.questions[this.currentQuestionIndex].correct;
+    const correctIndex = this.shuffledQuestions[this.currentQuestionIndex].correct;
     const isCorrect = parseInt(selectedAnswer.value) === correctIndex;
 
     // Знаходиться батьківський <label> і додається потрібний клас
@@ -95,7 +108,7 @@ class Quiz {
   }
 
   _checkAnswer(selectedAnswer) {
-    const correctIndex = this.questions[this.currentQuestionIndex].correct;
+    const correctIndex = this.shuffledQuestions[this.currentQuestionIndex].correct;
     if (parseInt(selectedAnswer.value) === correctIndex) {
       this.score++;
     }
@@ -103,7 +116,7 @@ class Quiz {
 
   _handleNextStep() {
     this._enableInputs(); 
-    if (this.currentQuestionIndex < this.questions.length - 1) {
+    if (this.currentQuestionIndex < this.shuffledQuestions.length - 1) {
       this.currentQuestionIndex++;
       this._clearPage();
       this._renderQuestion();
@@ -129,7 +142,7 @@ class Quiz {
 
   _calculateResult() {
     const correctAnswers = this.score;
-    const totalQuestions = this.questions.length;
+    const totalQuestions = this.shuffledQuestions.length;
     const percentage = (correctAnswers / totalQuestions) * 100;
 
     let title, message;
@@ -159,8 +172,8 @@ class Quiz {
 const questions = [
   {
     question: "What is the name of the main character in The Witcher?",
-    answers: ["Geralt", "Ciri", "Dandelion", "Vesemir"],
-    correct: 1,
+    answers: ["Ciri", "Geralt", "Dandelion", "Vesemir"],
+    correct: 2,
   },
   {
     question: "What is Geralt's nickname?",
@@ -174,8 +187,8 @@ const questions = [
   },
   {
     question: "What is the name of Geralt's horse?",
-    answers: ["Roach", "Shadow", "Windrunner", "Blaze"],
-    correct: 1,
+    answers: ["Blaze", "Shadow", "Windrunner", "Roach"],
+    correct: 4,
   },
   {
     question: "What is Ciri's full name?",
@@ -189,13 +202,13 @@ const questions = [
   },
   {
     question: "Who is the bard and Geralt's close friend?",
-    answers: ["Dandelion", "Triss", "Zoltan", "Emhyr"],
-    correct: 1,
+    answers: ["Zoltan", "Triss", "Dandelion", "Emhyr"],
+    correct: 3,
   },
   {
     question: "What monster is weak to silver weapons?",
-    answers: ["Ghouls", "Humans", "Bandits", "Knights"],
-    correct: 1,
+    answers: ["Humans", "Ghouls", "Bandits", "Knights"],
+    correct: 2,
   },
   {
     question: "What is the name of the Witchers' fortress?",
@@ -204,13 +217,13 @@ const questions = [
   },
   {
     question: "Which of these is a Witcher sign?",
-    answers: ["Aard", "Frost", "Blast", "Blink"],
-    correct: 1,
+    answers: ["Frost", "Aard", "Blast", "Blink"],
+    correct: 2,
   },
   {
     question: "What does Geralt drink to enhance his abilities?",
-    answers: ["Potions", "Tea", "Milk", "Wine"],
-    correct: 1,
+    answers: ["Wine", "Tea", "Milk", "Potions"],
+    correct: 4,
   },
   {
     question: "Who is the Emperor of Nilfgaard?",
