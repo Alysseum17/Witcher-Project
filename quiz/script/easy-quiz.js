@@ -7,6 +7,7 @@ class Quiz {
     this.score = 0;
     this.currentQuestionIndex = 0;
     this.isCompleted = false;
+    this.userAnswers = [];
 
     // DOM elements
     this.headerContainer = document.querySelector(containerIds.header);
@@ -25,11 +26,15 @@ class Quiz {
     this.shuffledQuestions = this._shuffleQuestions();
     this._renderQuestion();
     this._updateSubmitButton("Answer");
+    this.userAnswers = [];
   }
 
   _clearPage() {
     this.headerContainer.innerHTML = "";
     this.listContainer.innerHTML = "";
+
+    const reviewContainer = document.querySelector('.review-container');
+    if (reviewContainer) reviewContainer.remove();
   }
 
     _shuffleQuestions() {
@@ -108,11 +113,21 @@ class Quiz {
   }
 
   _checkAnswer(selectedAnswer) {
-    const correctIndex = this.shuffledQuestions[this.currentQuestionIndex].correct;
-    if (parseInt(selectedAnswer.value) === correctIndex) {
-      this.score++;
-    }
+  const question = this.shuffledQuestions[this.currentQuestionIndex];
+  const userAnswer = parseInt(selectedAnswer.value);
+  const isCorrect = userAnswer === question.correct;
+
+  this.userAnswers.push({
+    question: question.question,
+    answers: question.answers,
+    userAnswer,
+    correctAnswer: question.correct
+  });
+
+  if (isCorrect) {
+    this.score++;
   }
+}
 
   _handleNextStep() {
     this._enableInputs(); 
@@ -135,8 +150,30 @@ class Quiz {
       <h3 class="summary">${result.message}</h3>
       <p class="result">${result.scoreText}</p>
     `;
-
     this.headerContainer.innerHTML = resultsHTML;
+
+    const reviewContainer = document.createElement('div');
+    reviewContainer.className = 'review-container';
+    this.headerContainer.after(reviewContainer);
+
+    this.userAnswers.forEach((item, index) => {
+      const questionHTML = `
+        <div class="review-item">
+          <h3>Question ${index + 1}: ${item.question}</h3>
+          <ul class="review-answers">
+            ${item.answers.map((answer, i) => {
+              const answerNumber = i + 1;
+              let classes = '';
+              if (answerNumber === item.correctAnswer) classes = 'correct';
+              else if (answerNumber === item.userAnswer) classes = 'wrong';
+              return `<li class="${classes}">${answer}</li>`;
+            }).join('')}
+          </ul>
+        </div>
+      `;
+      reviewContainer.insertAdjacentHTML('beforeend', questionHTML);
+    });
+
     this._updateSubmitButton("Play again");
   }
 
