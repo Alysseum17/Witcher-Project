@@ -222,6 +222,47 @@ body {
   perspective: 1000px;
   color: #94ca00;
 }
+
+.review-container {
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  max-width: 600px;
+}
+
+.review-item {
+  margin-bottom: 2rem;
+}
+
+.review-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.review-answers {
+  list-style: none;
+  padding: 0;
+}
+
+.review-answers li {
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  border-radius: 4px;
+}
+
+.review-answers .correct {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.review-answers .wrong {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
 /* 
 @keyframes shake {
   10%,
