@@ -5,6 +5,9 @@ import {
   imageBounds,
   opacityGenerator,
   consumeWithTimeout,
+  subscribe,
+  publish,
+  mapName,
 } from './helper.js';
 class Map {
   #map = L.map('map', {
@@ -18,6 +21,8 @@ class Map {
   #isShown = true;
   #imageUrl;
   #imageBounds;
+  #mapName;
+  #contracts = [];
   #featureGroup = {};
   #btnDeleteOne = document.querySelector('.del--markers--one');
   #btnDeleteAll = document.querySelector('.del--markers');
@@ -28,10 +33,15 @@ class Map {
   #modalWindow = document.querySelector('.modal');
   #btnConfirmModal = document.querySelector('.btn--yes');
   #btnCloseModal = document.querySelector('.btn--no');
+  #witchers = document.querySelector('.witchers');
+  #isProcessing = false;
+  #waitingWitchers = [];
+  #witcherSubscriptions = {};
 
   constructor(imageUrl, imageBounds) {
     this.#imageUrl = imageUrl;
     this.#imageBounds = imageBounds;
+    this.#mapName = mapName;
   }
 
   init() {
@@ -66,7 +76,7 @@ class Map {
           `<span class = "heading">${item.title || names[key]}</span>
           <br>${key === 'pointofinterest' ? '' : item.descr || descriptions[key]}`,
         );
-        marker.bindTooltip(`${names[key]}`, {
+        marker.bindTooltip(`${key === 'waypoint' ? item.title : names[key]}`, {
           offset: L.point(10, -25),
         });
         marker.on('click', () => {
@@ -193,11 +203,32 @@ class Map {
     const contractForm = `
       <form class="popup-form" id="contractForm">
         <label>Monster:
-          <input type="text" name="monster" required></input>
+        <select name="monster" required>
+          <option value="" disabled selected>Select a monster…</option>
+          <option value="griffin">Griffin</option>
+          <option value="fiend">Fiend</option>
+          <option value="leshen">Leshen</option>
+          <option value="drowner">Drowner</option>
+          <option value="kikimora">Kikimora</option>
+          <option value="noonwraith">Noonwraith</option>
+          <option value="doppler">Doppler</option>
+          <option value="water-hag">Water Hag</option>
+          <option value="wyvern">Wyvern</option>
+          <option value="striga">Striga</option>
+        </select>
         </label>
         <label>Reward:
           <input type="number" name="reward" min="0" required />
         </label>
+       <label>Difficulty:
+         <select name="difficulty" required>
+          <option value="" disabled selected>Select contract difficulty...</option>
+          <option value="easy">Easy</option>
+          <option value="moderate">Moderate</option>        
+          <option value="hard">Hard</option>
+          <option value="very-hard">Very Hard</option>
+        </select>
+      </label>
         <button type="submit" class="btnPopup" >Save Contract</button>
       </form>
     `;
@@ -221,12 +252,12 @@ class Map {
             const data = Object.fromEntries(new FormData(ev.target).entries());
             const feature = { title: data.title, descr: data.descr, lat, lng };
             this.#map.closePopup(popup);
-            const raw = localStorage.getItem(this.#ownType);
+            const raw = localStorage.getItem(this.#mapName);
             const arr = raw ? JSON.parse(raw) : [];
             arr.push(feature);
-            localStorage.setItem(this.#ownType, JSON.stringify(arr));
+            localStorage.setItem(this.#mapName, JSON.stringify(arr));
             this.createMarkers(
-              localStorage.getItem(this.#ownType),
+              localStorage.getItem(this.#mapName),
               [],
               [],
               true,
@@ -240,6 +271,51 @@ class Map {
             ev.preventDefault();
             const data = Object.fromEntries(new FormData(ev.target).entries());
             console.log('New contract:', data.monster, data.reward);
+            this._showToast(
+              `New contract for ${data.monster} for ${data.reward} crowns`,
+            );
+            publish('new-contract', {
+              monster: data.monster,
+              reward: data.reward,
+              coords: { lat, lng },
+              duration:
+                data.difficulty === 'easy'
+                  ? 5000
+                  : data.difficulty === 'moderate'
+                    ? 10000
+                    : data.difficulty === 'hard'
+                      ? 15000
+                      : 20000,
+            });
+            const marker = L.marker([lat, lng], {
+              icon: L.icon({
+                iconUrl: `images/icons/tempcontract.png`,
+                iconSize: [25, 35],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41],
+              }),
+            }).addTo(this.#map);
+            marker.bindPopup(
+              `<span class = "heading">Contract</span>
+              <br>Contract for ${data.monster} for ${data.reward} crowns}`,
+            );
+            this.#contracts.push([
+              marker,
+              {
+                monster: data.monster,
+                reward: data.reward,
+                coords: { lat, lng },
+                duration:
+                  data.difficulty === 'easy'
+                    ? 5000
+                    : data.difficulty === 'moderate'
+                      ? 10000
+                      : data.difficulty === 'hard'
+                        ? 15000
+                        : 20000,
+              },
+            ]);
             this.#map.closePopup(popup);
           });
       }
@@ -263,9 +339,9 @@ class Map {
   }
   _confirmDelete(e) {
     e.preventDefault();
-    const raw = localStorage.getItem(this.#ownType);
+    const raw = localStorage.getItem(this.#mapName);
     if (raw) {
-      localStorage.removeItem(this.#ownType);
+      localStorage.removeItem(this.#mapName);
       this.#map.removeLayer(this.#featureGroup.waypoint);
       this.#featureGroup.waypoint.clearLayers();
     }
@@ -286,7 +362,7 @@ class Map {
         const marker = e.layer;
         this.#map.removeLayer(marker);
         this.#featureGroup.waypoint.removeLayer(marker);
-        const raw = localStorage.getItem(this.#ownType);
+        const raw = localStorage.getItem(this.#mapName);
         const arr = raw ? JSON.parse(raw) : [];
         const { lat, lng } = marker.getLatLng();
         const index = arr.findIndex(
@@ -294,7 +370,7 @@ class Map {
         );
         if (index !== -1) {
           arr.splice(index, 1);
-          localStorage.setItem(this.#ownType, JSON.stringify(arr));
+          localStorage.setItem(this.#mapName, JSON.stringify(arr));
         }
       });
     }
@@ -326,6 +402,83 @@ class Map {
         group.eachLayer((layer) => layer.setOpacity(opacity));
       },
       250,
+    );
+  }
+  _showToast(text, duration = 1000) {
+    const container = document.querySelector('.message');
+    const textInfo = document.querySelector('.contract--text');
+    container.classList.add('open--modal');
+    textInfo.innerHTML += `${text}<br>`;
+    setTimeout(() => {
+      container.classList.remove('open--modal');
+      textInfo.innerHTML = '';
+    }, duration);
+  }
+  _activateWitchers() {
+    this.#witchers.addEventListener('click', (e) => {
+      const card = e.target.closest('.witcher--card');
+      if (!card) return;
+
+      const name = card.dataset.name;
+      card.classList.toggle('witcher--active');
+
+      if (card.classList.contains('witcher--active')) {
+        this.#witcherSubscriptions[name] = this._subscribeWitcher(name);
+        if (this.#contracts.length > 0) {
+          publish('new-contract', this.#contracts[0][1]);
+        }
+      } else {
+        this.#witcherSubscriptions[name]?.();
+        this.#witcherSubscriptions[name] = null;
+      }
+    });
+  }
+  _subscribeWitcher(name) {
+    return subscribe(
+      'new-contract',
+      ({ monster, reward, coords, duration }) => {
+        if (this.#isProcessing) {
+          this.#waitingWitchers.push(name);
+          return;
+        }
+        this.#isProcessing = true;
+        const witcherCard = document.querySelector(`.${name.toLowerCase()}`);
+        if (witcherCard) {
+          witcherCard.classList.remove('witcher--active');
+        }
+
+        this._showToast(
+          `${name} takes the ${monster} contract for ${reward} crowns`,
+        );
+        setTimeout(() => {
+          const index = this.#contracts.findIndex(
+            ([, c]) =>
+              c.coords.lat === coords.lat && c.coords.lng === coords.lng,
+          );
+          if (index !== -1) {
+            const [mkr] = this.#contracts[index];
+            this.#map.removeLayer(mkr);
+            this.#contracts.splice(index, 1);
+          }
+
+          this.#isProcessing = false;
+
+          if (this.#waitingWitchers.length > 0) {
+            const nextWitcher = this.#waitingWitchers.shift();
+            this.#witcherSubscriptions[nextWitcher]?.();
+            this.#witcherSubscriptions[nextWitcher] =
+              this._subscribeWitcher(nextWitcher);
+            if (this.#contracts.length > 0) {
+              publish('new-contract', this.#contracts[0][1]);
+            }
+          }
+        }, duration);
+
+        if (this.#witcherSubscriptions[name]) {
+          this.#witcherSubscriptions[name]();
+          this.#witcherSubscriptions[name] = null;
+        }
+      },
     );
   }
   // startAutoFocus(key = 'pointofinterest') {

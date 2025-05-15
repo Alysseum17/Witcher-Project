@@ -10,7 +10,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/general.css" />
-    <link rel="stylesheet" href="../styles/navigation.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <script
       type="module"
@@ -56,6 +55,28 @@
                 >Delete one marker</a
               >
             </div>
+            <div class="grid grid--3-cols witchers">
+              <div class="witcher--card geralt" data-name="Geralt">
+                <img
+                  src="images/Geralt.avif"
+                  alt="Geralt of Rivia"
+                  class="witcher--img"
+                />
+                <p class="witcher--name">Geralt of Rivia</p>
+              </div>
+              <div class="witcher--card lambert" data-name="Lambert">
+                <img
+                  src="images/lambert.webp"
+                  alt="Lambert"
+                  class="witcher--img"
+                />
+                <p class="witcher--name">Lambert</p>
+              </div>
+              <div class="witcher--card eskel" data-name="Eskel">
+                <img src="images/eskel.webp" alt="Eskel" class="witcher--img" />
+                <p class="witcher--name">Eskel</p>
+              </div>
+            </div>
             <nav class="flex--container maps--nav">
               <a href="whiteOrchard.html" class="maps--nav-link">
                 White Orchard
@@ -79,6 +100,12 @@
           <button class="btn btn--yes">Yes</button>
           <button class="btn btn--no">No</button>
         </div>
+      </div>
+    </div>
+    <div class="modal message">
+      <div class="modal--backdrop"></div>
+      <div class="modal--box">
+        <p class="modal--text contract--text"></p>
       </div>
     </div>
   </body>

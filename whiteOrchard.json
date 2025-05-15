@@ -201,6 +201,7 @@
   ],
   "merchant": [
     {
+      "descr": "Sells runestones, alchemy supplies and food",
       "lat": 2050.181705150977,
       "lng": 551.9800157567291
     },
