@@ -1,8 +1,9 @@
 import Fastify from 'fastify';
-import morgan from 'morgan';
+import fastifyCookie from '@fastify/cookie';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import markerRoutes from './routes/markerRoute.js';
+import userRoutes from './routes/userRoute.js';
 import errorController from './controllers/errorController.js';
 
 process.on('uncaughtException', (err) => {
@@ -16,15 +17,17 @@ export const fastify = Fastify({
 });
 dotenv.config({ path: './config.env' });
 const port = process.env.PORT || 3000;
-if (process.env.NODE_ENV === 'development') {
-  fastify.register(morgan('dev'));
-}
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD,
 );
 
+fastify.register(fastifyCookie, {
+  secret: process.env.JWT_SECRET,
+  parseOptions: {},
+});
 fastify.register(markerRoutes, { prefix: '/api/v1' });
+fastify.register(userRoutes, { prefix: '/api/v1' });
 
 fastify.setErrorHandler(errorController);
 
