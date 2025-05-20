@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import slugify from 'slugify';
 
 const markerSchema = new mongoose.Schema({
   map: {
@@ -29,11 +28,6 @@ const markerSchema = new mongoose.Schema({
   },
   owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null },
   isPublic: { type: Boolean, default: false },
-});
-
-markerSchema.pre('save', function (next) {
-  this.slug = slugify(this.title, { lower: true });
-  next();
 });
 
 export const Marker = mongoose.model('Marker', markerSchema);
