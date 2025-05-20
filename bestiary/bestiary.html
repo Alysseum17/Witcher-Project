@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../styles/general.css" />
     <link rel="stylesheet" href="../styles/navigationFooter.css" />
     <link rel="stylesheet" href="styles/bestiary.css" />
-    <script defer src="script/bestiary.js"></script>
+    <script defer src="scripts/viewBestiary.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
@@ -35,10 +35,10 @@
         </a>
         <nav class="main--nav">
           <ul class="main--nav-list">
-            <li><a href="#" class="main--nav-link">Home</a></li>
-            <li><a href="bestiary.html" class="main--nav-link">Bestiary</a></li>
+            <li><a href="../homePage.html" class="main--nav-link">Home</a></li>
+            <li><a href="#" class="main--nav-link">Bestiary</a></li>
             <li><a href="../realmMap.html" class="main--nav-link">Map</a></li>
-            <li><a href="#" class="main--nav-link">Questions</a></li>
+            <li><a href="../questions.html" class="main--nav-link">Questions</a></li>
           </ul>
         </nav>
         <form action="#" class="login--form flex--container">
@@ -62,142 +62,20 @@
       </div>
     </header>
     <main>
-      <div class="content grid content--grid">
+      <div class="content content--grid grid">
         <div class="search">
-          <!-- Add full--grid class to the div with the class "search" to make it full width -->
           <div class="search--container flex--container">
             <input
               type="text"
               class="search--input"
               placeholder="Search for a character..."
             />
-            <!-- Add size--changed class to the input field to change its size -->
-            <a href="result.html" class="search--button">
+            <button class="search--button">
               <ion-icon name="search-outline"></ion-icon>
-            </a>
+            </button>
           </div>
-          <!-- <div class="search--result grid">
-         <div class="search--card flex--container">
-            <img src="../../images/geralt.webp" alt="Geralt" class="img--search" /><h3
-              href="#"
-              class="search--name"
-              >Geralt of Rivia</h3
-            >
-          </div>
-          <div class="search--info">
-          <div class="short--description grid grid--4-cols">
-            <div class="short--info">
-              <h2 class="short--heading">Basic Information</h2>
-              <div class="short--part">
-              <h3 class="short--name">Alias(es)</h3>
-              <p class="short--text">
-                White Wolf
-                Gwynbleidd
-                White One
-                Butcher of Blaviken
-                Ravix of Fourhorn
-                Geralt Roger Eric du Haute-Bellegarde (the first name he wanted)</p>
-              </div>
-              <div class="short--part">
-                <h3 class="short--name">Born</h3>
-                <p class="short--text">
-                  1211</p>
-                </div>
-                <div class="short--part">
-                  <h3 class="short--name">Coat of arms</h3>
-                  <p class="short--text">
-                    Img
-                  </p>
-                  </div>
-            </div>
-            <div class="short--info">
-              <h2 class="short--heading">Basic Information</h2>
-              <div class="short--part">
-              <h3 class="short--name">Alias(es)</h3>
-              <p class="short--text">
-                White Wolf
-                Gwynbleidd
-                White One
-                Butcher of Blaviken
-                Ravix of Fourhorn
-                Geralt Roger Eric du Haute-Bellegarde (the first name he wanted)</p>
-              </div>
-              <div class="short--part">
-                <h3 class="short--name">Born</h3>
-                <p class="short--text">
-                  1211</p>
-                </div>
-                <div class="short--part">
-                  <h3 class="short--name">Coat of arms</h3>
-                  <p class="short--text">
-                    Img
-                  </p>
-                  </div>
-            </div>
-            <div class="short--info">
-              <h2 class="short--heading">Basic Information</h2>
-              <div class="short--part">
-              <h3 class="short--name">Alias(es)</h3>
-              <p class="short--text">
-                White Wolf
-                Gwynbleidd
-                White One
-                Butcher of Blaviken
-                Ravix of Fourhorn
-                Geralt Roger Eric du Haute-Bellegarde (the first name he wanted)</p>
-              </div>
-              <div class="short--part">
-                <h3 class="short--name">Born</h3>
-                <p class="short--text">
-                  1211</p>
-                </div>
-                <div class="short--part">
-                  <h3 class="short--name">Coat of arms</h3>
-                  <p class="short--text">
-                    Img
-                  </p>
-                  </div>
-            </div>
-            <div class="short--info">
-              <h2 class="short--heading">Basic Information</h2>
-              <div class="short--part">
-              <h3 class="short--name">Alias(es)</h3>
-              <p class="short--text">
-                White Wolf
-                Gwynbleidd
-                White One
-                Butcher of Blaviken
-                Ravix of Fourhorn
-                Geralt Roger Eric du Haute-Bellegarde (the first name he wanted)</p>
-              </div>
-              <div class="short--part">
-                <h3 class="short--name">Born</h3>
-                <p class="short--text">
-                  1211</p>
-                </div>
-                <div class="short--part">
-                  <h3 class="short--name">Coat of arms</h3>
-                  <p class="short--text">
-                    Img
-                  </p>
-                  </div>
-            </div>
-          </div>
-          <div class="description">
-            <p class="description--text">
-              Geralt of Rivia was a legendary witcher of the School of the Wolf active throughout the 13th century. He loved the sorceress Yennefer, considered the love of his life despite their tumultuous relationship, and became Ciri's adoptive father.
-              </p>
-              <p class="description--text">
-              During the Trial of the Grasses, Geralt exhibited unusual tolerance for the mutagens that grant witchers their abilities. Accordingly, Geralt was subjected to further experimental mutagens which rendered his hair white and may have given him greater speed, strength, and stamina than his fellow witchers.
-            </p>
-            <p class="description--text">
-              Despite his title, Geralt did not hail from the city of Rivia. After being left with the witchers by his mother, Visenna, he grew up in their keep of Kaer Morhen in the realm of Kaedwen. In the interest of appearing more trustworthy to potential clients, young witchers were encouraged to make up surnames for themselves by master Vesemir. As his first choice, Geralt chose "Geralt Roger Eric du Haute-Bellegarde", but this choice was dismissed by Vesemir as silly and pretentious, so "Geralt" was all that remained of his chosen name. "Of Rivia" was a more practical alternative and Geralt even went so far as to adopt a Rivian accent to appear more authentic. Later, Queen Meve of Lyria knighted him for his valor in the Battle for the Bridge on the Yaruga conferring on him the formal title "of Rivia", which amused him.[2] He, therefore, became a true knight.
-              </p>
-          </div>
-      </div>-->
         </div>
         <div class="popular--searches grid grid--2-cols">
-          <!-- Add hidden class to the div with the class "popular--searches" to hide it -->
           <h2 class="secondary--heading heading--popular">Popular Searches</h2>
           <div class="popular--card flex--container card" data-name="Geralt">
             <img
