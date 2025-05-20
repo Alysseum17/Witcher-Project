@@ -16,9 +16,6 @@
   border: none;
   background-color: #eee;
 }
-.size--change {
-  width: 75%;
-}
 .search--button {
   display: inline-block;
   padding: 1.6rem 2.4rem;
@@ -141,4 +138,7 @@
 }
 .one--column .popular--card {
   width: 30rem;
+}
+.search--form {
+  width: 75%;
 }
