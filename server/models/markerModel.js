@@ -4,6 +4,13 @@ const markerSchema = new mongoose.Schema({
   map: {
     type: String,
     required: true,
+    enum: [
+      'white-orchard',
+      'hos-velen',
+      'skellige',
+      'kaer-morhen',
+      'toussaint',
+    ],
   },
   class: {
     type: String,
