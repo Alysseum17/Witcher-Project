@@ -1,15 +1,19 @@
 'use strict';
 
-const searchBtn = document.querySelector('.search--button');
+const searchForm = document.getElementById('search--form');
 const serachingArea = document.querySelector('.popular--searches');
 
-searchBtn.addEventListener('click', function () {
-  const searchingName = document.querySelector('.search--input').value;
-  if (!searchingName) return;
-  window.location.href = `result.html?character=${encodeURIComponent(searchingName)}`;
+searchForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const character = document.querySelector('#character--input').value;
+  if (character) {
+    // Redirect to result.html with character as a query param
+    window.location.href = `result.html?character=${encodeURIComponent(character)}`;
+  }
 });
 
 serachingArea.addEventListener('click', function (e) {
   if (!e.target.closest('.popular--card')) return;
-  window.location.href = 'result.html';
+  const character = e.target.closest('.popular--card').dataset.name;
+  window.location.href = `result.html?character=${encodeURIComponent(character)}`;
 });

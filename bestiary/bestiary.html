@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../styles/general.css" />
     <link rel="stylesheet" href="../styles/navigationFooter.css" />
     <link rel="stylesheet" href="styles/bestiary.css" />
+    <script defer src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script defer src="scripts/viewBestiary.js"></script>
     <script
       type="module"
@@ -38,7 +39,9 @@
             <li><a href="../homePage.html" class="main--nav-link">Home</a></li>
             <li><a href="#" class="main--nav-link">Bestiary</a></li>
             <li><a href="../realmMap.html" class="main--nav-link">Map</a></li>
-            <li><a href="../questions.html" class="main--nav-link">Questions</a></li>
+            <li>
+              <a href="../questions.html" class="main--nav-link">Questions</a>
+            </li>
           </ul>
         </nav>
         <form action="#" class="login--form flex--container">
@@ -65,19 +68,26 @@
       <div class="content content--grid grid">
         <div class="search">
           <div class="search--container flex--container">
-            <input
-              type="text"
-              class="search--input"
-              placeholder="Search for a character..."
-            />
-            <button class="search--button">
-              <ion-icon name="search-outline"></ion-icon>
-            </button>
+            <form id="search--form" class="search--form flex--container">
+              <input
+                type="text"
+                class="search--input"
+                id="character--input"
+                name="character"
+                placeholder="Search for a character..."
+              />
+              <button class="search--button">
+                <ion-icon name="search-outline"></ion-icon>
+              </button>
+            </form>
           </div>
         </div>
         <div class="popular--searches grid grid--2-cols">
           <h2 class="secondary--heading heading--popular">Popular Searches</h2>
-          <div class="popular--card flex--container card" data-name="Geralt">
+          <div
+            class="popular--card flex--container card"
+            data-name="Geralt_of_Rivia"
+          >
             <img
               src="../images/geralt.webp"
               alt="Geralt"
@@ -91,14 +101,20 @@
               >Cirrila</a
             >
           </div>
-          <div class="popular--card flex--container card" data-name="Yennefer">
+          <div
+            class="popular--card flex--container card"
+            data-name="Yennefer_of_Vengerberg"
+          >
             <img
               src="../images/yennefer.png"
               alt="Yennefer"
               class="img--popular"
             /><a href="#" class="popular--link">Yennefer of Vengerberg</a>
           </div>
-          <div class="popular--card flex--container card" data-name="Triss">
+          <div
+            class="popular--card flex--container card"
+            data-name="Triss_Merigold"
+          >
             <img
               src="../images/triss.png"
               alt="Triss Merigold"
@@ -112,7 +128,10 @@
               class="img--popular"
             /><a href="#" class="popular--link">Dandelion</a>
           </div>
-          <div class="popular--card flex--container card" data-name="Regis">
+          <div
+            class="popular--card flex--container card"
+            data-name="Emiel_Regis_Rohellec_Terzieff-Godefroy"
+          >
             <img src="../images/regis.png" alt="Regis" class="img--popular" /><a
               href="#"
               class="popular--link"
