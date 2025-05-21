@@ -20,6 +20,9 @@ export const getMe = (request, _reply, done) => {
 };
 
 export const updateMe = async (request, reply) => {
+  const id = request.params.id.includes('\n')
+    ? request.params.id.replace('\n', '')
+    : request.params.id;
   if (request.body.password || request.body.passwordConfirm) {
     throw new OperationError(
       'This route is not for password updates. Please use /updateMyPassword instead.',
@@ -28,14 +31,10 @@ export const updateMe = async (request, reply) => {
 
   const filteredBody = filterObj(request.body, 'name', 'email');
 
-  const updatedUser = await User.findByIdAndUpdate(
-    request.user.id,
-    filteredBody,
-    {
-      new: true,
-      runValidators: true,
-    },
-  );
+  const updatedUser = await User.findByIdAndUpdate(id, filteredBody, {
+    new: true,
+    runValidators: true,
+  });
 
   reply.code(200).send({
     code: 'success',
@@ -46,7 +45,10 @@ export const updateMe = async (request, reply) => {
 };
 
 export const deleteMe = async (request, reply) => {
-  await User.findByIdAndDelete(request.user.id);
+  const id = request.params.id.includes('\n')
+    ? request.params.id.replace('\n', '')
+    : request.params.id;
+  await User.findByIdAndDelete(id);
 
   reply.code(204).send({
     code: 'success',

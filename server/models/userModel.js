@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import argon2 from 'argon2';
 import crypto from 'crypto';
 import validator from 'validator';
 
@@ -42,21 +42,23 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre('save', async function () {
-  if (this.isModified('password')) {
-    this.password = await bcrypt.hash(this.password, 12);
-    this.passwordConfirm = undefined;
+  if (!this.isModified('password')) return;
+  this.password = await argon2.hash(this.password, {
+    type: argon2.argon2id,
+    memoryCost: 2 ** 16,
+    timeCost: 4,
+    parallelism: 2,
+  });
+  this.passwordConfirm = undefined;
 
-    if (!this.isNew) {
-      this.passwordChangedAt = Date.now() - 1000;
-    }
-  }
+  if (!this.isNew) this.passwordChangedAt = Date.now() - 1000;
 });
 
 userSchema.methods.correctPassword = async function (
   candidatePassword,
   userPassword,
 ) {
-  return await bcrypt.compare(candidatePassword, userPassword);
+  return await argon2.verify(candidatePassword, userPassword);
 };
 
 userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {

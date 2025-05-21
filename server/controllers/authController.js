@@ -97,7 +97,6 @@ export const protect = async (request, _reply) => {
   }
 
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  console.log(decoded);
 
   const currentUser = await User.findById(decoded.id);
   if (!currentUser) {
@@ -142,9 +141,7 @@ export const forgotPassword = async (request, reply) => {
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
 
-  const resetURL = `${request.protocol}://${request.get(
-    'host',
-  )}/api/v1/users/resetPassword/${resetToken}`;
+  const resetURL = `${request.protocol}://${request.headers.host}/api/v1/users/resetPassword/${resetToken}`;
 
   const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}. If you didn't forget your password, please ignore this email!`;
 

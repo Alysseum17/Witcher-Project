@@ -26,8 +26,8 @@ fastify.register(fastifyCookie, {
   secret: process.env.JWT_SECRET,
   parseOptions: {},
 });
-fastify.register(markerRoutes, { prefix: '/api/v1' });
-fastify.register(userRoutes, { prefix: '/api/v1' });
+fastify.register(markerRoutes, { prefix: '/api/v1/markers' });
+fastify.register(userRoutes, { prefix: '/api/v1/users' });
 
 fastify.setErrorHandler(errorController);
 
