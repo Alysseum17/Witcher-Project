@@ -1,39 +1,40 @@
 import mongoose from 'mongoose';
-import slugify from 'slugify';
 
 const markerSchema = new mongoose.Schema({
+  map: {
+    type: String,
+    required: true,
+    enum: [
+      'white-orchard',
+      'hos-velen',
+      'skellige',
+      'kaer-morhen',
+      'toussaint',
+    ],
+  },
   class: {
     type: String,
-    required: [true, 'A marker must have a class'],
+    required: true,
     default: 'waypoint',
   },
   title: {
     type: String,
-    required: [true, 'A marker must have a title'],
-    maxlength: [
-      40,
-      'A marker title must have less or equal than 40 characters',
-    ],
+    required: true,
+    maxlength: 100,
   },
   description: {
     type: String,
-    required: [true, 'A marker must have a description'],
   },
   lat: {
     type: Number,
-    required: [true, 'A marker must have a latitude'],
-    unique: true,
+    required: true,
   },
   lng: {
     type: Number,
-    required: [true, 'A marker must have a longitude'],
-    unique: true,
+    required: true,
   },
-});
-
-markerSchema.pre('save', function (next) {
-  this.slug = slugify(this.title, { lower: true });
-  next();
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null },
+  isPublic: { type: Boolean, default: false },
 });
 
 export const Marker = mongoose.model('Marker', markerSchema);

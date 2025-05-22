@@ -1,9 +1,11 @@
 import Fastify from 'fastify';
 import fastifyCors from '@fastify/cors';
 import fastifyFormbody from '@fastify/formbody';
+import fastifyCookie from '@fastify/cookie';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import markerRoutes from './routes/markerRoute.js';
+import userRoutes from './routes/userRoute.js';
 import errorController from './controllers/errorController.js';
 import bestiaryRoute from './routes/bestiaryRoute.js';
 
@@ -23,7 +25,12 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD,
 );
 
-fastify.register(markerRoutes, { prefix: '/api/v1' });
+fastify.register(fastifyCookie, {
+  secret: process.env.JWT_SECRET,
+  parseOptions: {},
+});
+fastify.register(markerRoutes, { prefix: '/api/v1/markers' });
+fastify.register(userRoutes, { prefix: '/api/v1/users' });
 
 await fastify.register(fastifyCors, {
   origin: '*',

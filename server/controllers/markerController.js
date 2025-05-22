@@ -1,71 +1,48 @@
 import { Marker } from '../models/markerModel.js';
-import APIMethods from '../utils/apiMethods.js';
 import OperationError from '../utils/operationError.js';
-export const getAllMarkers = async (request, reply) => {
-  const featureply = new APIMethods(Marker.find(), request.query)
-    .filter()
-    .sort()
-    .limitFields()
-    .paginate();
+import * as crudFactory from '../utils/crudFactory.js';
 
-  const markers = await featureply.query;
+export const getAllMarkers = crudFactory.getAll(Marker);
+export const getMarker = crudFactory.getOne(Marker);
+export const createMarker = crudFactory.createOne(Marker);
+export const updateMarker = crudFactory.updateOne(Marker);
+export const deleteMarker = crudFactory.deleteOne(Marker);
 
-  reply.code(200).send({
+export const getPublicMarkers = async (request, reply) => {
+  const markers = await Marker.find({ isPublic: true });
+  reply.send({
     code: 'success',
-    replyults: markers.length,
     data: {
       markers,
     },
   });
 };
-export const getMarker = async (request, reply) => {
-  const marker = await Marker.findById(request.params.id);
-  if (!marker) throw new OperationError('No marker found with that ID', 404);
 
-  reply.code(200).send({
+export const getOwnMarkers = async (request, reply) => {
+  const markers = await Marker.find({
+    owner: request.user._id,
+    isPublic: false,
+  });
+  reply.send({
     code: 'success',
     data: {
-      marker,
+      markers,
     },
   });
 };
 
-export const createMarker = async (request, reply) => {
-  const newMarker = await Marker.create(request.body);
-
-  reply.code(201).send({
+export const createOwnMarker = async (request, reply) => {
+  if (!request.body.title)
+    throw new OperationError('Please provide a title!', 400);
+  const newMarker = await Marker.create({
+    ...request.body,
+    owner: request.user._id,
+    isPublic: false,
+  });
+  reply.send({
     code: 'success',
     data: {
       marker: newMarker,
     },
-  });
-};
-export const updateMarker = async (request, reply) => {
-  const marker = await Marker.findByIdAndUpdate(
-    request.params.id,
-    request.body,
-    {
-      new: true,
-      runValidators: true,
-    },
-  );
-  if (!marker) throw new OperationError('No marker found with that ID', 404);
-
-  reply.code(200).send({
-    code: 'success',
-    data: {
-      marker,
-    },
-  });
-};
-
-export const deleteMarker = async (request, reply) => {
-  const marker = await Marker.findByIdAndDelete(request.params.id);
-
-  if (!marker) throw new OperationError('No marker found with that ID', 404);
-
-  reply.code(204).send({
-    code: 'success',
-    data: null,
   });
 };

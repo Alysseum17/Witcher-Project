@@ -1,18 +1,19 @@
 const width = {
-  whiteOrchard: 5100,
-  hosVelen: 8200,
+  'white-orchard': 5100,
+  'hos-velen': 8200,
   skellige: 7400,
-  kaerMorhen: 4100,
+  'kaer-morhen': 4100,
   toussaint: 4600,
 };
 const height = {
-  whiteOrchard: 4100,
-  hosVelen: 9200,
+  'white-orchard': 4100,
+  'hos-velen': 9200,
   skellige: 7400,
-  kaerMorhen: 5100,
+  'kaer-morhen': 5100,
   toussaint: 4600,
 };
-export const mapName = location.pathname.split('/').pop().replace('.html', '');
+const params = new URLSearchParams(window.location.search);
+export const mapName = params.get('map') || 'default';
 export const imageWidth = width[mapName];
 export const imageHeight = height[mapName];
 export const imageUrl = `../images/${mapName}.webp`;
