@@ -18,6 +18,10 @@
     "prettier": "3.5.3"
   },
   "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@fastify/formbody": "^8.0.2",
+    "jsdom": "^26.1.0",
+
     "@fastify/cookie": "^11.0.2",
     "argon2": "^0.43.0",
     "htmx.org": "^2.0.4",
@@ -26,8 +30,9 @@
     "jsonwebtoken": "^9.0.2",
     "leaflet": "^1.9.4",
     "mongodb": "^6.16.0",
-    "mongoose": "^8.14.3",
+    "mongoose": "^8.15.0",
     "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^7.0.3",
     "slugify": "^1.6.6",
     "validator": "^13.15.0"
