@@ -158,8 +158,8 @@
 
 .wrapper {
   position: relative;
-  min-height: 200px; /* або будь-яка потрібна висота */
-  background: #f5f5f5; /* щоб бачити межі */
+  min-height: 200px;
+  background: #f5f5f5;
 }
 
 .spinner {

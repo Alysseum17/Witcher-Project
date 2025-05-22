@@ -70,7 +70,6 @@ function divideCharacterInfo(result) {
     if (!found) divided.other[key] = value;
   }
 
-  // Якщо description не задано — пробуємо витягнути з result.html
   if (!divided.description && result.html) {
     try {
       const parser = new DOMParser();
@@ -94,7 +93,6 @@ const createHTML = async (req, rep) => {
   const character = req.body.title || req.body.character;
   const result = await searchCharacter(character);
 
-  // Fallback if not found
   if (!result) {
     rep.type('text/html').send(
       `<div class="search--result grid">
@@ -230,19 +228,10 @@ const createHTML = async (req, rep) => {
 };
 
 const searchCharacter = async (title) => {
-  const endpoint = 'https://witcher.fandom.com/api.php';
-  const params = new URLSearchParams({
-    action: 'parse',
-    page: title,
-    format: 'json',
-    prop: 'text|images',
-  });
-
-  const url = `${endpoint}?${params.toString()}`;
-
+  const url = `https://witcher.fandom.com/wiki/${encodeURIComponent(title)}`;
   try {
     const res = await fetch(url);
-    const data = await res.json();
+    const data = await res.text();
     return await parseHTML(data);
   } catch (error) {
     console.log(error);
@@ -250,20 +239,25 @@ const searchCharacter = async (title) => {
   }
 };
 
-const parseHTML = async (apiJson) => {
-  if (!apiJson || !apiJson.parse) {
-    return null;
-  }
+const parseHTML = async (html) => {
+  if (!html) return null;
 
-  const { title, images, text } = apiJson.parse;
-  const html = text['*'];
-
-  // створюємо віртуальний документ
   const doc = new JSDOM(html).window.document;
+
+  const title =
+    doc.querySelector('.page-header__title')?.textContent.trim() ||
+    doc
+      .querySelector('title')
+      ?.textContent.replace(' | Witcher Wiki | Fandom', '')
+      .trim() ||
+    '';
+
+  const images = [];
+  const infoboxImg = doc.querySelector('.pi-image img');
+  if (infoboxImg && infoboxImg.src) images.push(infoboxImg.src);
 
   const result = { title, images };
 
-  /* ---------- 1. інфобокс ---------- */
   doc.querySelectorAll('.pi-item.pi-data').forEach((row) => {
     const key =
       row.dataset.source ||
@@ -278,7 +272,6 @@ const parseHTML = async (apiJson) => {
 
     if (key && value) {
       if (key === 'aka') {
-        // Use innerHTML to preserve <br> tags for splitting
         let raw = valueNode?.innerHTML || '';
         result[key] =
           raw
@@ -297,7 +290,6 @@ const parseHTML = async (apiJson) => {
     }
   });
 
-  /* ---------- 2. Перші три абзаци статті ---------- */
   const paragraphs = [...doc.querySelectorAll('.mw-parser-output > p')].filter(
     (p) => p.textContent.trim().length > 30,
   );

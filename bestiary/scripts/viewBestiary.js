@@ -7,7 +7,6 @@ searchForm.addEventListener('submit', function (e) {
   e.preventDefault();
   const character = document.querySelector('#character--input').value;
   if (character) {
-    // Redirect to result.html with character as a query param
     window.location.href = `result.html?character=${encodeURIComponent(character)}`;
   }
 });

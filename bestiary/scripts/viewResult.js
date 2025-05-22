@@ -1,5 +1,4 @@
 'use strict';
-const searchBtn = document.querySelector('.search--button');
 
 document.addEventListener('DOMContentLoaded', function () {
   const params = new URLSearchParams(window.location.search);
@@ -13,10 +12,3 @@ document.addEventListener('DOMContentLoaded', function () {
     htmx.process(resultDiv);
   }
 });
-
-if (searchBtn) {
-  searchBtn.addEventListener('click', function () {
-    const searchingName = document.querySelector('.search--input').value;
-    if (!searchingName) return;
-  });
-}

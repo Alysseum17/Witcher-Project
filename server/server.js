@@ -1,7 +1,6 @@
 import Fastify from 'fastify';
 import fastifyCors from '@fastify/cors';
 import fastifyFormbody from '@fastify/formbody';
-import morgan from 'morgan';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import markerRoutes from './routes/markerRoute.js';
@@ -19,9 +18,6 @@ export const fastify = Fastify({
 });
 dotenv.config({ path: './config.env' });
 const port = process.env.PORT || 3000;
-if (process.env.NODE_ENV === 'development') {
-  fastify.register(morgan('dev'));
-}
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD,
