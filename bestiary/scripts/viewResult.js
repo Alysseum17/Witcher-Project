@@ -18,6 +18,5 @@ if (searchBtn) {
   searchBtn.addEventListener('click', function () {
     const searchingName = document.querySelector('.search--input').value;
     if (!searchingName) return;
-    // document.querySelector('.search--input').value = '';
   });
 }

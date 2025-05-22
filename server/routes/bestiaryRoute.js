@@ -96,15 +96,20 @@ const createHTML = async (req, rep) => {
 
   // Fallback if not found
   if (!result) {
-    rep
-      .type('text/html')
-      .send(
-        '<div class="search--card flex--container"><h3 class="search--name">Not found</h3><div class="search--info"><p>No information available for this character.</p></div></div>',
-      );
+    rep.type('text/html').send(
+      `<div class="search--result grid">
+          <div class="search--card flex--container">
+            <img src="../../bestiary/images/questionMark.png" alt="Unknown" class="img--search" /><h3
+              href="#"
+              class="search--name"
+              >${character || 'Unknown'}</h3
+            >
+          </div>
+        </div>`,
+    );
     return;
   }
   const divided = divideCharacterInfo(result);
-  console.log(divided);
   const html = `
     <div class="search--result grid">
          <div class="search--card flex--container">
@@ -205,18 +210,19 @@ const createHTML = async (req, rep) => {
                   </p>
                   </div>
             </div>
+            </div>
+            </div>
+            <div class="description">
+              <p class="description--text">
+                ${divided?.description[0] ?? 'Unknown'}
+              </p>
+              <p class="description--text">
+                ${divided?.description[1] ?? ''}
+              </p>
+              <p class="description--text">
+                ${divided?.description[2] ?? ''}
+              </p>
           </div>
-          <div class="description">
-            <p class="description--text">
-              ${divided?.description[0] ?? 'Unknown'}
-            </p>
-            <p class="description--text">
-              ${divided?.description[1] ?? ''}
-            </p>
-            <p class="description--text">
-              ${divided?.description[2] ?? ''}
-            </p>
-        </div>
     </div>
   `;
 
