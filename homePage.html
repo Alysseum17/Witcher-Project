@@ -44,24 +44,10 @@
             </li>
           </ul>
         </nav>
-        <form action="#" class="login--form flex--container">
-          <div>
-            <input class="login" type="text" placeholder="Login" required />
-          </div>
-          <div>
-            <input
-              class="password"
-              type="password"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <div>
-            <button class="confirm--button">
-              <span class="arrow">&rarr;</span>
-            </button>
-          </div>
-        </form>
+        <div class="flex--container registration">
+          <button type="button" class="btn--signup">Sign up</button>
+          <button type="button" class="btn--login">Log in</button>
+        </div>
       </div>
     </header>
     <main>
@@ -452,5 +438,45 @@
         </nav>
       </div>
     </footer>
+    <div class="modal-overlay" id="overlay"></div>
+    <div class="modal" id="modal">
+      <button class="modal-close" id="close">&times;</button>
+      <input type="radio" name="auth" id="login-tab" />
+      <input type="radio" name="auth" id="signup-tab" />
+
+      <div class="modal-tabs">
+        <label for="signup-tab">Sign Up</label>
+        <label for="login-tab">Log In</label>
+      </div>
+
+      <div class="modal-forms">
+        <form class="form-login">
+          <label>
+            Email
+            <input type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Password
+            <input type="password" placeholder="••••••••" required />
+          </label>
+          <button type="submit" class="btn-submit">Log In</button>
+        </form>
+        <form class="form-signup">
+          <label>
+            Username
+            <input type="text" placeholder="your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Password
+            <input type="password" placeholder="••••••••" required />
+          </label>
+          <button type="submit" class="btn-submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

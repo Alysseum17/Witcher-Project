@@ -67,6 +67,10 @@ export const login = async (request, reply) => {
 };
 
 export const logout = async (request, reply) => {
+  if (!request.user) return;
+  request.user.passwordResetToken = undefined;
+  request.user.passwordResetExpires = undefined;
+  await request.user.save({ validateBeforeSave: false });
   reply
     .clearCookie('jwt', {
       path: '/',

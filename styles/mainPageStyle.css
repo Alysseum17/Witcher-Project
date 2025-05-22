@@ -193,3 +193,138 @@
   background-color: #888;
   opacity: 1;
 }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  z-index: 11;
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-close {
+  display: block;
+  position: absolute;
+  font-size: 3rem;
+  line-height: 1;
+  padding: 0;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #555;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.modal input[type='radio'] {
+  display: none;
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.modal-tabs label {
+  flex: 1;
+  text-align: center;
+  padding: 1.2rem 0;
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  font-size: 1.8rem;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+#login-tab:checked ~ .modal-tabs label[for='login-tab'],
+#signup-tab:checked ~ .modal-tabs label[for='signup-tab'] {
+  color: #222;
+  background: #fafafa;
+}
+#login-tab:checked ~ .modal-tabs label[for='login-tab']::after,
+#signup-tab:checked ~ .modal-tabs label[for='signup-tab']::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  background: #f08306;
+  border-radius: 2px;
+}
+.modal-forms {
+  padding: 2rem;
+}
+.modal-forms form {
+  display: none;
+}
+#login-tab:checked ~ .modal-forms .form-login {
+  display: block;
+}
+#signup-tab:checked ~ .modal-forms .form-signup {
+  display: block;
+}
+
+.modal-forms label {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+.modal-forms input {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1.8rem;
+}
+.btn-submit {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.3rem;
+  background: #f08306;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-submit:hover {
+  background: #d56b00;
+}
