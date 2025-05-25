@@ -7,9 +7,7 @@ import dotenv from 'dotenv';
 import markerRoutes from './routes/markerRoute.js';
 import userRoutes from './routes/userRoute.js';
 import errorController from './controllers/errorController.js';
-import fastifyCors from '@fastify/cors';
 import bestiaryRoute from './routes/bestiaryRoute.js';
-
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -39,6 +37,7 @@ await fastify.register(fastifyCors, {
       cb(new Error('Not allowed by CORS'));
     }
   },
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   credentials: true,
 });
 await fastify.register(fastifyCookie, {
