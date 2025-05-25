@@ -1,4 +1,4 @@
-import { mapName, apiUrl } from './helper.js';
+import { mapName } from './helper.js';
 import { apiJSON } from '../../script/apiClient.js';
 async function fetchData(url) {
   try {
@@ -12,7 +12,7 @@ async function fetchData(url) {
   }
 }
 export const data = await apiJSON(
-  `${apiUrl}/markers?limit=2000&map=${mapName}`,
+  `http://localhost:3000/api/v1/markers?limit=2000&map=${mapName}&isPublic=true`,
   {
     method: 'GET',
   },

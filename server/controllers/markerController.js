@@ -46,3 +46,26 @@ export const createOwnMarker = async (request, reply) => {
     },
   });
 };
+
+export const deleteAllOwnMarkers = async (request, reply) => {
+  const { lat, lng } = request.query;
+  const filter = {
+    owner: request.user._id,
+    isPublic: false,
+  };
+  if (lat && lng) {
+    filter.lat = parseFloat(lat);
+    filter.lng = parseFloat(lng);
+  }
+  const deletedMarkers = await Marker.deleteMany(filter);
+  if (deletedMarkers.deletedCount === 0) {
+    throw new OperationError('No markers found to delete!', 404);
+  }
+  reply.send({
+    status: 'success',
+    data: {
+      markers: deletedMarkers,
+      deletedCount: deletedMarkers.deletedCount,
+    },
+  });
+};

@@ -55,10 +55,10 @@ userSchema.pre('save', async function () {
 });
 
 userSchema.methods.correctPassword = async function (
-  candidatePassword,
   userPassword,
+  candidatePassword,
 ) {
-  return await argon2.verify(candidatePassword, userPassword);
+  return await argon2.verify(userPassword, candidatePassword);
 };
 
 userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {

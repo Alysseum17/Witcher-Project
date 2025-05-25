@@ -451,37 +451,30 @@
       </div>
 
       <div class="modal-forms">
-        <form class="form-login">
+        <form class="form-login form">
           <label class="auth-field">
             <span>Email</span>
             <input
               type="email"
-              name="email"
+              name="emailLogin"
               placeholder="you@example.com"
               required
             />
+            <small class="error-msg" data-for="emailLogin"></small>
           </label>
           <label class="auth-field">
             <span>Password</span>
             <input
               type="password"
-              name="password"
+              name="passwordLogin"
               placeholder="••••••••"
               required
             />
-          </label>
-          <label class="auth-field">
-            <span>Password confirmation</span>
-            <input
-              type="password"
-              name="passwordConfirm"
-              placeholder="••••••••"
-              required
-            />
+            <small class="error-msg" data-for="passwordLogin"></small>
           </label>
           <button type="submit" class="btn-submit">Log In</button>
         </form>
-        <form class="form-signup">
+        <form class="form-signup form">
           <label class="auth-field">
             <span>Username</span>
             <input type="text" name="name" placeholder="your name" required />
@@ -521,10 +514,8 @@
         </form>
       </div>
     </div>
-    <div class="modal message">
-      <div class="modal--box">
-        <p class="modal--text"></p>
-      </div>
+    <div class="modal--box message">
+      <p class="modal--text"></p>
     </div>
   </body>
 </html>

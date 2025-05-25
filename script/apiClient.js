@@ -30,7 +30,7 @@ const limiter = async () => {
 export const apiFetch = withAuthProxy(fetch, {
   strategies,
   defaultStrategy: 'cookie',
-  onRenew: renewCookie,
+  onRenew: () => {},
   limiter,
   logger,
 });

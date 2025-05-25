@@ -18,4 +18,9 @@ export default async function markerRoutes(fastify, _opts) {
     { preHandler: authController.protect },
     markerController.createOwnMarker,
   );
+  fastify.delete(
+    '/own',
+    { preHandler: authController.protect },
+    markerController.deleteAllOwnMarkers,
+  );
 }

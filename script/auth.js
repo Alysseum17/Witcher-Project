@@ -7,7 +7,11 @@ class Auth {
   #btnSignup = document.querySelector('.btn--signup');
   #btnLogin = document.querySelector('.btn--login');
   #formSignup = document.querySelector('.form-signup');
+  #formLogin = document.querySelector('.form-login');
+  #forms = document.querySelectorAll('.form');
   #errorMessages = document.querySelectorAll('.error-msg');
+  #message = document.querySelector('.message');
+  #modalText = document.querySelector('.modal--text');
   constructor(user) {
     this.user = user;
   }
@@ -16,18 +20,22 @@ class Auth {
       s.textContent = '';
       s.classList.remove('show');
     });
-    this.#formSignup
-      .querySelectorAll('input')
-      .forEach((inp) => inp.classList.remove('invalid'));
-    for (const [field, message] of Object.entries(details)) {
-      const small = document.querySelector(`.error-msg[data-for="${field}"]`);
-      const input = this.#formSignup.querySelector(`[name="${field}"]`);
-      if (small) {
-        small.textContent = message;
-        small.classList.add('show');
+    this.#forms.forEach((form) => {
+      form
+        .querySelectorAll('input')
+        .forEach((inp) => inp.classList.remove('invalid'));
+      for (const [field, message] of Object.entries(details)) {
+        const small = document.querySelector(`.error-msg[data-for="${field}"]`);
+        const input =
+          this.#formSignup.querySelector(`[name="${field}"]`) ||
+          this.#formLogin.querySelector(`[name="${field}"]`);
+        if (small) {
+          small.textContent = message;
+          small.classList.add('show');
+        }
+        if (input) input.classList.add('invalid');
       }
-      if (input) input.classList.add('invalid');
-    }
+    });
   }
   _closeModal() {
     this.#overlay.classList.remove('active');
@@ -48,7 +56,7 @@ class Auth {
     this.#close.addEventListener('click', this._closeModal.bind(this));
     this.#overlay.addEventListener('click', this._closeModal.bind(this));
   }
-  async _isLoggedIn() {
+  async isLoggedIn() {
     try {
       const res = await fetch('http://localhost:3000/api/v1/users/auth/ping', {
         method: 'GET',
@@ -60,13 +68,13 @@ class Auth {
     }
   }
   async checkAuthAndUpdateUI() {
-    const loggedIn = await this._isLoggedIn();
+    const loggedIn = await this.isLoggedIn();
     if (!loggedIn) return;
     const res = await apiJSON('http://localhost:3000/api/v1/users/me');
     const { user } = res.data;
     this.#registrationContainer.innerHTML = `
     <h1 class = "username">${user.name}</h1>
-    <img src="../images/users/${user.photo}" alt="Avatar" class="user-avatar" />
+    <img src="/../images/users/${user.photo}" alt="Avatar" class="user-avatar" />
     `;
   }
   async signup(e) {
@@ -90,22 +98,45 @@ class Auth {
       else alert(err.message || 'Unknown error');
     }
   }
+  async login(e) {
+    e.preventDefault();
+    this._showErrors();
+    const formData = new FormData(e.target);
+    const body = {
+      email: formData.get('emailLogin'),
+      password: formData.get('passwordLogin'),
+    };
+
+    try {
+      await apiJSON('http://localhost:3000/api/v1/users/login', {
+        method: 'POST',
+        body: JSON.stringify(body),
+      });
+      this._closeModal();
+      this._showToast('Login successful! Welcome back.✅✅✅');
+      this.checkAuthAndUpdateUI();
+      this.#formLogin.reset();
+    } catch (err) {
+      if (err.errors || err.details)
+        this._showErrors(err.errors || err.details);
+      else this._showErrors({ passwordLogin: err.message || 'Unknown error' });
+    }
+  }
   addEventListeners() {
-    this.#formSignup.addEventListener('submit', (e) => this.signup(e));
+    this.#formSignup.addEventListener('submit', this.signup.bind(this));
+    this.#formLogin.addEventListener('submit', this.login.bind(this));
   }
   _showToast(text, duration = 1000) {
-    const container = document.querySelector('.message');
-    const textInfo = document.querySelector('.modal--text');
-    container.classList.add('open--modal');
-    textInfo.innerHTML = text;
+    this.#message.classList.add('active');
+    this.#modalText.innerHTML = text;
     setTimeout(() => {
-      container.classList.remove('open--modal');
-      textInfo.innerHTML = '';
+      this.#message.classList.remove('active');
+      this.#modalText.innerHTML = '';
     }, duration);
   }
 }
 
-const auth = new Auth();
+export const auth = new Auth();
 auth.showAuthModal();
 auth.checkAuthAndUpdateUI();
 auth.addEventListeners();

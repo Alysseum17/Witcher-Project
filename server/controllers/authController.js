@@ -57,7 +57,7 @@ export const login = async (request, reply) => {
 
   const user = await User.findOne({ email }).select('+password');
 
-  if (!user || !(await user.correctPassword(password, user.password))) {
+  if (!user || !(await user.correctPassword(user.password, password))) {
     throw new OperationError('Incorrect email or password', 401);
   }
 

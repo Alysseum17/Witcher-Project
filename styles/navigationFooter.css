@@ -166,3 +166,178 @@
 .footer--link:active {
   color: #555;
 }
+.modal-registration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  z-index: 999;
+}
+.modal-registration.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-close {
+  display: block;
+  position: absolute;
+  font-size: 3rem;
+  line-height: 1;
+  padding: 0;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #555;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.modal-registration input[type='radio'] {
+  display: none;
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.modal-tabs label {
+  flex: 1;
+  text-align: center;
+  padding: 1.2rem 0;
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  font-size: 1.8rem;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+#login-tab:checked ~ .modal-tabs label[for='login-tab'],
+#signup-tab:checked ~ .modal-tabs label[for='signup-tab'] {
+  color: #222;
+  background: #fafafa;
+}
+#login-tab:checked ~ .modal-tabs label[for='login-tab']::after,
+#signup-tab:checked ~ .modal-tabs label[for='signup-tab']::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  background: #f08306;
+  border-radius: 2px;
+}
+.modal-forms {
+  padding: 2rem;
+}
+.modal-forms form {
+  display: none;
+}
+#login-tab:checked ~ .modal-forms .form-login {
+  display: block;
+}
+#signup-tab:checked ~ .modal-forms .form-signup {
+  display: block;
+}
+
+.modal-forms label {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+.modal-forms input {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1.8rem;
+}
+.btn-submit {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.3rem;
+  background: #f08306;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-submit:hover {
+  background: #d56b00;
+}
+.user-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  background-color: #eee;
+}
+
+.username {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.auth-field input {
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  border: 2px solid #5555;
+  border-radius: 6px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.auth-field input.invalid {
+  border-color: #ff5c5c;
+  background: #fff7f7;
+  box-shadow: 0 0 0 2px rgba(255, 92, 92, 0.25);
+}
+
+.auth-field input.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(255, 92, 92, 0.4);
+}
+
+.error-msg {
+  color: #ff5c5c;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-top: 0.3rem;
+
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    opacity 0.25s,
+    max-height 0.25s;
+}
+.error-msg.show {
+  opacity: 1;
+  max-height: 40px;
+}

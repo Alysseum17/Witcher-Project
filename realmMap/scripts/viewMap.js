@@ -1,5 +1,5 @@
 import * as helper from './helper.js';
-
+import { apiJSON } from '../../script/apiClient.js';
 class Map {
   #map = L.map('map', {
     crs: L.CRS.Simple,
@@ -45,12 +45,7 @@ class Map {
   createMarkers(features, names = {}) {
     const groups = helper.groupFeaturesByClass(features);
     Object.entries(groups).forEach(([key, items]) => {
-      if (!this.#featureGroup[key]) {
-        this.#featureGroup[key] = L.featureGroup();
-      } else {
-        this.#featureGroup[key].clearLayers();
-      }
-
+      if (!this.#featureGroup[key]) this.#featureGroup[key] = L.featureGroup();
       const counterEl = document.querySelector(`.${key} .counter`);
       if (counterEl) counterEl.textContent = items.length;
       items.forEach((item) => {
@@ -183,7 +178,7 @@ class Map {
       activity.querySelector('.counter').classList.toggle('hide--counter');
     }
   }
-  _createOwnMarker(e) {
+  async _createOwnMarker(e) {
     const { lat, lng } = e.latlng;
 
     const markerForm = `
@@ -240,30 +235,36 @@ class Map {
       .setContent(wrapper)
       .openOn(this.#map);
 
-    const attachHandler = () => {
+    const attachHandler = async () => {
       if (document.getElementById('markerForm')) {
         document
           .getElementById('markerForm')
-          .addEventListener('submit', (ev) => {
+          .addEventListener('submit', async (ev) => {
             ev.preventDefault();
             const data = Object.fromEntries(new FormData(ev.target).entries());
             const feature = {
+              map: this.#mapName,
+              class: this.#ownType,
               title: data.title,
               description: data.descr,
               lat,
               lng,
             };
             this.#map.closePopup(popup);
-            const raw = localStorage.getItem(this.#mapName);
-            const arr = raw ? JSON.parse(raw) : [];
-            arr.push(feature);
-            localStorage.setItem(this.#mapName, JSON.stringify(arr));
-            this.createMarkers(
-              localStorage.getItem(this.#mapName),
-              [],
-              [],
-              true,
-            );
+            try {
+              const res = await apiJSON(
+                'http://localhost:3000/api/v1/markers/own',
+                {
+                  method: 'POST',
+                  body: JSON.stringify(feature),
+                },
+              );
+              console.log(res);
+              const markerInf = res.data.marker;
+              this.createMarkers([markerInf]);
+            } catch (err) {
+              console.error('Error creating marker:', err);
+            }
           });
       }
       if (document.getElementById('contractForm')) {
@@ -339,13 +340,29 @@ class Map {
     this.#modalWindow.classList.add('active');
     this.#overlay.classList.add('active');
   }
-  _confirmDelete(e) {
+  async _confirmDelete(e) {
     e.preventDefault();
-    const raw = localStorage.getItem(this.#mapName);
-    if (raw) {
-      localStorage.removeItem(this.#mapName);
-      this.#map.removeLayer(this.#featureGroup.waypoint);
-      this.#featureGroup.waypoint.clearLayers();
+    if (!helper.isLoggedIn) return;
+    try {
+      const res = await fetch('http://localhost:3000/api/v1/markers/own', {
+        method: 'DELETE',
+        credentials: 'include',
+      });
+      if (!res.ok) {
+        this._showToast('No markers to delete', 2000);
+        this.#modalWindow.classList.remove('active');
+        this.#overlay.classList.remove('active');
+        return;
+      }
+      const data = await res.json();
+      const { deletedCount } = data.data;
+      if (deletedCount > 0) {
+        this.#map.removeLayer(this.#featureGroup.waypoint);
+        this.#featureGroup.waypoint.clearLayers();
+      }
+      this._showToast('All markers deleted', 2000);
+    } catch (err) {
+      console.error('Error deleting markers:', err);
     }
     this.#modalWindow.classList.remove('active');
     this.#overlay.classList.remove('active');
@@ -356,26 +373,22 @@ class Map {
     this.#overlay.classList.remove('active');
   }
 
-  _removeOneMarker(e) {
+  async _removeOneMarker(e) {
     e.preventDefault();
+    if (!helper.isLoggedIn) return;
     this._cancelMarkerDelete();
     this.#btnDeleteOne.classList.add('is--active');
     if (this.#featureGroup[this.#ownType]) {
-      this.#featureGroup[this.#ownType].once('click', (e) => {
+      this.#featureGroup[this.#ownType].once('click', async (e) => {
         this.#btnDeleteOne.classList.remove('is--active');
         const marker = e.layer;
         this.#map.removeLayer(marker);
         this.#featureGroup.waypoint.removeLayer(marker);
-        const raw = localStorage.getItem(this.#mapName);
-        const arr = raw ? JSON.parse(raw) : [];
         const { lat, lng } = marker.getLatLng();
-        const index = arr.findIndex(
-          (item) => item.lat === lat && item.lng === lng,
+        await fetch(
+          `http://localhost:3000/api/v1/markers/own?lat=${lat}&lng=${lng}`,
+          { method: 'DELETE', credentials: 'include' },
         );
-        if (index !== -1) {
-          arr.splice(index, 1);
-          localStorage.setItem(this.#mapName, JSON.stringify(arr));
-        }
       });
     }
   }
