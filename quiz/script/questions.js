@@ -55,3 +55,17 @@ if (easyQuizButton) {
     window.open("./quiz/easy-quiz.html", "_blank");
   });
 }
+
+const mediumQuizButton = document.getElementById("mediumQuiz");
+if (mediumQuizButton) {
+  mediumQuizButton.addEventListener("click", function () {
+    window.open("./quiz/medium-quiz.html", "_blank");
+  });
+}
+
+const hardQuizButton = document.getElementById("hardQuiz");
+if (hardQuizButton) {
+  hardQuizButton.addEventListener("click", function () {
+    window.open("./quiz/hard-quiz.html", "_blank");
+  });
+}
