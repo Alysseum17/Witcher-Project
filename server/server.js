@@ -1,4 +1,6 @@
 import Fastify from 'fastify';
+import fastifyCors from '@fastify/cors';
+import fastifyFormbody from '@fastify/formbody';
 import fastifyCookie from '@fastify/cookie';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -6,6 +8,8 @@ import markerRoutes from './routes/markerRoute.js';
 import userRoutes from './routes/userRoute.js';
 import errorController from './controllers/errorController.js';
 import fastifyCors from '@fastify/cors';
+import bestiaryRoute from './routes/bestiaryRoute.js';
+
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -44,6 +48,12 @@ await fastify.register(fastifyCookie, {
 });
 fastify.register(markerRoutes, { prefix: '/api/v1/markers' });
 fastify.register(userRoutes, { prefix: '/api/v1/users' });
+
+await fastify.register(fastifyCors, {
+  origin: '*',
+});
+await fastify.register(fastifyFormbody);
+fastify.register(bestiaryRoute, { prefix: '/api/v1' });
 
 fastify.setErrorHandler(errorController);
 
