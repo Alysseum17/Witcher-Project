@@ -11,7 +11,7 @@ export const deleteMarker = crudFactory.deleteOne(Marker);
 export const getPublicMarkers = async (request, reply) => {
   const markers = await Marker.find({ isPublic: true });
   reply.send({
-    code: 'success',
+    status: 'success',
     data: {
       markers,
     },
@@ -24,7 +24,7 @@ export const getOwnMarkers = async (request, reply) => {
     isPublic: false,
   });
   reply.send({
-    code: 'success',
+    status: 'success',
     data: {
       markers,
     },
@@ -40,7 +40,7 @@ export const createOwnMarker = async (request, reply) => {
     isPublic: false,
   });
   reply.send({
-    code: 'success',
+    status: 'success',
     data: {
       marker: newMarker,
     },

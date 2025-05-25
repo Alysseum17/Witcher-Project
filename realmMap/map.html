@@ -28,9 +28,6 @@
       defer
     ></script>
     <script type="module" src="scripts/controller.js"></script>
-    <script type="module" src="scripts/viewMap.js"></script>
-    <script type="module" src="scripts/modal.js"></script>
-    <script type="module" src="scripts/helper.js"></script>
     <title>White Orchard|Realm Map</title>
   </head>
   <body>
@@ -78,33 +75,37 @@
               </div>
             </div>
             <nav class="flex--container maps--nav">
-              <a href="hosVelen.html" class="maps--nav-link">
+              <a href="map.html?map=white-orchard" class="maps--nav-link">
+                White Orchard
+              </a>
+              <a href="map.html?map=hos-velen" class="maps--nav-link">
                 Velen & Novigrad
               </a>
-              <a href="skellige.html" class="maps--nav-link"> Skellige </a>
-              <a href="kaerMorhen.html" class="maps--nav-link"> Kaer Morhen </a>
-              <a href="toussaint.html" class="maps--nav-link"> Toussaint </a>
+              <a href="map.html?map=skellige" class="maps--nav-link">
+                Skellige
+              </a>
+              <a href="map.html?map=kaer-morhen" class="maps--nav-link">
+                Kaer Morhen
+              </a>
+              <a href="map.html?map=toussaint" class="maps--nav-link">
+                Toussaint
+              </a>
             </nav>
           </div>
         </div>
         <div class="map" id="map"></div>
       </div>
     </main>
-    <div class="modal">
-      <div class="modal--backdrop"></div>
-      <div class="modal--box">
-        <p class="modal--text">Are you sure?</p>
-        <div class="modal--actions">
-          <button class="btn btn--yes">Yes</button>
-          <button class="btn btn--no">No</button>
-        </div>
+    <div class="modal-overlay"></div>
+    <div class="modal--box">
+      <p class="modal--text">Are you sure?</p>
+      <div class="modal--actions">
+        <button class="btn btn--yes">Yes</button>
+        <button class="btn btn--no">No</button>
       </div>
     </div>
-    <div class="modal message">
-      <div class="modal--backdrop"></div>
-      <div class="modal--box">
-        <p class="modal--text contract--text"></p>
-      </div>
+    <div class="modal--box message">
+      <p class="modal--text contract--text"></p>
     </div>
   </body>
 </html>

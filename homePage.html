@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/mainPageStyle.css" />
     <link rel="stylesheet" href="styles/navigationFooter.css" />
-    <script defer src="script/script.js"></script>
+    <script defer src="script/smoothScroll.js"></script>
+    <script type="module" src="script/auth.js"></script>
     <script defer src="script/slider.js"></script>
     <script
       type="module"
@@ -438,9 +439,9 @@
         </nav>
       </div>
     </footer>
-    <div class="modal-overlay" id="overlay"></div>
-    <div class="modal" id="modal">
-      <button class="modal-close" id="close">&times;</button>
+    <div class="modal-overlay"></div>
+    <div class="modal-registration">
+      <button class="modal-close">&times;</button>
       <input type="radio" name="auth" id="login-tab" />
       <input type="radio" name="auth" id="signup-tab" />
 
@@ -451,31 +452,78 @@
 
       <div class="modal-forms">
         <form class="form-login">
-          <label>
-            Email
-            <input type="email" placeholder="you@example.com" required />
+          <label class="auth-field">
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
           </label>
-          <label>
-            Password
-            <input type="password" placeholder="••••••••" required />
+          <label class="auth-field">
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              placeholder="••••••••"
+              required
+            />
+          </label>
+          <label class="auth-field">
+            <span>Password confirmation</span>
+            <input
+              type="password"
+              name="passwordConfirm"
+              placeholder="••••••••"
+              required
+            />
           </label>
           <button type="submit" class="btn-submit">Log In</button>
         </form>
         <form class="form-signup">
-          <label>
-            Username
-            <input type="text" placeholder="your name" required />
+          <label class="auth-field">
+            <span>Username</span>
+            <input type="text" name="name" placeholder="your name" required />
+            <small class="error-msg" data-for="name"></small>
           </label>
-          <label>
-            Email
-            <input type="email" placeholder="you@example.com" required />
+          <label class="auth-field">
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+            <small class="error-msg" data-for="email"></small>
           </label>
-          <label>
-            Password
-            <input type="password" placeholder="••••••••" required />
+          <label class="auth-field">
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              placeholder="••••••••"
+              required
+            />
+            <small class="error-msg" data-for="password"></small>
+          </label>
+          <label class="auth-field">
+            <span>Password confrirmation</span>
+            <input
+              type="password"
+              name="passwordConfirm"
+              placeholder="••••••••"
+              required
+            />
+            <small class="error-msg" data-for="passwordConfirm"></small>
           </label>
           <button type="submit" class="btn-submit">Sign Up</button>
         </form>
+      </div>
+    </div>
+    <div class="modal message">
+      <div class="modal--box">
+        <p class="modal--text"></p>
       </div>
     </div>
   </body>

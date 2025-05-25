@@ -12,6 +12,7 @@ const height = {
   'kaer-morhen': 5100,
   toussaint: 4600,
 };
+export const apiUrl = 'http://localhost:3000/api/v1';
 const params = new URLSearchParams(window.location.search);
 export const mapName = params.get('map') || 'default';
 export const imageWidth = width[mapName];
@@ -24,17 +25,17 @@ export const imageBounds = [
   [imageHeight, imageWidth],
 ];
 // Generators
-const colorCycle = function* (list = ['#c00', '#0c0', '#00c', '#cc0']) {
-  for (;;) for (const c of list) yield c;
-};
+// const colorCycle = function* (list = ['#c00', '#0c0', '#00c', '#cc0']) {
+//   for (;;) for (const c of list) yield c;
+// };
 
-const randomFeatureCoords = function* (featureGroup) {
-  while (true) {
-    const layers = Object.values(featureGroup._layers);
-    const r = Math.floor(Math.random() * layers.length);
-    yield layers[r].getLatLng();
-  }
-};
+// const randomFeatureCoords = function* (featureGroup) {
+//   while (true) {
+//     const layers = Object.values(featureGroup._layers);
+//     const r = Math.floor(Math.random() * layers.length);
+//     yield layers[r].getLatLng();
+//   }
+// };
 export const opacityGenerator = function* () {
   while (true) {
     yield 0.3;
@@ -63,7 +64,7 @@ export const consumeWithTimeout = function (
     setTimeout(step, interval);
   })();
 };
-//
+
 const bus = new EventTarget();
 export const publish = (eventName, detail) => {
   const e = new CustomEvent(eventName, { detail });
@@ -73,4 +74,17 @@ export const subscribe = (eventName, handler) => {
   const wrapper = (event) => handler(event.detail);
   bus.addEventListener(eventName, wrapper);
   return () => bus.removeEventListener(eventName, wrapper);
+};
+
+export const groupFeaturesByClass = (features) => {
+  const groups = Array.isArray(features)
+    ? features.reduce((acc, item) => {
+        const key = item.class;
+        if (!acc[key]) acc[key] = [];
+        acc[key].push(item);
+        return acc;
+      }, {})
+    : features;
+
+  return groups;
 };

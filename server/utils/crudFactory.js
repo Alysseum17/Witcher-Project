@@ -11,7 +11,7 @@ export const getAll = (Model) => async (request, reply) => {
   const docs = await feature.query;
 
   reply.code(200).send({
-    code: 'success',
+    status: 'success',
     results: docs.length,
     data: {
       [Model.modelName.toLowerCase()]: docs,
@@ -26,7 +26,7 @@ export const getOne = (Model) => async (request, reply) => {
   const doc = await Model.findById(id);
   if (!doc) throw new OperationError('No document found with that ID', 404);
   reply.code(200).send({
-    code: 'success',
+    status: 'success',
     data: {
       [Model.modelName.toLowerCase()]: doc,
     },
@@ -37,7 +37,7 @@ export const createOne = (Model) => async (request, reply) => {
   const newDoc = await Model.create(request.body);
 
   reply.code(201).send({
-    code: 'success',
+    status: 'success',
     data: {
       [Model.modelName.toLowerCase()]: newDoc,
     },
@@ -55,7 +55,7 @@ export const updateOne = (Model) => async (request, reply) => {
   if (!doc) throw new OperationError('No document found with that ID', 404);
 
   reply.code(200).send({
-    code: 'success',
+    status: 'success',
     data: {
       [Model.modelName.toLowerCase()]: doc,
     },
@@ -70,7 +70,7 @@ export const deleteOne = (Model) => async (request, reply) => {
   if (!doc) throw new OperationError('No document found with that ID', 404);
 
   reply.code(204).send({
-    code: 'success',
+    status: 'success',
     data: null,
   });
 };

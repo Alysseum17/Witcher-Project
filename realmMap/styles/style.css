@@ -1,7 +1,7 @@
 .content {
   display: grid;
   grid-template-columns: 1.5fr 4fr;
-  height: 145vh;
+  height: 160vh;
   padding-top: 1.2rem;
   background-color: #fdf2e9;
 }
@@ -205,76 +205,8 @@
 .btnPopup:hover {
   background-color: #5f3b26;
 }
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 1000;
-}
-.open--modal {
-  display: block;
-}
-.modal--backdrop {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-}
-
-.modal--box {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fdf2e9;
-  padding: 1.4rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  min-width: 260px;
-  text-align: center;
-  font-family: 'Rubik', sans-serif;
-}
-
-.modal--text {
-  margin: 0 0 1rem;
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #4e372b;
-}
-
-.modal--actions {
-  display: flex;
-  gap: 0.8rem;
-  justify-content: center;
-}
-
-.btn {
-  border: none;
-  padding: 0.45rem 1.4rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.btn--yes {
-  background-color: #8c5a39;
-  color: #fff;
-}
-.btn--yes:hover {
-  background-color: #5f3b26;
-}
-
-.btn--no {
-  background-color: #d9cdc4;
-  color: #4e372b;
-}
-.btn--no:hover {
-  background-color: #c3b6ac;
-}
 .is--active {
-  background: #c8372b !important; /* більш яскравий червоно-коричневий */
+  background: #c8372b !important;
   box-shadow: 0 0 10px 2px rgba(200, 55, 43, 0.6);
   animation: pulse 1s infinite;
 }
