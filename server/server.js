@@ -7,7 +7,9 @@ import dotenv from 'dotenv';
 import markerRoutes from './routes/markerRoute.js';
 import userRoutes from './routes/userRoute.js';
 import errorController from './controllers/errorController.js';
+import fastifyCors from '@fastify/cors';
 import bestiaryRoute from './routes/bestiaryRoute.js';
+
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -25,7 +27,21 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD,
 );
 
-fastify.register(fastifyCookie, {
+await fastify.register(fastifyCors, {
+  origin: (origin, cb) => {
+    if (!origin) {
+      return cb(null, true);
+    }
+    const allowed = ['http://localhost:5500', 'http://127.0.0.1:5500'];
+    if (allowed.includes(origin)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+});
+await fastify.register(fastifyCookie, {
   secret: process.env.JWT_SECRET,
   parseOptions: {},
 });

@@ -13,26 +13,24 @@ const signToken = (id) => {
 
 const createSendToken = (user, statusCode, reply) => {
   const token = signToken(user._id);
-
-  const cookieMaxAge = Number(process.env.JWT_COOKIE_EXPIRES_IN) * 24 * 60 * 60;
   user.password = undefined;
+  const cookieMaxAge = Number(process.env.JWT_COOKIE_EXPIRES_IN) * 24 * 60 * 60;
+  const isProd = process.env.NODE_ENV === 'production';
+  const cookieOptions = {
+    httpOnly: true,
+    secure: isProd,
+    sameSite: isProd ? 'lax' : 'strict',
+    path: '/',
+    maxAge: cookieMaxAge,
+  };
 
-  reply
-    .code(statusCode)
-    .setCookie('jwt', token, {
-      httpOnly: true,
-      maxAge: cookieMaxAge,
-      path: '/',
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-    })
-    .send({
-      code: 'success',
-      token,
-      data: {
-        user,
-      },
-    });
+  reply.code(statusCode).setCookie('jwt', token, cookieOptions).send({
+    status: 'success',
+    token,
+    data: {
+      user,
+    },
+  });
 };
 
 export const signup = async (request, reply) => {
@@ -80,7 +78,7 @@ export const logout = async (request, reply) => {
     })
     .code(204)
     .send({
-      code: 'success',
+      status: 'success',
       message: 'Logged out successfully!',
     });
 };
@@ -157,15 +155,14 @@ export const forgotPassword = async (request, reply) => {
     });
 
     reply.code(200).send({
-      code: 'success',
+      status: 'success',
       message: 'Token sent to email!',
     });
   } catch (err) {
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
-    console.error(err);
-
+    console.error('Error sending email:', err);
     throw new OperationError(
       'There was an error sending the email. Try again later!',
       500,

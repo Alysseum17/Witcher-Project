@@ -162,3 +162,81 @@ html {
   grid-column: 1 / -1;
   justify-self: center;
 }
+
+.modal--box {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fdf2e9;
+  padding: 1.4rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  min-width: 260px;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+}
+.modal--box.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal--text {
+  margin: 0 0 1rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #4e372b;
+}
+
+.modal--actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.btn {
+  border: none;
+  padding: 0.45rem 1.4rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn--yes {
+  background-color: #8c5a39;
+  color: #fff;
+}
+.btn--yes:hover {
+  background-color: #5f3b26;
+}
+
+.btn--no {
+  background-color: #d9cdc4;
+  color: #4e372b;
+}
+.btn--no:hover {
+  background-color: #c3b6ac;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  z-index: 500;
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

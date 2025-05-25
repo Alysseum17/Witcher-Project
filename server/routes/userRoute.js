@@ -81,4 +81,13 @@ export default async function userRoutes(fastify, _opts) {
     },
     userController.deleteUser,
   );
+  fastify.get(
+    '/auth/ping',
+    {
+      preHandler: authController.protect,
+    },
+    async (_req, reply) => {
+      reply.code(204).send();
+    },
+  );
 }

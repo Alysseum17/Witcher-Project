@@ -1,19 +1,10 @@
-import {
-  imageUrl,
-  mapCenter,
-  initialZoom,
-  imageBounds,
-  opacityGenerator,
-  consumeWithTimeout,
-  subscribe,
-  publish,
-  mapName,
-} from './helper.js';
+import * as helper from './helper.js';
+
 class Map {
   #map = L.map('map', {
     crs: L.CRS.Simple,
-    center: mapCenter,
-    zoom: initialZoom,
+    center: helper.mapCenter,
+    zoom: helper.initialZoom,
     minZoom: -2,
     maxZoom: 2,
     attributionControl: false,
@@ -30,15 +21,18 @@ class Map {
   #sideBar = document.querySelector('.side--bar');
   #ownType = 'waypoint';
   #activitiesList = document.querySelector('.activities');
-  #modalWindow = document.querySelector('.modal');
+  #modalWindow = document.querySelector('.modal--box');
+  #overlay = document.querySelector('.modal-overlay');
   #btnConfirmModal = document.querySelector('.btn--yes');
   #btnCloseModal = document.querySelector('.btn--no');
   #witchers = document.querySelector('.witchers');
+  #message = document.querySelector('.message');
+  #contractText = document.querySelector('.contract--text');
   #isProcessing = false;
   #waitingWitchers = [];
   #witcherSubscriptions = {};
 
-  constructor(imageUrl, imageBounds) {
+  constructor(imageUrl, imageBounds, mapName) {
     this.#imageUrl = imageUrl;
     this.#imageBounds = imageBounds;
     this.#mapName = mapName;
@@ -48,21 +42,19 @@ class Map {
     this.#map.setMaxBounds(this.#imageBounds);
     L.imageOverlay(this.#imageUrl, this.#imageBounds).addTo(this.#map);
   }
-  createMarkers(features, descriptions = [], names = [], ownMarker = false) {
-    const featuresObj = ownMarker ? JSON.parse(features) : features;
-    const entries = ownMarker
-      ? [[this.#ownType, featuresObj]]
-      : Object.entries(featuresObj);
-    for (const [key, value] of entries) {
+  createMarkers(features, names = {}) {
+    const groups = helper.groupFeaturesByClass(features);
+    Object.entries(groups).forEach(([key, items]) => {
       if (!this.#featureGroup[key]) {
         this.#featureGroup[key] = L.featureGroup();
       } else {
         this.#featureGroup[key].clearLayers();
       }
-      if (document.querySelector(`.${key}`))
-        document.querySelector(`.${key}`).textContent = value.length;
-      value.forEach((item) => {
-        const marker = L.marker(item, {
+
+      const counterEl = document.querySelector(`.${key} .counter`);
+      if (counterEl) counterEl.textContent = items.length;
+      items.forEach((item) => {
+        const marker = L.marker([item.lat, item.lng], {
           icon: L.icon({
             iconUrl: `./images/icons/${key}.png`,
             iconSize: [25, 35],
@@ -71,25 +63,29 @@ class Map {
             shadowSize: [41, 41],
           }),
         });
-        this.#featureGroup[key].addLayer(marker);
-        marker.bindPopup(
-          `<span class = "heading">${item.title || names[key]}</span>
-          <br>${key === 'pointofinterest' ? '' : item.descr || descriptions[key]}`,
-        );
-        marker.bindTooltip(`${key === 'waypoint' ? item.title : names[key]}`, {
+
+        marker.bindPopup(`
+          <span class="heading">${item.title || names[key] || key}</span><br>
+          ${item.description || ''}
+        `);
+
+        marker.bindTooltip(item.title || names[key] || key, {
           offset: L.point(10, -25),
         });
-        marker.on('click', () => {
-          const { lat, lng } = item;
-          this.#map.setView([lat, lng], this.#map.getZoom());
-        });
-      });
-      this.#featureGroup[key].addTo(this.#map);
-    }
-  }
 
+        marker.on('click', () => {
+          this.#map.setView([item.lat, item.lng], this.#map.getZoom());
+        });
+
+        this.#featureGroup[key].addLayer(marker);
+      });
+
+      this.#featureGroup[key].addTo(this.#map);
+    });
+  }
   createSideBar(features, names) {
-    for (const [key, value] of Object.entries(features)) {
+    const groups = helper.groupFeaturesByClass(features);
+    for (const [key, value] of Object.entries(groups)) {
       if (value.length > 0) {
         const markup = `
           <div class="activity" data-name = "${key}">
@@ -127,6 +123,7 @@ class Map {
       'click',
       this._cancelDelete.bind(this),
     );
+    this.#overlay.addEventListener('click', this._cancelDelete.bind(this));
   }
   pulseOneMarkerListener() {
     this.#activitiesList.addEventListener(
@@ -250,7 +247,12 @@ class Map {
           .addEventListener('submit', (ev) => {
             ev.preventDefault();
             const data = Object.fromEntries(new FormData(ev.target).entries());
-            const feature = { title: data.title, descr: data.descr, lat, lng };
+            const feature = {
+              title: data.title,
+              description: data.descr,
+              lat,
+              lng,
+            };
             this.#map.closePopup(popup);
             const raw = localStorage.getItem(this.#mapName);
             const arr = raw ? JSON.parse(raw) : [];
@@ -270,11 +272,10 @@ class Map {
           .addEventListener('submit', (ev) => {
             ev.preventDefault();
             const data = Object.fromEntries(new FormData(ev.target).entries());
-            console.log('New contract:', data.monster, data.reward);
             this._showToast(
               `New contract for ${data.monster} for ${data.reward} crowns`,
             );
-            publish('new-contract', {
+            helper.publish('new-contract', {
               monster: data.monster,
               reward: data.reward,
               coords: { lat, lng },
@@ -335,7 +336,8 @@ class Map {
   }
   _openModal(e) {
     e.preventDefault();
-    this.#modalWindow.classList.add('open--modal');
+    this.#modalWindow.classList.add('active');
+    this.#overlay.classList.add('active');
   }
   _confirmDelete(e) {
     e.preventDefault();
@@ -345,11 +347,13 @@ class Map {
       this.#map.removeLayer(this.#featureGroup.waypoint);
       this.#featureGroup.waypoint.clearLayers();
     }
-    this.#modalWindow.classList.remove('open--modal');
+    this.#modalWindow.classList.remove('active');
+    this.#overlay.classList.remove('active');
   }
   _cancelDelete(e) {
     e.preventDefault();
-    this.#modalWindow.classList.remove('open--modal');
+    this.#modalWindow.classList.remove('active');
+    this.#overlay.classList.remove('active');
   }
 
   _removeOneMarker(e) {
@@ -394,8 +398,8 @@ class Map {
     const key = activity.dataset.name;
     const group = this.#featureGroup[key];
     if (!group) return;
-    const gen = opacityGenerator();
-    consumeWithTimeout(
+    const gen = helper.opacityGenerator();
+    helper.consumeWithTimeout(
       gen,
       5000,
       (opacity) => {
@@ -405,13 +409,13 @@ class Map {
     );
   }
   _showToast(text, duration = 1000) {
-    const container = document.querySelector('.message');
-    const textInfo = document.querySelector('.contract--text');
-    container.classList.add('open--modal');
-    textInfo.innerHTML += `${text}<br>`;
+    this.#message.classList.add('active');
+    this.#overlay.classList.add('active');
+    this.#contractText.innerHTML += `${text}<br>`;
     setTimeout(() => {
-      container.classList.remove('open--modal');
-      textInfo.innerHTML = '';
+      this.#message.classList.remove('active');
+      this.#overlay.classList.remove('active');
+      this.#contractText.innerHTML = '';
     }, duration);
   }
   _activateWitchers() {
@@ -419,13 +423,13 @@ class Map {
       const card = e.target.closest('.witcher--card');
       if (!card) return;
 
-      const name = card.dataset.name;
+      const { name } = card.dataset;
       card.classList.toggle('witcher--active');
 
       if (card.classList.contains('witcher--active')) {
         this.#witcherSubscriptions[name] = this._subscribeWitcher(name);
         if (this.#contracts.length > 0) {
-          publish('new-contract', this.#contracts[0][1]);
+          helper.publish('new-contract', this.#contracts[0][1]);
         }
       } else {
         this.#witcherSubscriptions[name]?.();
@@ -434,7 +438,7 @@ class Map {
     });
   }
   _subscribeWitcher(name) {
-    return subscribe(
+    return helper.subscribe(
       'new-contract',
       ({ monster, reward, coords, duration }) => {
         if (this.#isProcessing) {
@@ -469,7 +473,7 @@ class Map {
             this.#witcherSubscriptions[nextWitcher] =
               this._subscribeWitcher(nextWitcher);
             if (this.#contracts.length > 0) {
-              publish('new-contract', this.#contracts[0][1]);
+              helper.publish('new-contract', this.#contracts[0][1]);
             }
           }
         }, duration);
@@ -481,15 +485,6 @@ class Map {
       },
     );
   }
-  // startAutoFocus(key = 'pointofinterest') {
-  //   if (!this.#featureGroup[key]) return;
-  //   const coordsGen = randomFeatureCoords(this.#featureGroup[key]);
-  //   this._focusInterval && clearInterval(this._focusInterval);
-  //   this._focusInterval = setInterval(() => {
-  //     const { lat, lng } = coordsGen.next().value;
-  //     this.#map.setView([lat, lng], this.#map.getZoom());
-  //   }, 5000);
-  // }
 }
 
-export default new Map(imageUrl, imageBounds);
+export default new Map(helper.imageUrl, helper.imageBounds, helper.mapName);

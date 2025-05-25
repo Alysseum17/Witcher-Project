@@ -8,9 +8,9 @@ import { Marker } from './server/models/markerModel.js';
 dotenv.config({ path: './config.env' });
 
 const REGION_FILES = [
-  'whiteOrchard.json',
-  'hosVelen.json',
-  'kaerMorhen.json',
+  'white-orchard.json',
+  'hos-velen.json',
+  'kaer-morhen.json',
   'skellige.json',
   'toussaint.json',
 ];
@@ -46,7 +46,7 @@ const loadJSON = async (file) =>
           map: mapSlug,
           class: klass,
           title: p.title ?? commonNames[klass] ?? klass,
-          description: p.description ?? commonDescriptions[klass] ?? '',
+          description: p.descr ?? commonDescriptions[klass] ?? '',
           lat: p.lat,
           lng: p.lng,
           owner: null,

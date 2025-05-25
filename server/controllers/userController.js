@@ -9,7 +9,7 @@ export const updateUser = crudFactory.updateOne(User);
 export const deleteUser = crudFactory.deleteOne(User);
 export const createUser = async (_request, reply) => {
   reply.code(500).send({
-    code: 'error',
+    status: 'error',
     message: 'This route is not defined! Please use /signup instead.',
   });
 };
@@ -37,7 +37,7 @@ export const updateMe = async (request, reply) => {
   });
 
   reply.code(200).send({
-    code: 'success',
+    status: 'success',
     data: {
       user: updatedUser,
     },
@@ -51,7 +51,7 @@ export const deleteMe = async (request, reply) => {
   await User.findByIdAndDelete(id);
 
   reply.code(204).send({
-    code: 'success',
+    status: 'success',
     data: null,
   });
 };

@@ -1,12 +1,9 @@
 import map from './viewMap.js';
-import { mapName } from './helper.js';
-import { data, descriptions, names } from './modal.js';
-const init = () => {
+import { data, names } from './dataLoader.js';
+const init = async () => {
   map.init();
   map.createSideBar(data, names);
-  map.createMarkers(data, descriptions, names);
-  if (localStorage.getItem(mapName))
-    map.createMarkers(localStorage.getItem(mapName), descriptions, names, true);
+  map.createMarkers(data, names);
   map.pulseOneMarkerListener();
   map.removeMarkerListener();
   map.removeAllMarkersListener();
