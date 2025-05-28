@@ -11,6 +11,7 @@ import bestiaryRoute from './routes/bestiaryRoute.js';
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log(err);
   console.log(err.name, err.message);
   process.exit(1);
 });
@@ -47,9 +48,6 @@ await fastify.register(fastifyCookie, {
 fastify.register(markerRoutes, { prefix: '/api/v1/markers' });
 fastify.register(userRoutes, { prefix: '/api/v1/users' });
 
-await fastify.register(fastifyCors, {
-  origin: '*',
-});
 await fastify.register(fastifyFormbody);
 fastify.register(bestiaryRoute, { prefix: '/api/v1' });
 

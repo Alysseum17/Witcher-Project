@@ -9,13 +9,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles/general.css" />
-    <link rel="stylesheet" href="../styles/navigationFooter.css" />
-    <link rel="stylesheet" href="styles/bestiary.css" />
-    <link rel="stylesheet" href="../styles/mainPageStyle.css" />
-    <script defer src="https://unpkg.com/htmx.org@1.9.10"></script>
-    <script defer src="scripts/viewBestiary.js"></script>
-    <script type="module" src="../script/authController.js"></script>
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/mainPageStyle.css" />
+    <link rel="stylesheet" href="styles/navigationFooter.css" />
+    <link rel="stylesheet" href="styles/profile.css" />
+    <script type="module" src="script/profileController.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
@@ -29,106 +27,65 @@
   <body>
     <header class="main--header">
       <div class="flex--container flex--header">
-        <a href="#">
-          <img
-            src="../images/logo.png"
-            alt="Witcher logo"
-            class="logo--image"
-          />
+        <a href="homePage.html">
+          <img src="images/logo.png" alt="Witcher logo" class="logo--image" />
         </a>
         <nav class="main--nav">
           <ul class="main--nav-list">
-            <li><a href="../homePage.html" class="main--nav-link">Home</a></li>
-            <li><a href="#" class="main--nav-link">Bestiary</a></li>
-            <li><a href="../realmMap.html" class="main--nav-link">Map</a></li>
+            <li><a href="homePage.html" class="main--nav-link">Home</a></li>
             <li>
-              <a href="../questions.html" class="main--nav-link">Questions</a>
+              <a href="bestiary/bestiary.html" class="main--nav-link"
+                >Bestiary</a
+              >
+            </li>
+            <li><a href="realmMap.html" class="main--nav-link">Map</a></li>
+            <li>
+              <a href="questions.html" class="main--nav-link">Questions</a>
             </li>
           </ul>
         </nav>
         <div class="flex--container registration">
-          <button type="button" class="btn--signup">Sign up</button>
-          <button type="button" class="btn--login">Log in</button>
+          <h1 class="username"></h1>
+          <img src="#" alt="Avatar" class="user-avatar" />
         </div>
       </div>
     </header>
-    <main>
-      <div class="content content--grid grid">
-        <div class="search">
-          <div class="search--container flex--container">
-            <form id="search--form" class="search--form flex--container">
-              <input
-                type="text"
-                class="search--input"
-                id="character--input"
-                name="character"
-                placeholder="Search for a character..."
-              />
-              <button class="search--button">
-                <ion-icon name="search-outline"></ion-icon>
-              </button>
-            </form>
-          </div>
-        </div>
-        <div class="popular--searches grid grid--2-cols">
-          <h2 class="secondary--heading heading--popular">Popular Searches</h2>
-          <div
-            class="popular--card flex--container card"
-            data-name="Geralt_of_Rivia"
-          >
-            <img
-              src="../images/geralt.webp"
-              alt="Geralt"
-              class="img--popular"
-            /><a href="#" class="popular--link">Geralt of Rivia</a>
-          </div>
-          <div class="popular--card flex--container card" data-name="Ciri">
-            <img src="../images/ciri.png" alt="Ciri" class="img--popular" /><a
-              href="#"
-              class="popular--link"
-              >Cirrila</a
-            >
-          </div>
-          <div
-            class="popular--card flex--container card"
-            data-name="Yennefer_of_Vengerberg"
-          >
-            <img
-              src="../images/yennefer.png"
-              alt="Yennefer"
-              class="img--popular"
-            /><a href="#" class="popular--link">Yennefer of Vengerberg</a>
-          </div>
-          <div
-            class="popular--card flex--container card"
-            data-name="Triss_Merigold"
-          >
-            <img
-              src="../images/triss.png"
-              alt="Triss Merigold"
-              class="img--popular"
-            /><a href="#" class="popular--link">Triss Merigold</a>
-          </div>
-          <div class="popular--card flex--container card" data-name="Dandelion">
-            <img
-              src="../images/dandelion.png"
-              alt="Dandelion"
-              class="img--popular"
-            /><a href="#" class="popular--link">Dandelion</a>
-          </div>
-          <div
-            class="popular--card flex--container card"
-            data-name="Emiel_Regis_Rohellec_Terzieff-Godefroy"
-          >
-            <img src="../images/regis.png" alt="Regis" class="img--popular" /><a
-              href="#"
-              class="popular--link"
-              >Regis</a
-            >
-          </div>
-        </div>
+    <section class="profile">
+      <div class="header">
+        <img class="avatar" src="/images/users/default.jpg" alt="avatar" />
+        <h2 class="name">Witcher</h2>
+        <p class="email">witcher@kaermorhen.com</p>
+        <button class="btn edit-btn">Edit</button>
       </div>
-    </main>
+
+      <form class="edit-form hidden">
+        <input name="name" placeholder="Your name" />
+        <input name="email" type="email" placeholder="Your email" />
+        <button class="btn btn--primary">Save</button>
+      </form>
+
+      <details class="pwd-details">
+        <summary>Change password</summary>
+        <form class="pwd-form form">
+          <div class="password-group">
+            <input
+              name="passwordCurrent"
+              type="password"
+              placeholder="Current"
+            />
+            <input name="password" type="password" placeholder="New" />
+            <input
+              name="passwordConfirm"
+              type="password"
+              placeholder="Repeat"
+            />
+            <button class="btn--update">Update password</button>
+          </div>
+        </form>
+      </details>
+
+      <button class="btn btn--primary logout-btn">Log out</button>
+    </section>
     <footer class="footer">
       <div class="container grid grid--footer">
         <div class="logo--col">
@@ -136,7 +93,7 @@
             <img
               class="footer--logo logo--image"
               alt="Witcher logo"
-              src="../images/logo.png"
+              src="images/logo.png"
             />
           </a>
 
@@ -229,60 +186,6 @@
               required
             />
             <small class="error-msg" data-for="passwordLogin"></small>
-          </label>
-          <label>
-            <details class="forgot-details">
-              <summary>Forgot password</summary>
-
-              <div class="forgot-form">
-                <div class="email-group">
-                  <input
-                    class="inp-email"
-                    type="email"
-                    placeholder="Your e-mail"
-                  />
-                  <small class="error-msg" data-for="emailReset"></small>
-                  <button type="button" class="btn btn--primary send-code-btn">
-                    Send code
-                  </button>
-                </div>
-
-                <div class="code-group hidden">
-                  <input
-                    class="inp-code"
-                    type="text"
-                    maxlength="64"
-                    placeholder="Verification code"
-                  />
-                  <small class="error-msg" data-for="codeReset"></small>
-                  <p class="code-info">Code sent to your e-mail</p>
-                  <button type="button" class="btn-resend" data-remaining="90">
-                    Send again
-                  </button>
-                </div>
-
-                <div class="pwd-fields hidden">
-                  <input
-                    name="password"
-                    type="password"
-                    class="inp-password"
-                    placeholder="New password"
-                  />
-                  <small class="error-msg" data-for="password"></small>
-                  <input
-                    name="passwordConfirm"
-                    type="password"
-                    class="inp-password-confirm"
-                    placeholder="Repeat password"
-                  />
-                </div>
-                <small class="error-msg" data-for="passwordConfirm"></small>
-
-                <button class="btn btn--primary hidden btn-update">
-                  Update password
-                </button>
-              </div>
-            </details>
           </label>
           <button type="submit" class="btn-submit">Log In</button>
         </form>

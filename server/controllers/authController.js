@@ -76,7 +76,7 @@ export const logout = async (request, reply) => {
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
     })
-    .code(204)
+    .code(200)
     .send({
       status: 'success',
       message: 'Logged out successfully!',
@@ -143,15 +143,21 @@ export const forgotPassword = async (request, reply) => {
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
 
-  const resetURL = `${request.protocol}://${request.headers.host}/api/v1/users/resetPassword/${resetToken}`;
-
-  const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}. If you didn't forget your password, please ignore this email!`;
+  const message = `Forgot your password? Enter your reset token in the form to reset it: ${resetToken}\nIf you didn't request this, please ignore this email.`;
+  const html = `
+          <!DOCTYPE html><html lang="en"><body>
+          <h1 style="margin:0 0 16px">Password reset</h1>
+          <p>Enter the token in the form:</p>
+          <p style="padding:12px 24px; background:#eee; font-weight:bold">${resetToken}</p>
+          <p style="font-size:14px;color:#666">If you didn't request this, please ignore this email.</p>
+          </body></html>`;
 
   try {
     await sendEmail({
       email: user.email,
       subject: 'Your password reset token (valid for only 10 min)',
       message,
+      html,
     });
 
     reply.code(200).send({
@@ -162,7 +168,6 @@ export const forgotPassword = async (request, reply) => {
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
-    console.error('Error sending email:', err);
     throw new OperationError(
       'There was an error sending the email. Try again later!',
       500,
@@ -174,12 +179,12 @@ export const resetPassword = async (request, reply) => {
   const { password, passwordConfirm } = request.body;
   const { token } = request.params;
 
-  if (!password || !passwordConfirm) {
-    throw new OperationError(
-      'Please provide a new password and confirm it!',
-      400,
-    );
-  }
+  // if (!password || !passwordConfirm) {
+  //   throw new OperationError(
+  //     'Please provide a new password and confirm it!',
+  //     400,
+  //   );
+  // }
 
   const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
 
@@ -211,7 +216,7 @@ export const updatePassword = async (request, reply) => {
 
   const user = await User.findById(request.user.id).select('+password');
 
-  if (!(await user.correctPassword(passwordCurrent, user.password))) {
+  if (!(await user.correctPassword(user.password, passwordCurrent))) {
     throw new OperationError('Your current password is wrong.', 401);
   }
 

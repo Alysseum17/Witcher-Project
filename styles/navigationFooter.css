@@ -289,6 +289,7 @@
   object-fit: cover;
   border: 2px solid #ddd;
   background-color: #eee;
+  cursor: pointer;
 }
 
 .username {
@@ -340,4 +341,121 @@
 .error-msg.show {
   opacity: 1;
   max-height: 40px;
+}
+.forgot-details {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: var(--bg-input);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius);
+  transition:
+    box-shadow var(--tr),
+    background var(--tr);
+}
+
+.forgot-details[open] {
+  background: var(--bg-card);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.forgot-details summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--c-primary);
+  list-style: none;
+}
+
+.forgot-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.forgot-details summary::after {
+  content: '▾';
+  margin-left: auto;
+  transition: transform var(--tr);
+  font-size: 1.4rem;
+}
+
+.forgot-details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.code-group,
+.password-group {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.forgot-details input {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid #d0d0d0;
+  border-radius: calc(var(--radius) / 2);
+  background: var(--bg-input);
+  font-size: 1.8rem;
+  color: var(--c-text);
+}
+
+.forgot-details input:focus {
+  border-color: var(--c-primary);
+  outline: none;
+}
+
+.code-info {
+  font-size: 1.4rem;
+  color: var(--c-sub);
+  margin-left: 0.2rem;
+}
+
+.forgot-details .btn.btn--primary {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.7rem 0;
+  font-size: 1.7rem;
+}
+.forgot-details .hidden {
+  display: none;
+}
+
+.email-group,
+.code-group,
+.pwd-fields {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.send-code-btn {
+  justify-self: start;
+}
+
+.pwd-fields input {
+  font-size: 1.6rem;
+}
+.btn-resend {
+  padding: 0.45rem 1.2rem;
+  font-size: 1.3rem;
+  background: var(--bg-input);
+  border: 1px solid var(--c-primary);
+  color: var(--c-primary);
+  border-radius: calc(var(--radius) / 2);
+  cursor: pointer;
+  transition: var(--tr);
+}
+.btn-resend:hover:not(:disabled) {
+  background: var(--c-primary);
+  color: #fff;
+}
+.btn-resend:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.code-info {
+  font-size: 1.3rem;
+  color: var(--c-sub);
+  margin-top: 0.4rem;
 }
