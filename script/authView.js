@@ -111,9 +111,7 @@ class AuthView {
   async checkAuthAndUpdateUI() {
     const loggedIn = await this.isLoggedIn();
     if (!loggedIn) return;
-    await getCurrentUser();
-    const res = await apiJSON('http://localhost:3000/api/v1/users/me');
-    const { user } = res.data;
+    const user = await getCurrentUser();
     this.#registrationContainer.innerHTML = `
     <h1 class = "username">${user.name}</h1>
     <img src="/../images/users/${user.photo}" alt="Avatar" class="user-avatar" />
