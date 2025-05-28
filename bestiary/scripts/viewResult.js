@@ -12,3 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     htmx.process(resultDiv);
   }
 });
+
+document.body.addEventListener('htmx:afterSwap', function () {
+  document.querySelector('.search--input').value = '';
+  document.querySelector('.search--input').blur();
+});

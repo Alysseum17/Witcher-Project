@@ -1,3 +1,13 @@
+:root {
+  --clr-bg-main: #fae5d3;
+  --clr-bg-card: #fdf2e9;
+  --clr-accent: #c69c6d;
+  --clr-text: #2b2b2b;
+  --clr-muted: #555;
+  --radius-lg: 12px;
+  --shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  font-family: 'Rubik', 'Roboto', system-ui, sans-serif;
+}
 .content {
   margin: 2.4rem 1.2rem 9.6rem 1.2rem;
 }
@@ -21,7 +31,7 @@
   padding: 1.6rem 2.4rem;
   font-size: 2.4rem;
   font-weight: 700;
-  background-color: #888;
+  background-color: #eb984e;
   color: #eee;
   border-radius: 9px;
   border: none;
@@ -48,13 +58,7 @@
   border-radius: 9px;
   padding: 0 2.4rem 2.4rem 2.4rem;
 }
-.img--search {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-}
+
 .search--name {
   font-size: 2.4rem;
   font-weight: 600;
@@ -107,6 +111,12 @@
   grid-column: 1 / -1;
   justify-self: center;
 }
+.bestiary--description {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 2.4rem;
+}
+
 .img--popular {
   width: 15rem;
   height: 17rem;
@@ -122,6 +132,7 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 .popular--card {
+  border: 1px solid #000;
   cursor: pointer;
   transition:
     transform 0.25s ease,
@@ -143,6 +154,7 @@
 }
 .popular--searches {
   row-gap: 1.6rem;
+  border-radius: 9px;
 }
 .one--column .popular--card {
   width: 30rem;
@@ -201,4 +213,188 @@
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;
   }
+}
+
+.bestiary--description {
+  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+  border: 1px solid #3d3d3d;
+  border-left: 4px solid #eb984e;
+  color: #e0e0e0;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+}
+
+.bestiary--description {
+  margin-top: 1.5rem;
+  background: var(--clr-bg-card);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  line-height: 1.6;
+  font-size: 2.4rem;
+}
+
+.bestiary--description p {
+  margin: 0 0 0.9rem;
+  color: var(--clr-muted);
+}
+
+.bestiary--description p strong {
+  color: var(--clr-text);
+}
+
+.bestiary-heading {
+  margin-top: 7rem;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #3b2f2f;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  padding-left: 0.5rem;
+  position: relative;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- картка бестіарію --------------------------------------------------- */
+.bestiary-entry {
+  display: flex;
+  gap: 2rem;
+  background: var(--clr-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* лівий бік (зображення) */
+.entry-left {
+  flex: 0 0 240px;
+}
+.entry-img {
+  max-height: 60%;
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-lg);
+  object-fit: contain;
+}
+
+/* правий бік (усе решта) */
+.entry-right {
+  flex: 1 1 auto;
+}
+
+.entry-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--clr-text);
+}
+
+/* блоки характеристик */
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.entry-grid section {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.entry-grid h3 {
+  font-size: 2.2rem;
+  margin: 0 0 0.6rem;
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+dl {
+  margin: 0;
+}
+dt {
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin: 0.8rem 0 0.8rem 0;
+}
+dd {
+  margin: 0 0 0.4rem;
+  font-size: 2rem;
+}
+
+/* опис персонажа */
+.entry-description p {
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0 0 0.9rem;
+  line-height: 1.6;
+  color: var(--clr-muted);
+}
+
+.bestiary-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: var(--clr-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.empty-icon ion-icon {
+  font-size: 4rem;
+  color: var(--clr-accent);
+}
+
+.empty-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0.3rem;
+  color: var(--clr-text);
+}
+
+.empty-text {
+  font-size: 2.3rem;
+  color: var(--clr-muted);
+}
+
+.empty-hints {
+  list-style: disc;
+  padding-left: 1.2rem;
+  text-align: left;
+  font-size: 1.8rem;
+  color: var(--clr-muted);
+}
+
+.empty-hints li {
+  margin-bottom: 0.4rem;
 }
