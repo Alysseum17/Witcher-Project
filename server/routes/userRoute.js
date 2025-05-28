@@ -6,6 +6,11 @@ export default async function userRoutes(fastify, _opts) {
   fastify.post('/login', authController.login);
   fastify.post('/forgotPassword', authController.forgotPassword);
   fastify.patch('/resetPassword/:token', authController.resetPassword);
+  fastify.post(
+    '/logout',
+    { preHandler: authController.protect },
+    authController.logout,
+  );
 
   fastify.patch(
     '/updateMyPassword',
@@ -21,7 +26,7 @@ export default async function userRoutes(fastify, _opts) {
 
   fastify.patch(
     '/updateMe',
-    { preHandler: authController.protect },
+    { preHandler: [authController.protect, userController.getMe] },
     userController.updateMe,
   );
   fastify.delete(

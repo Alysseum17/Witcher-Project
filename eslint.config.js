@@ -29,7 +29,7 @@ export default defineConfig([
       'class-methods-use-this': 'off',
       'prefer-destructuring': ['error', { object: true, array: false }],
       'no-unused-vars': [
-        'error',
+        'warn',
         {
           argsIgnorePattern: '^_|req|res|next|val',
           varsIgnorePattern: '^_',
