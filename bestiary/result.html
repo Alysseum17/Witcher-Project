@@ -65,9 +65,8 @@
     <main>
       <div class="content">
         <div class="search">
-
           <div class="search--container flex--container">
-            <form hx-post="http://localhost:3000/api/v1/bestiary" hx-target=".search--result.grid" hx-swap="outerHTML" class="search--form flex--container">
+            <form hx-post="http://localhost:3000/api/v1/bestiary" hx-target=".search--result" hx-swap="outerHTML" class="search--form flex--container">
               <input type="text" class="search--input size--change" name="character" placeholder="Search for a character..." />
               <button class="search--button" type="submit">
               <ion-icon name="search-outline"></ion-icon>
