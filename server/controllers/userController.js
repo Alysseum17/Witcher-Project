@@ -28,8 +28,19 @@ export const updateMe = async (request, reply) => {
       'This route is not for password updates. Please use /updateMyPassword instead.',
     );
   }
-
-  const filteredBody = filterObj(request.body, 'name', 'email');
+  let filteredBody = {};
+  if (!request.body.name && !request.body.email) {
+    throw new OperationError(
+      'Please provide at least one field to update.',
+      400,
+    );
+  } else if (request.body.name && request.body.email) {
+    filteredBody = filterObj(request.body, 'name', 'email');
+  } else if (request.body.name) {
+    filteredBody = filterObj(request.body, 'name');
+  } else {
+    filteredBody = filterObj(request.body, 'email');
+  }
 
   const updatedUser = await User.findByIdAndUpdate(id, filteredBody, {
     new: true,

@@ -1,4 +1,4 @@
-import { auth } from '../../script/auth.js';
+import authView from '../../script/authView.js';
 const width = {
   'white-orchard': 5100,
   'hos-velen': 8200,
@@ -14,7 +14,7 @@ const height = {
   toussaint: 4600,
 };
 // export const apiUrl = 'http://localhost:3000/api/v1';
-export const isLoggedIn = auth.isLoggedIn();
+export const isLoggedIn = authView.isLoggedIn();
 const params = new URLSearchParams(window.location.search);
 export const mapName = params.get('map') || 'default';
 export const imageWidth = width[mapName];
