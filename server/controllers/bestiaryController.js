@@ -82,22 +82,6 @@ function divideCharacterInfo(result) {
     if (!found) divided.other[key] = value;
   }
 
-  // if (!divided.description && result.html) {
-  //   try {
-  //     const parser = new DOMParser();
-  //     const doc = parser.parseFromString(result.html, 'text/html');
-  //     const paragraphs = doc.querySelectorAll('.mw-parser-output > p');
-  //     const firstThree = Array.from(paragraphs).slice(0, 3);
-  //     const text = firstThree
-  //       .map((p) => p.textContent.trim())
-  //       .join(' ')
-  //       .trim();
-  //     if (text) divided.description = text;
-  //   } catch (e) {
-  //     console.warn('Не вдалося обробити HTML для опису:', e);
-  //   }
-  // }
-
   return divided;
 }
 
@@ -285,26 +269,5 @@ const parseHTML = async (html) => {
     ...doc.querySelectorAll('.mw-headline, .mw-parser-output > p'),
   ].map((h2) => h2.textContent.trim());
   result.description = paragraphs;
-  // console.log(
-  //   [...doc.querySelectorAll('.mw-headline, .mw-parser-output > p')].map((h2) =>
-  //     h2.textContent.trim(),
-  //   ),
-  // );
-  // result.description = paragraphs.map((p) =>
-  //   p.textContent
-  //     .replace(/\s+/g, ' ')
-  //     .replace(/\[[^\]]*]/g, '')
-  //     .trim(),
-  // );
-  // const firstFour = paragraphs.slice(0, 4);
-  // if (firstFour.length) {
-  //   result.description = firstFour.map((p) =>
-  //     p.textContent
-  //       .replace(/\s+/g, ' ')
-  //       .replace(/\[[^\]]*]/g, '')
-  //       .trim(),
-  //   );
-  // }
-
   return result;
 };
