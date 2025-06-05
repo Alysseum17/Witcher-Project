@@ -82,22 +82,6 @@ function divideCharacterInfo(result) {
     if (!found) divided.other[key] = value;
   }
 
-  if (!divided.description && result.html) {
-    try {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(result.html, 'text/html');
-      const paragraphs = doc.querySelectorAll('.mw-parser-output > p');
-      const firstThree = Array.from(paragraphs).slice(0, 3);
-      const text = firstThree
-        .map((p) => p.textContent.trim())
-        .join(' ')
-        .trim();
-      if (text) divided.description = text;
-    } catch (e) {
-      console.warn('Не вдалося обробити HTML для опису:', e);
-    }
-  }
-
   return divided;
 }
 
@@ -199,15 +183,22 @@ export const createHTML = async (req, rep) => {
     </div>
     <div class="entry-description">
       ${divided.description
-        .slice(0, 4)
-        .map((p) => `<p>${p}</p>`)
+        .map((p) => {
+          if (p === 'TBA') {
+            return '<p>No Info</p>';
+          }
+          if (p.length > 40) {
+            return `<p>${p}</p>`;
+          } else {
+            return `<h3>${p}</h3>`;
+          }
+        })
         .join('')}
     </div>
   </div>
 </article>
 </div>
   `;
-
   rep.type('text/html').send(html);
 };
 
@@ -274,19 +265,9 @@ const parseHTML = async (html) => {
     }
   });
 
-  const paragraphs = [...doc.querySelectorAll('.mw-parser-output > p')].filter(
-    (p) => p.textContent.trim().length > 30,
-  );
-
-  const firstFour = paragraphs.slice(0, 4);
-  if (firstFour.length) {
-    result.description = firstFour.map((p) =>
-      p.textContent
-        .replace(/\s+/g, ' ')
-        .replace(/\[[^\]]*]/g, '')
-        .trim(),
-    );
-  }
-
+  const paragraphs = [
+    ...doc.querySelectorAll('.mw-headline, .mw-parser-output > p'),
+  ].map((h2) => h2.textContent.trim());
+  result.description = paragraphs;
   return result;
 };
