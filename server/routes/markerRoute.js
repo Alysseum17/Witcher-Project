@@ -1,5 +1,5 @@
-import markerController from '../controllers/markerController.js';
-import authController from '../controllers/authController.js';
+import * as markerController from '../controllers/markerController.js';
+import * as authController from '../controllers/authController.js';
 
 export default async function markerRoutes(fastify, _opts) {
   fastify.get('/', markerController.getAllMarkers);
