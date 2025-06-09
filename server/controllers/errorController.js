@@ -44,18 +44,17 @@ const sendErrorProd = (err, reply) => {
   }
 };
 
-export default (err, request, reply) => {
+export default (err, _req, reply) => {
   let error = Object.create(err);
+  console.log('00000000000');
   error.statusCode = error.statusCode || 500;
   error.status = error.status || 'error';
+  if (error.name === 'CastError') error = handleCastErrorDB(error);
   if (error.name === 'ValidationError') error = handleValidationErrorDB(error);
   const dupCode = error.code || error.cause?.code;
-  if (dupCode == 11000) error = handleDuplicateFieldsDB(error);
-  if (process.env.NODE_ENV === 'development') {
-    return sendErrorDev(error, reply);
-  }
+  if (dupCode === 11000) error = handleDuplicateFieldsDB(error);
 
-  if (error.name === 'CastError') error = handleCastErrorDB(error);
+  if (process.env.NODE_ENV === 'development') return sendErrorDev(error, reply);
 
-  sendErrorProd(error, reply);
+  return sendErrorProd(error, reply);
 };
