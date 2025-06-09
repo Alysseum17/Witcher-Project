@@ -19,6 +19,7 @@ class AuthView {
   #codeGroup = document.querySelector('.code-group');
   #inputCode = document.querySelector('.inp-code');
   #btnResend = document.querySelector('.btn-resend');
+  #forgotForm = document.querySelector('.forgot-form');
   #passwordFields = document.querySelector('.pwd-fields');
   #inputPassword = document.querySelector('.inp-password');
   #inputPasswordConfirm = document.querySelector('.inp-password-confirm');
@@ -74,9 +75,8 @@ class AuthView {
         const input =
           this.#formSignup.querySelector(`[name="${field}"]`) ||
           this.#formLogin.querySelector(`[name="${field}"]`) ||
-          this.#inputEmail ||
-          this.#inputCode ||
-          this.#passwordFields.querySelector(`[name="${field}"]`);
+          this.#forgotForm.querySelector(`[name="${field}"]`);
+        this.#passwordFields.querySelector(`[name="${field}"]`);
         if (small) {
           small.textContent = message;
           small.classList.add('show');
@@ -232,7 +232,20 @@ class AuthView {
     }
     if (password !== passwordConfirm) {
       this._showErrors({
-        passwordConfirm: 'Passwords do not match',
+        passwordConfirmReset: 'Passwords do not match',
+      });
+      return;
+    }
+    if (password.length < 8) {
+      this._showErrors({
+        passwordReset: 'Password must be at least 8 characters long',
+      });
+      return;
+    }
+    if (passwordConfirm.length < 8) {
+      this._showErrors({
+        passwordConfirmReset:
+          'Password confirmation must be at least 8 characters long',
       });
       return;
     }

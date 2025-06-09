@@ -479,6 +479,7 @@
               <div class="forgot-form">
                 <div class="email-group">
                   <input
+                    name="emailReset"
                     class="inp-email"
                     type="email"
                     placeholder="Your e-mail"
@@ -491,6 +492,7 @@
 
                 <div class="code-group hidden">
                   <input
+                    name="codeReset"
                     class="inp-code"
                     type="text"
                     maxlength="64"
@@ -505,7 +507,7 @@
 
                 <div class="pwd-fields hidden">
                   <input
-                    name="password"
+                    name="passwordReset"
                     type="password"
                     class="inp-password"
                     placeholder="New password"
@@ -518,7 +520,10 @@
                     placeholder="Repeat password"
                   />
                 </div>
-                <small class="error-msg" data-for="passwordConfirm"></small>
+                <small
+                  class="error-msg"
+                  data-for="passwordConfirmReset"
+                ></small>
 
                 <button class="btn btn--primary hidden btn-update">
                   Update password
