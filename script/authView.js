@@ -138,7 +138,9 @@ class AuthView {
     } catch (err) {
       if (err.errors || err.details)
         this._showErrors(err.errors || err.details);
-      else alert(err.message || 'Unknown error');
+      else {
+        alert(err.message || 'Unknown error');
+      }
     }
   }
   async login(e) {
@@ -219,12 +221,12 @@ class AuthView {
       return;
     }
     if (!password) {
-      this._showErrors({ password: 'Please enter a new password' });
+      this._showErrors({ passwordReset: 'Please enter a new password' });
       return;
     }
     if (!passwordConfirm) {
       this._showErrors({
-        passwordConfirm: 'Please confirm your password',
+        passwordConfirmReset: 'Please confirm your password',
       });
       return;
     }

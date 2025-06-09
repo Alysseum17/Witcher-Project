@@ -24,7 +24,7 @@ const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD,
 );
-
+fastify.setErrorHandler(errorController);
 await fastify.register(fastifyCors, {
   origin: (origin, cb) => {
     if (!origin) {
@@ -49,8 +49,6 @@ fastify.register(userRoutes, { prefix: '/api/v1/users' });
 
 await fastify.register(fastifyFormbody);
 fastify.register(bestiaryRoute, { prefix: '/api/v1' });
-
-fastify.setErrorHandler(errorController);
 
 await mongoose.connect(DB).then(() => console.log('DB connection successful!'));
 try {

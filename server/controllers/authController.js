@@ -35,9 +35,6 @@ const createSendToken = (user, statusCode, reply) => {
 
 export const signup = async (request, reply) => {
   const { name, email, password, passwordConfirm } = request.body;
-  if (!name || !email || !password || !passwordConfirm) {
-    throw new OperationError('Please provide all required fields!', 400);
-  }
   const newUser = await User.create({
     name,
     email,

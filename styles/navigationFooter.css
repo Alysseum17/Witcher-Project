@@ -315,13 +315,15 @@
     box-shadow 0.2s;
 }
 
-.auth-field input.invalid {
+.auth-field input.invalid,
+.forgot-form input.invalid {
   border-color: #ff5c5c;
   background: #fff7f7;
   box-shadow: 0 0 0 2px rgba(255, 92, 92, 0.25);
 }
 
-.auth-field input.invalid:focus {
+.auth-field input.invalid:focus,
+.forgot-form input.invalid:focus {
   box-shadow: 0 0 0 3px rgba(255, 92, 92, 0.4);
 }
 
